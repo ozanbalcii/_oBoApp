@@ -1,8 +1,9 @@
+// Desktop.jsx
 
 export default function Desktop() {
   return (
-    <>
-        <h1>Desktop</h1>
-    </>
-  )
+    <div className="w-full h-screen bg-bgDesktop bg-cover overflow-hidden">
+     
+    </div>
+  );
 }
