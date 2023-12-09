@@ -1,6 +1,7 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import Desktop from "../pages/desktop/Desktop";
+
 import MasterLayout from "../layouts/MasterLayout";
+import Desktop from "../components/desktop/Desktop";
 export default function PrivateRoutes() {
   return (
     <BrowserRouter>
