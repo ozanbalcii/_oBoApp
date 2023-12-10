@@ -8,3 +8,6 @@ To do list:
 React, Redux Toolkit and Tailwind will be used.
 Detailed document will be created
 Library: Material UI
+
+
+https://icomoon.io/app/#/select/image
