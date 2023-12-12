@@ -4,7 +4,7 @@ import PrivateRoutes from "./app/routes/PrivateRoutes";
 function App() {
   return (
     <>
-      <PrivateRoutes />
+      <PrivateRoutes  />
     </>
   );
 }
