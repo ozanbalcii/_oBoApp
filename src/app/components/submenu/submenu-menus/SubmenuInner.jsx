@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import SVG from "../../../assets/svg/SVG";
 import { motion } from "framer-motion";
 import {
@@ -6,47 +5,59 @@ import {
   useSubmenuContext,
 } from "../../../contexts/SubmenuProvider";
 
-export default function SubmenuInner({ isVisible }) {
+export default function SubmenuInner() {
   const { showsubMenu, setShowsubMenu } = useSubmenuContext(SubmenuContext);
-
- 
 
   const handleOpen = () => {
     setShowsubMenu(true);
   };
   console.log(showsubMenu);
   // ${showsubMenu ? 'animate__animated  animate__backInUp ' : 'animate__animated animate__bounceOutDown'}
+  // <div className=" text-xs bg-white opacity-90" onMouseEnter={handleOpen}> .</div>
+  // bg-gradient-to-r from-purple-900 via-[#3311A7] to-[#3311A7]  opacity-90
+
+
   return (
     <>
-      <div
-        className="bg-transparent  text-xs"
-        onMouseEnter={handleOpen}
-      >
+      <div className=" text-xs " onMouseEnter={handleOpen}>
         .
       </div>
       {showsubMenu && (
-        <div className=" z-5 verflow-hidden fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full pl-[4.063rem] pr-[4.063rem] pb-[0.313rem] transition-all">
+        <>
           <div
-            className={`inset-0 backdrop-filter backdrop-blur-3xl transition-all  rounded-3xl `}
+            className={`inset-0  rounded-xlsm  `}
           >
-            <motion.div transition={{ type: "spring", stiffness: 100 }}>
-              <div className="flex items-center justify-center gap-5 border-[0.006rem] border-gray-500 rounded-3xl pt-[0.48rem] pb-[0.48rem] text-[1.563rem]">
-                <div className="py-[8px] rounded-lg ">
-                  <SVG icon="finder" size={55} className={"rounded-xl"} />
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <div className="flex items-center justify-center gap-5 border-[0.006rem] shadow-3xl border-gray-500  rounded-3xl pt-[0.78rem]  pb-[0.48rem] text-[1.563rem] bg-blur-xl ">
+                <div className="rounded-lg ">
+                  <SVG icon="finder" className={"rounded-xl"} />
                 </div>
-                <SVG icon="linkedin" size={55} className={"rounded-xl"} />
-                <SVG icon="spotify" size={55} className={"rounded-xl"} />
-                <SVG icon="gmail" size={55} className={"rounded-xl"} />
-                <SVG icon="github" size={55} className={"rounded-xl"} />
-                <SVG
-                  icon="vsCode"
-                  size={55}
-                  className={"rounded-xl bg-white p-2"}
-                />
+                <div className="rounded-lg ">
+                  <SVG icon="linkedin" className={"rounded-xl"} />
+                </div>
+                <div className=" rounded-lg ">
+                  <SVG icon="spotify" className={"rounded-xl"} />
+                </div>
+                <div className="rounded-lg ">
+                  <SVG icon="gmail" className={"rounded-xl"} />
+                </div>
+                <div className="rounded-lg ">
+                  <SVG icon="github" className={"rounded-xl"} />
+                </div>
+                <div className="rounded-lg ">
+                  <SVG
+                    icon="vsCode"
+                    
+                    className={"rounded-xl bg-white p-2"}
+                  />
+                </div>
               </div>
             </motion.div>
           </div>
-        </div>
+        </>
       )}
     </>
   );

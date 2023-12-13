@@ -3,9 +3,9 @@ import PrivateRoutes from "./app/routes/PrivateRoutes";
 
 function App() {
   return (
-    <>
-      <PrivateRoutes  />
-    </>
+    <div className="antialiased">
+      <PrivateRoutes/>
+    </div>
   );
 }
 

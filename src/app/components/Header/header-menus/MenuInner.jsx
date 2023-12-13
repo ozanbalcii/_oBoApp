@@ -4,7 +4,7 @@ import RightSideMenu from "./rightSideMenu/RightSideMenu";
 
 export default function MenuInner() {
   return (
-    <>
+    <div className="bg-gradient-to-r from-purple-500 via-[#3311A7] to-[#4a1fd7]  ">
       <div className="flex items-center justify-center cursor-none">
         <Middle />
       </div>
@@ -16,6 +16,6 @@ export default function MenuInner() {
           <RightSideMenu />
         </div>
       </div>
-    </>
+    </div>
   );
 }

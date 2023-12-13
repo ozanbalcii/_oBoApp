@@ -2,7 +2,29 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+  
+    screens: {
+      xxs: '300px',
+      '2xs': '400px',
+      xs: '480px',
+      sm: '640px',
+      md: '768px',
+      '2md': '800px',
+      '3md': '900px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1440px',
+      '2xxl': '1600px',
+      '25xl': '1800px',
+      '3xl': '1920px',
+    },
     extend: {
+      blur: {
+        xlsm: '1px',
+      },
+      boxShadow: {
+        '3xl': '0 75px 8px -15px rgba(0, 0, 0, 0.6)',
+      },
       backgroundImage: {
         bgDesktop: "url('/src/app/assets/backgrounds/bgDesktop.jpg')",
       },
