@@ -6,7 +6,7 @@ import { MenuItem as BaseMenuItem, menuItemClasses } from "@mui/base/MenuItem";
 import { styled } from "@mui/system";
 import { FaApple } from "react-icons/fa";
 
-export default function MenuSimple() {
+export default function CustomDropdown() {
   const createHandleMenuClick = (menuItem) => {
     return () => {
       console.log(`Clicked on ${menuItem}`);
@@ -39,10 +39,17 @@ export default function MenuSimple() {
     900: "#1C2025",
   };
 
+  const green = {
+    50: "#228B22",
+  };
+  const white = {
+    50: "#FFFFFF",
+  };
+
   const Listbox = styled("ul")(
     ({ theme }) => `
       font-size: 0.685rem;
-      font-weight: 30; 
+      font-weight: 25; 
       box-sizing: border-box;
       backdrop-filter: opacity(0.6);
       margin: 9px 0;
@@ -62,7 +69,9 @@ export default function MenuSimple() {
           : "rgba(0,0,0, 0.05)"
       };
       z-index: 1;
-  
+      border: 0.5px solid ${
+        theme.palette.mode === "dark" ? grey[700] : grey[600]
+      };
       background-color: rgba(50, 50, 64, 0.5);
     `
   );
@@ -71,15 +80,13 @@ export default function MenuSimple() {
     ({ theme }) => `
     font-family: 'Arial;
     list-style: none;
-    padding: 8px;
-    border-radius: 8px;
+    padding: 3.5px 15px; 
+    border-radius: 2px;
     cursor: default;
     user-select: none;
+    display: flex; 
+    align-items: center; 
     color: rgb(255 255 255);
-    &:last-of-type {
-      border-bottom: none;
-    }
-  
     &.${menuItemClasses.focusVisible} {
       outline: 3px solid ${
         theme.palette.mode === "dark" ? blue[600] : blue[200]
@@ -95,8 +102,9 @@ export default function MenuSimple() {
     }
 
    &:hover:not(.${menuItemClasses.disabled}) {
-     background-color: ${theme.palette.mode === "dark" ? blue[900] : grey[300]};
-     color: ${theme.palette.mode === "dark" ? blue[100] : blue[900]};
+     background-color: ${theme.palette.mode === "dark" ? green[50] : green[50] };
+     color: ${theme.palette.mode === "dark" ? white[50] : white[50]};
+     font-weight: 200;
    }
    `
   );
@@ -141,19 +149,16 @@ export default function MenuSimple() {
         <FaApple />
       </MenuButton>
       <Menu slots={{ listbox: Listbox }} className="backdrop-filter ">
-        <MenuItem onClick={createHandleMenuClick("Profile")}>
+        <MenuItem className="" onClick={createHandleMenuClick("Profile")}>
           Example-1
         </MenuItem>
-      <div className='p-[0.5rem]' >
-      <hr className="border-t-1 border-[#8585AB] " />
+      <div className='p-[0.3rem]' >
+      <hr className="border-1 border-[#8585AB] " />
       </div >
         <MenuItem onClick={createHandleMenuClick("Profile")}>
           Example-2
         </MenuItem>
-        {/* <MenuItem onClick={createHandleMenuClick("Language settings")}>
-          Language settings
-        </MenuItem>
-        <MenuItem onClick={createHandleMenuClick("Log out")}>Log out</MenuItem> */}
+       
       </Menu>
     </Dropdown>
   );

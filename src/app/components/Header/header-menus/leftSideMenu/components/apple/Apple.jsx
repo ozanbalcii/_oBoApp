@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
+// Apple.js
+import React from 'react';
+import CustomDropdown from '../../../../../common/Dropdown/Dropdown';
+import { ButtonNameContext, useButtonValueContext } from '../../../../../../contexts/HeaderButtonsProvider';
 
-import Button from '../../../../../common/Button';
-import MenuSimple from '../../../../../common/Dropdown/Dropdown';
 
 export default function Apple() {
-const[dropdownOpen, setDropdownOpen] = useState(false);   
+  const { buttonName, setButtonName } = useButtonValueContext(ButtonNameContext);
+
   return (
     <>
-        <MenuSimple/>
+      <CustomDropdown />
     </>
-  )
+  );
 }
-
-
-
-
