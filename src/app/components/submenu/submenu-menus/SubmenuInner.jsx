@@ -31,7 +31,7 @@ export default function SubmenuInner() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <div className="flex items-center justify-center gap-5 border-[0.006rem] shadow-3xl border-gray-500  rounded-3xl pt-[0.78rem]  pb-[0.48rem] text-[1.563rem] bg-blur-xl ">
+              <div className="flex items-center justify-center gap-5 border-[0.006rem] shadow-3xl border-gray-500  rounded-3xl pt-[0.89rem]  pb-[0.89rem] text-[1.563rem] backdrop-filter bg-zinc-800 bg-opacity-50  ">
                 <div className="rounded-lg ">
                   <SVG icon="finder" className={"rounded-xl"} />
                 </div>

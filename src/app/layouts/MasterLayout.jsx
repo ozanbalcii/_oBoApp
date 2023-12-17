@@ -9,7 +9,7 @@ export default function MasterLayout() {
     setShowsubMenu(true);
   };
   return (
-    <div className="bg-no-repeat sm:bg-gradient-to-r  sm:from-purple-900 sm:via-[#3311A7] sm:to-[#3311A7] ">
+    <div className="bg-no-repeat sm:bg-gradient-to-r  sm:from-purple-900 sm:via-[#3311A7] sm:to-[#3311A7]">
       <Header />
       <Desktop />
     </div>
