@@ -6,13 +6,14 @@ import { MenuItem as BaseMenuItem, menuItemClasses } from "@mui/base/MenuItem";
 import { styled } from "@mui/system";
 import { FaApple } from "react-icons/fa";
 
-export default function CustomDropdown({ loading, setButtonName, buttonName}) {
+export default function CustomDropdown({ loading, buttonName}) {
   const createHandleMenuClick = (menuItem) => {
-    console.log(buttonName, "buttonName:");
+   
     return () => {
       console.log(`Clicked on ${menuItem}`);
     };
   };
+  console.log(buttonName?.map(item =>{item.label}), "buttonName:");
 
   const blue = {
     50: "#F0F7FF",
@@ -55,7 +56,7 @@ export default function CustomDropdown({ loading, setButtonName, buttonName}) {
       backdrop-filter: opacity(0.6);
       margin: 9px 0;
       min-width: 200px;
-      border-radius: 4px;
+      border-radius: 8px;
       z-index: 30;
       box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
       overflow: auto;
@@ -82,13 +83,13 @@ export default function CustomDropdown({ loading, setButtonName, buttonName}) {
     font-family: 'Arial;
     list-style: none;
     padding: 3.5px 15px; 
-    border-radius: 2px;
+    border-radius: 3px;
     margin: 4px 4px 4px;
     cursor: default;
     user-select: none;
     display: flex; 
     align-items: center; 
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    // box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     color: rgb(255 255 255);
     &.${menuItemClasses.focusVisible} {
       outline: 3px solid ${
@@ -152,15 +153,16 @@ export default function CustomDropdown({ loading, setButtonName, buttonName}) {
         <FaApple />
       </MenuButton>
       <Menu slots={{ listbox: Listbox }} className="backdrop-filter pl-2 ">
-        <MenuItem onClick={createHandleMenuClick("Profile")}>
-          Example-1
-        </MenuItem>
-        <div className="pr-[0.3rem] pl-[0.3rem]">
-          <hr className="border-1 border-[#8585AB] " />
+        {buttonName?.map((options) => (
+          <>
+          <MenuItem onClick={createHandleMenuClick("Profile")}>
+            {options?.label}
+          </MenuItem>
+          <div className="pr-[0.4rem] pl-[0.4rem]">
+          <hr className="border-1 border-[#4c4c61] " />
         </div>
-        <MenuItem onClick={createHandleMenuClick("Profile")}>
-          Example-2
-        </MenuItem>
+          </>
+        ))}
       </Menu>
     </Dropdown>
   );

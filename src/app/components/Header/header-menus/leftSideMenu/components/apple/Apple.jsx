@@ -12,22 +12,28 @@ export default function Apple() {
 
   const { buttonName, setButtonName } = useButtonValueContext(ButtonNameContext);
 
-  const fetchHeaderButtonsOptions= async () => {
+  const fetchHeaderButtonsOptions = async () => {
     try {
       setLoading(true);
-      const opitonsData = await getHeaderButtonsData();
-      const results = opitonsData?.data?.map((item) => ({
-        value: item.id,
-        label: item?.title ? item?.title : null,
-      }))
-      console.log(results,'resultsresults')
-      setButtonName(results)
+      const optionsData = await getHeaderButtonsData();
+      const results = optionsData?.data?.map((item) => {
+        if (item.type === 'apple') {
+          return {
+            value: item.id,
+            label: item?.title || null,
+          };
+        }
+        return null; 
+      }).filter(Boolean); 
+      console.log(results, 'resultsresults');
+      setButtonName(results);
     } catch (error) {
-      console.log("an error occured", error);
+      console.log("An error occurred", error);
     } finally {
       setLoading(false);
     }
   };
+  
 
   useEffect(() => {
     fetchHeaderButtonsOptions();
@@ -37,7 +43,6 @@ export default function Apple() {
     <>
       <CustomDropdown
        loading={loading}
-       setButtonName={setButtonName}
        buttonName={buttonName}
         />
     </>
