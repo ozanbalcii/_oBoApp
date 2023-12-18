@@ -6,8 +6,9 @@ import { MenuItem as BaseMenuItem, menuItemClasses } from "@mui/base/MenuItem";
 import { styled } from "@mui/system";
 import { FaApple } from "react-icons/fa";
 
-export default function CustomDropdown() {
+export default function CustomDropdown({ loading, setButtonName, buttonName}) {
   const createHandleMenuClick = (menuItem) => {
+    console.log(buttonName, "buttonName:");
     return () => {
       console.log(`Clicked on ${menuItem}`);
     };
@@ -82,10 +83,12 @@ export default function CustomDropdown() {
     list-style: none;
     padding: 3.5px 15px; 
     border-radius: 2px;
+    margin: 4px 4px 4px;
     cursor: default;
     user-select: none;
     display: flex; 
     align-items: center; 
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     color: rgb(255 255 255);
     &.${menuItemClasses.focusVisible} {
       outline: 3px solid ${
@@ -102,7 +105,7 @@ export default function CustomDropdown() {
     }
 
    &:hover:not(.${menuItemClasses.disabled}) {
-     background-color: ${theme.palette.mode === "dark" ? green[50] : green[50] };
+     background-color: ${theme.palette.mode === "dark" ? green[50] : green[50]};
      color: ${theme.palette.mode === "dark" ? white[50] : white[50]};
      font-weight: 200;
    }
@@ -148,17 +151,16 @@ export default function CustomDropdown() {
       <MenuButton className="hover:bg-[#F8FAFC] hover:bg-opacity-20 text-white  ">
         <FaApple />
       </MenuButton>
-      <Menu slots={{ listbox: Listbox }} className="backdrop-filter ">
-        <MenuItem className="" onClick={createHandleMenuClick("Profile")}>
+      <Menu slots={{ listbox: Listbox }} className="backdrop-filter pl-2 ">
+        <MenuItem onClick={createHandleMenuClick("Profile")}>
           Example-1
         </MenuItem>
-      <div className='p-[0.3rem]' >
-      <hr className="border-1 border-[#8585AB] " />
-      </div >
+        <div className="pr-[0.3rem] pl-[0.3rem]">
+          <hr className="border-1 border-[#8585AB] " />
+        </div>
         <MenuItem onClick={createHandleMenuClick("Profile")}>
           Example-2
         </MenuItem>
-       
       </Menu>
     </Dropdown>
   );

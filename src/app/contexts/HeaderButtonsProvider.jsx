@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 export const ButtonNameContext = createContext();
 
 export const HeaderButtonsProvider = ({ children }) => {
-    const [buttonName, setButtonName] = useState('denemeeeee');
+    const [buttonName, setButtonName] = useState({});
     const data = {
         buttonName,
         setButtonName,

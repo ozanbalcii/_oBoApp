@@ -1,4 +1,4 @@
-export const appleButtonData = [
+export const headerButtonsData = [
   {
     id: 0,
     title: "About This Mac",

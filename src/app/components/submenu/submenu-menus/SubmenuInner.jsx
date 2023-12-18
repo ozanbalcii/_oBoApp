@@ -11,10 +11,6 @@ export default function SubmenuInner() {
   const handleOpen = () => {
     setShowsubMenu(true);
   };
-  console.log(showsubMenu);
-  // ${showsubMenu ? 'animate__animated  animate__backInUp ' : 'animate__animated animate__bounceOutDown'}
-  // <div className=" text-xs bg-white opacity-90" onMouseEnter={handleOpen}> .</div>
-  // bg-gradient-to-r from-purple-900 via-[#3311A7] to-[#3311A7]  opacity-90
 
 
   return (
