@@ -4,14 +4,13 @@ import {
   SubmenuContext,
   useSubmenuContext,
 } from "../../../contexts/SubmenuProvider";
-
+import { NavLink } from "react-router-dom";
 export default function SubmenuInner() {
   const { showsubMenu, setShowsubMenu } = useSubmenuContext(SubmenuContext);
 
   const handleOpen = () => {
     setShowsubMenu(true);
   };
-
 
   return (
     <>
@@ -20,9 +19,7 @@ export default function SubmenuInner() {
       </div>
       {showsubMenu && (
         <>
-          <div
-            className={`inset-0  rounded-xlsm  `}
-          >
+          <div className={`inset-0  rounded-xlsm  `}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -31,9 +28,9 @@ export default function SubmenuInner() {
                 <div className="rounded-lg ">
                   <SVG icon="finder" className={"rounded-xl"} />
                 </div>
-                <div className="rounded-lg ">
+                <NavLink to="/linkedin-ozanbalci98" className="rounded-lg ">
                   <SVG icon="linkedin" className={"rounded-xl"} />
-                </div>
+                </NavLink>
                 <div className=" rounded-lg ">
                   <SVG icon="spotify" className={"rounded-xl"} />
                 </div>
@@ -44,11 +41,7 @@ export default function SubmenuInner() {
                   <SVG icon="github" className={"rounded-xl"} />
                 </div>
                 <div className="rounded-lg ">
-                  <SVG
-                    icon="vsCode"
-                    
-                    className={"rounded-xl bg-white p-2"}
-                  />
+                  <SVG icon="vsCode" className={"rounded-xl bg-white p-2"} />
                 </div>
               </div>
             </motion.div>

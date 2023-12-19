@@ -1,18 +1,15 @@
-import "./App.css";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import PrivateRoutes from "./app/routes/PrivateRoutes";
-import * as React from 'react';
-import IconButton from '@mui/material/IconButton';
-import Box from '@mui/material/Box';
-import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-
+import "./App.css";
 
 function App() {
   return (
-    <div className="antialiased">
-      <PrivateRoutes/>
-    </div>
+    <BrowserRouter>
+      <div className="antialiased">
+        <PrivateRoutes />
+      </div>
+    </BrowserRouter>
   );
 }
 

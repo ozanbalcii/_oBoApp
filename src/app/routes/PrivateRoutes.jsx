@@ -1,15 +1,16 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 import MasterLayout from "../layouts/MasterLayout";
-import Desktop from "../components/desktop/Desktop";
+import Linkedin from "../pages/applications/linkedin/Linkedin";
+
 export default function PrivateRoutes() {
   return (
-    <BrowserRouter>
       <Routes>
-        <Route element={<MasterLayout />}>
-          <Route path="/*" element={<Desktop />} />
+        <Route path="/" element={<MasterLayout />}>
+          <Route path="linkedin-ozanbalci98" element={<Linkedin />} />
         </Route>
       </Routes>
-    </BrowserRouter>
   );
 }
+
+
