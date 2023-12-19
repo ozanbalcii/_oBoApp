@@ -19,52 +19,120 @@ export default function RecipeReviewCard() {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  const [url, setUrl] = React.useState(
+    "http://localhost:5173/linkedin-ozanbalci98"
+  );
 
   return (
     <div className="flex justify-center">
       <Card className="" sx={{ maxWidth: 1600 }}>
-        <div className="bg-slate-900 flex items-center gap-2 p-1">
-          <Button className="bg-red-400 rounded-full ">x</Button>
-          <span className="bg-yellow-400 rounded-full h-6 w-6 flex items-center justify-center">
-            <Button
-              className="relative"
-              expand={expanded}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more"
-            >
+        <div className="bg-[#09060f] flex items-center gap-2 p-1 pl-4 pt-1 pb-1">
+          <Button
+            icon={
+              <SVG
+                icon="x, cancel, close"
+                className="rounded-md font-bold transition-all text-center"
+                size={10}
+              />
+            }
+            className="bg-red-400 rounded-full w-4 h-4 "
+          />
+          <Button
+            icon={
               <SVG
                 icon="enlarge2"
                 className="rounded-md font-bold transition-all"
-                size={15}
+                size={11}
               />
-            </Button>
-          </span>
-          <Button className="bg-green-400 rounded-full">-</Button>
-          <div className="pl-5">
-            <div className="text-white border border-gray-500 rounded-xl p-1 hover:bg-slate-900 ">
-              <div className="flex gap-3 items-center">
-                <SVG icon="linkedin" className={"rounded-md"} size={23} />
-             
+            }
+            className="relative bg-yellow-400 rounded-full h-4 w-4 flex items-center justify-center"
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          />
+          <Button
+            icon={
+              <SVG
+                icon="minus"
+                className="rounded-md font-bold transition-all"
+                size={5}
+              />
+            }
+            className="bg-green-400  rounded-full h-4 w-4 flex items-center justify-center"
+          />
 
+          <div className="pl-5">
+            <div className="text-white border-y border-gray-500 rounded-xl p-1 hover:bg-slate-900 ">
+              <Button className="flex gap-3 items-center font-thin text-[15px]">
+                <SVG icon="linkedin" className="rounded-md" size={23} />
                 <span>Linkedin</span>
-                <Button className="rounded-full w-1 h-4 text-xs ">X</Button>
+                <Button
+                  className="ml-auto"
+                  icon={<SVG icon="x, cancel, close" size={10} />}
+                />
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-4 bg-[#282828] p-3">
+          <div className=" text-white gap-1 flex ">
+            <div>
+              <Button
+                className="ml-auto hover:bg-[#F8FAFC]"
+                icon={<SVG icon="arrow-left2" size={13} />}
+              />
+            </div>
+            <div>
+              <Button
+                className="ml-auto hover:bg-[#F8FAFC]"
+                icon={<SVG icon="forward" size={13} />}
+              />
+            </div>
+            <div>
+              <Button
+                className="ml-auto hover:bg-[#F8FAFC]"
+                icon={<SVG icon="loop2" size={13} />}
+              />
+            </div>
+            <div>
+              <Button
+                className="ml-auto hover:bg-[#F8FAFC] "
+                icon={<SVG icon="home3" size={13} />}
+              />
+            </div>
+          </div>
+          <div className="bg-[#536872] rounded-2xl text-white pl-3 text-sm flex items-center">
+            <input
+              type="text"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              className="bg-[#536872] rounded-2xl text-white pl-3 text-sm flex items-center w-full"
+            />
+          </div>
+          <div>
+            <div className=" text-white gap-1 flex ">
+              <div>
+                <Button
+                  className="ml-auto hover:bg-[#F8FAFC]"
+                  icon={<SVG icon="music" size={13} />}
+                />
+              </div>
+              <div>
+                <Button
+                  className="ml-auto hover:bg-[#F8FAFC] "
+                  icon={<SVG icon="star-full" size={13} />}
+                />
+              </div>
+              <div>
+                <Button
+                  className="ml-auto hover:bg-[#F8FAFC]"
+                  icon={<SVG icon="power-cord" size={13} />}
+                />
               </div>
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-4 bg-[#200924] p-3">
-  <div className=" rounded-xl text-white">
-  <SVG icon="arrow-left2" className={"rounded-md"} size={19} />
-  </div>
-  <div className="bg-slate-800 rounded-xl text-white pl-3 text-sm flex items-center ">
-  http://localhost:5173/linkedin-ozanbalci98
-  </div>
-  <div className=''>
-    {/* buttons */} 3
-  </div>
-</div>
-
         <CardMedia
           component="img"
           height="194"

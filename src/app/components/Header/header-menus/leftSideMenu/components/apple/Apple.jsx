@@ -1,4 +1,3 @@
-// Apple.js
 import React, { useEffect, useState } from "react";
 import CustomDropdown from "../../../../../common/Dropdown/Dropdown";
 import {
