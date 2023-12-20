@@ -14,14 +14,15 @@ const Button = forwardRef(function ButtonComponent(
     onClick,
     loading,
     icon,
-    text
+    text,
+    onMouseEnter,
   },
   ref
 ) {
   const activeButtonClass = isActive
     ? "!border-blue-100 !bg-blue-100 !text-white-100"
     : "";
-  const classNames = `font-bold relative flex cursor-pointer items-center justify-center transition-all pl-[9.5px] pr-[9.5px]  hover:bg-opacity-20 rounded-[0.2rem] ${style} ${activeButtonClass}`;
+  const classNames = `font-bold relative flex cursor-pointer items-center justify-center transition-all pl-[9.5px] pr-[9.5px]  hover:bg-opacity-70 rounded-[0.2rem] ${style} ${activeButtonClass}`;
   return (
     <>
       {type === "button" ? (
@@ -30,6 +31,7 @@ const Button = forwardRef(function ButtonComponent(
           className={`${classNames}` + className}
           onClick={onClick}
           disabled={loading}
+          onMouseEnter={onMouseEnter}
         >
           {children}
           {<i className="text-[18px]">{icon}</i>}
