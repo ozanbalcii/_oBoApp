@@ -35,6 +35,7 @@ const Button = forwardRef(function ButtonComponent(
         >
           {children}
           {<i className="text-[18px]">{icon}</i>}
+          {text}
         </button>
       ) : (
         <Link prefetch={prefetch} href={url} target={target} s>

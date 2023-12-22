@@ -160,7 +160,7 @@ export default function LinkedinHeader() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar className="bg-white">
+        <Toolbar className="bg-white flex justify-center ">
           <Typography
             variant="h6"
             noWrap
@@ -168,58 +168,121 @@ export default function LinkedinHeader() {
             sx={{ display: { xs: "none", sm: "block" } }}
           ></Typography>
 
-          <Button
-            icon={<SVG icon="linkedin" className="rounded-md "  size={40} />}
-          />
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="">
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color=""
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color=""
-            >
-              <AccountCircle />
-            </IconButton>
-          </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color=""
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box>
+          <div className="flex items-center justify-center">
+            {/* begin header left side  */}
+            <div className="flex items-center justify-center">
+              <Button
+                icon={<SVG icon="linkedin" className="rounded-md " size={35} />}
+              />
+              <input
+                type="text"
+                placeholder=" Search"
+                className="bg-[#EDF3F7] text-darky rounded-md w-3/9 h-9 hover:border hover:border-red-400"
+              />
+            </div>
+            {/* end header left side  */}
+            {/* begin header right side */}
+            <div className=" text-darky ">
+              <Box sx={{ flexGrow: 1 }} />
+              <Box sx={{ display: { xs: "none", md: "flex" } }}>
+                {/* <Badge badgeContent={4} color="error">
+                  </Badge>  */}
+
+                <div className="flex items-center gap-5">
+                  <div>
+                    <Button
+                      icon={
+                        <SVG
+                          icon="home3"
+                          className="text-[#666666] hover:text-darky"
+                          size={23}
+                        />
+                      }
+                    />
+                    <div className="text-[13px]">Home Page</div>
+                  </div>
+
+                  <div>
+                    <Button
+                      icon={
+                        <SVG
+                          icon="people"
+                          className="text-[#666666] hover:text-darky"
+                          size={23}
+                        />
+                      }
+                    />
+                    <div className="text-[13px]">My Network</div>
+                  </div>
+
+                  <div>
+                    <Button
+                      icon={
+                        <SVG
+                          icon="bag"
+                          className="text-[#666666] hover:text-darky"
+                          size={23}
+                        />
+                      }
+                    />
+                    <div className="text-[13px]">Jobs</div>
+                  </div>
+                  <div>
+                    <Button
+                      icon={
+                        <SVG
+                          icon="message"
+                          className="text-[#666666] hover:text-darky"
+                          size={23}
+                        />
+                      }
+                    />
+                    <div className="text-[13px]">Message</div>
+                  </div>
+                  <div>
+                    <Button
+                      icon={
+                        <SVG
+                          icon="bell"
+                          className="text-[#666666] hover:text-darky"
+                          size={23}
+                        />
+                      }
+                    />
+                    <div className="text-[13px]">Notifications</div>
+                  </div>
+                  <div>
+                    <Button
+                      icon={
+                        <SVG
+                          icon="profile"
+                          className="text-[#666666] hover:text-darky"
+                          size={23}
+                        />
+                      }
+                    />
+                    <div className="text-[13px] text-center">Me</div>
+                  </div>
+                  <div>
+                    <Button
+                      icon={
+                        <SVG
+                          icon="menu"
+                          className="text-[#666666] hover:text-darky"
+                          size={28}
+                        />
+                      }
+                    />
+                    <div className="text-[13px]  text-center">For business</div>
+                  </div>
+                  <Button className="text-[#C6AA88] font-cantarell text-[12.5px] underline hover:text-darky transition-all whitespace-pre-line text-center">
+                    Try Premium for <br /> 0$
+                  </Button>
+                </div>
+              </Box>
+            </div>
+            {/* end header right side */}
+          </div>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
