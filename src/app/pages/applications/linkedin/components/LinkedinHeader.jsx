@@ -170,26 +170,24 @@ export default function LinkedinHeader() {
 
           <div className="flex items-center justify-center">
             {/* begin header left side  */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center p-2">
               <Button
                 icon={<SVG icon="linkedin" className="rounded-md " size={35} />}
               />
               <input
                 type="text"
                 placeholder=" Search"
-                className="bg-[#EDF3F7] text-darky rounded-md w-3/9 h-9 hover:border hover:border-red-400"
+                className="bg-[#EDF3F7] border border-white text-darky rounded-md w-3/9 h-9 hover:border  hover:border-blue-400"
               />
             </div>
             {/* end header left side  */}
+
             {/* begin header right side */}
-            <div className=" text-darky ">
+            <div className=" ml-[120px] text-darky ">
               <Box sx={{ flexGrow: 1 }} />
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
-                {/* <Badge badgeContent={4} color="error">
-                  </Badge>  */}
-
                 <div className="flex items-center gap-5">
-                  <div>
+                  <div className="flex flex-col items-center justify-center">
                     <Button
                       icon={
                         <SVG
@@ -199,10 +197,10 @@ export default function LinkedinHeader() {
                         />
                       }
                     />
-                    <div className="text-[13px]">Home Page</div>
+                    <div className="text-[12px] text-center">Home</div>
                   </div>
 
-                  <div>
+                  <div className="flex flex-col items-center justify-center">
                     <Button
                       icon={
                         <SVG
@@ -212,10 +210,10 @@ export default function LinkedinHeader() {
                         />
                       }
                     />
-                    <div className="text-[13px]">My Network</div>
+                    <div className="text-[12px] text-center ">My Network</div>
                   </div>
 
-                  <div>
+                  <div className="flex flex-col items-center justify-center">
                     <Button
                       icon={
                         <SVG
@@ -225,9 +223,10 @@ export default function LinkedinHeader() {
                         />
                       }
                     />
-                    <div className="text-[13px]">Jobs</div>
+                    <div className="text-[13px] text-center">Jobs</div>
                   </div>
-                  <div>
+
+                  <div className="flex flex-col items-center justify-center">
                     <Button
                       icon={
                         <SVG
@@ -237,9 +236,10 @@ export default function LinkedinHeader() {
                         />
                       }
                     />
-                    <div className="text-[13px]">Message</div>
+                    <div className="text-[12px]">Message</div>
                   </div>
-                  <div>
+
+                  <div className="relative flex flex-col items-center justify-center">
                     <Button
                       icon={
                         <SVG
@@ -249,9 +249,14 @@ export default function LinkedinHeader() {
                         />
                       }
                     />
-                    <div className="text-[13px]">Notifications</div>
+                    <span className="inline-flex items-center justify-center absolute top-0 right-0 -mt-[5.5px] mr-[12px] rounded-full bg-red-400 h-[17px] w-[17px]">
+                      <span className="text-white">8</span>
+                    </span>
+
+                    <div className="text-[12px] text-center">Notifications</div>
                   </div>
-                  <div>
+
+                  <div className="flex flex-col items-center justify-center border-r border-gray-400">
                     <Button
                       icon={
                         <SVG
@@ -261,9 +266,9 @@ export default function LinkedinHeader() {
                         />
                       }
                     />
-                    <div className="text-[13px] text-center">Me</div>
+                    <div className="text-[11px] text-center ">Me</div>
                   </div>
-                  <div>
+                  <div className="flex flex-col items-center justify-center">
                     <Button
                       icon={
                         <SVG
@@ -273,9 +278,9 @@ export default function LinkedinHeader() {
                         />
                       }
                     />
-                    <div className="text-[13px]  text-center">For business</div>
+                    <div className="text-[12px] text-center">For business</div>
                   </div>
-                  <Button className="text-[#C6AA88] font-cantarell text-[12.5px] underline hover:text-darky transition-all whitespace-pre-line text-center">
+                  <Button className="text-[#C6AA88] font-cantarell text-[11.5px] underline hover:text-darky transition-all whitespace-pre-line text-center">
                     Try Premium for <br /> 0$
                   </Button>
                 </div>
