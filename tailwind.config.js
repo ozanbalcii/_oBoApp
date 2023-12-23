@@ -27,6 +27,8 @@ export default {
       },
       backgroundImage: {
         bgDesktop: "url('/src/app/assets/backgrounds/bgDesktop.jpg')",
+        profileBg: "url('/src/app/assets/LinkedinPagePhoto/profileBackground.jpeg')",
+        profilePhoto: "url('/src/app/assets/LinkedinPagePhoto/me.jpeg')",
       },
       colors: {
         primary: "#ffbe33",

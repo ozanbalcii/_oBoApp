@@ -11,6 +11,8 @@ import ShareIcon from "@mui/icons-material/Share";
 import Button from "../../../components/common/Button";
 import SVG from "../../../assets/svg/SVG";
 import LinkedinHeader from "./components/LinkedinHeader";
+import LinkedinBodyLeftSide from "./components/Body/LinkedinBodyLeftSide";
+import LinkedinBodyRightSide from "./components/LinkedinBodyRightSide";
 
 export default function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);
@@ -75,23 +77,23 @@ export default function RecipeReviewCard() {
               // }
               className=" bg-slate-700 hover:bg-green-400  rounded-full w-[14px] h-[9px]  flex items-center justify-center"
             />
-
             <div className="pl-5">
-              <div className="flex items-center justify-center gap-1 text-white border border-gray-700 rounded-xl p-2 hover:bg-slate-900 ">
-                <Button
-                  icon={
-                    <SVG icon="linkedin" className="rounded-md" size={23} />
-                  }
-                  className="flex gap-3 items-center  "
-                ></Button>
-                <text className="text-[15px] font-pFont ">Linkedin</text>
-                <Button
-                  className="ml-auto"
-                  icon={<SVG icon="x, cancel, close" size={11} />}
-                />
-              </div>
+                <div className="flex items-center justify-center gap-1 text-white border border-gray-700 rounded-xl p-2 hover:bg-slate-900 ">
+                  <Button
+                    icon={
+                      <SVG icon="linkedin" className="rounded-md" size={23} />
+                    }
+                    className="flex gap-3 items-center  "
+                  ></Button>
+                  <text className="text-[15px] font-pFont ">Linkedin</text>
+                  <Button
+                    className="ml-auto"
+                    icon={<SVG icon="x, cancel, close" size={11} />}
+                  />
+                </div>
             </div>
           </div>
+
           <div className="grid grid-cols-3 gap-4 bg-[#282828] p-3">
             <div className=" text-white gap-1 flex ">
               <div>
@@ -150,29 +152,18 @@ export default function RecipeReviewCard() {
               </div>
             </div>
           </div>
-          <LinkedinHeader />
 
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <LinkedinHeader />
+   
+          <Collapse className="bg-[#F4F2EE]" in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
               <Typography>
-                <div className="grid grid-cols-10">
-                  <div className="col-span-7 bg-gray-300 p-4">
-                    <Typography>
-                      Add rice and stir very gently to distribute. Top with
-                      artichokes and peppers, and cook without stirring, until
-                      most of the liquid is absorbed, 15 to 18 minutes. Reduce
-                      heat to medium-low, add reserved shrimp and mussels,
-                      tucking them down into the rice, and cook again without
-                      stirring, until mussels have opened and rice is just
-                      tender, 5 to 7 minutes more. (Discard any mussels that
-                      don&apos;t open.)
-                    </Typography>
+                <div className="grid grid-cols-10 pl-[19.5rem] pr-[19.5rem] gap-5 ">
+                  <div className="col-span-7  p-4 rounded-l-md">
+                    <LinkedinBodyLeftSide />
                   </div>
-                  <div className="col-span-3 bg-blue-300 p-4">
-                    <Typography>
-                      Set aside off of the heat to let rest for 10 minutes, and
-                      then serve.
-                    </Typography>
+                  <div className="col-span-3  p-4 rounded-r-md pl-10">
+                  <LinkedinBodyRightSide/>
                   </div>
                 </div>
               </Typography>
