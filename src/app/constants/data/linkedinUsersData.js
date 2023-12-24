@@ -132,8 +132,10 @@ export const linkedinUsersData = [
       },
     ],
     photo: "/src/app/assets/LinkedinPagePhoto/me.jpeg",
-    background: "/src/app/assets/LinkedinPagePhoto/profileBackground.jpeg",
     companyPhoto: "/src/app/assets/LinkedinPagePhoto/profileBackground.jpeg",
-    currentCompanyPhoto: "/src/app/assets/LinkedinPagePhoto/currentCompany.jpg",
+    
+    profileBackground:'/src/app/assets/LinkedinPagePhoto/profileBackground.jpeg',
+    currentCompanyPhoto: "/src/app/assets/LinkedinPagePhoto/currentCompany.png",
   },
 ];
+
