@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 export const SubmenuContext = createContext();
 
 export const SubmenuProvider = ({ children }) => {
-const[showsubMenu, setShowsubMenu] = useState(false);
+  const [showsubMenu, setShowsubMenu] = useState(false);
 
   const data = {
     showsubMenu,
