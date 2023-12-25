@@ -1,17 +1,14 @@
-import { useEffect } from "react";
 import Button from "../../../../../../components/common/Button/index";
-import { LinkedinPageDataContext, useLinkedinPageDataContext } from "../../../../../../contexts/LinkedinPageProvider";
-import { getLinkedinUsersData } from "../../../services/index";
+import {
+  LinkedinPageDataContext,
+  useLinkedinPageDataContext,
+} from "../../../../../../contexts/LinkedinPageProvider";
 import SVG from "../../../../../../assets/svg/SVG";
 
 export default function BodyIntro() {
-
-  const {
-    mainDataOfUser,
-  } = useLinkedinPageDataContext(LinkedinPageDataContext);
-
-
- 
+  const { mainDataOfUser } = useLinkedinPageDataContext(
+    LinkedinPageDataContext
+  );
 
   return (
     <>
@@ -35,7 +32,7 @@ export default function BodyIntro() {
                 icon={
                   <SVG
                     icon="bell"
-                    className="rounded-md font-bold transition-all hover:bg-gray-500 hover:rounded-full"
+                    className="rounded-md font-bold transition-all hover:text-yellow-600 hover:rounded-full"
                     size={20.5}
                   />
                 }
@@ -68,11 +65,16 @@ export default function BodyIntro() {
                   Contact Info
                 </Button>
               </div>
-              <div>
-                <Button className="text-xs font-bold text-blue-700 hover:underline pt-1 pl-0  md:hidden xl:flex">
+
+
+                {/* //! Normal button used */}
+    
+                <button className="text-xs font-bold text-blue-700 hover:underline pt-1 md:hidden xl:flex">
                   {data?.connections}
-                </Button>
-              </div>
+                </button>
+              {/* //! Normal button used */}
+
+
               <div className=" flex items-center pt-3 p-0 gap-2 transition-all">
                 <Button className="rounded-[2rem] bg-[#0B65C2] text-white text-xs font-bold hover:bg-blue-900 w-[6.95rem] h-[2rem] flex items-center justify-center gap-2 ">
                   <SVG icon="paper-send" size={14} />
@@ -81,13 +83,9 @@ export default function BodyIntro() {
                 <Button className="rounded-[2rem] text-center text-[14.5px] p-0 bg-[#fff] text-darky border border-gray-600 hover:border-[1px] hover:border-darky text-xs font-bold hover:bg-neutral-200 w-[5.4.5rem] h-[2rem] flex items-center justify-center  ">
                   More
                 </Button>
-            
               </div>
-               
             </div>
-          
           </div>
-         
         </>
       ))}
     </>

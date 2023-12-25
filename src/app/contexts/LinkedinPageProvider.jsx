@@ -28,8 +28,24 @@ export const LinkedinPageProvider = ({ children }) => {
               connections: item?.connections ? item?.connections : "-",
               currentCompany: item?.currentCompany ? item?.currentCompany : "-",
               about: item?.about ? item?.about : "-",
-              allActivity: item?.allActivity.skills,
-              
+              post: item?.post ? item?.post : "-",
+              followers: item?.followers ? item?.followers : "-",
+
+              allActivity: item?.allActivity?.map((value) => ({
+                activityPost: value?.activityPost ? value?.activityPost : "-",
+                desc: value?.desc ? value?.desc : "-",
+                skills: value?.skills ? value?.skills : "-",
+              })),
+              experience: item?.experience?.map((exp)=> ({
+                id: exp?.id ? exp?.id : "Error: Id is doesn't exist",
+                title: exp?.title ? exp?.title : "-",
+                photo: exp?.photo ? exp?.photo : "Error: Photo is doesn't exist",
+                company: exp?.company ? exp?.company : "-",
+                date: exp?.date ? exp?.date : "-",
+                desc: exp?.desc ? exp?.desc : "-",
+              })),
+
+
               currentCompanyPhoto: item?.currentCompanyPhoto
                 ? item?.currentCompanyPhoto
                 : "???",

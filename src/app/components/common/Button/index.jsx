@@ -32,6 +32,7 @@ const Button = forwardRef(function ButtonComponent(
           onClick={onClick}
           disabled={loading}
           onMouseEnter={onMouseEnter}
+           text={text}
         >
           {children}
           {<i className="text-[18px]">{icon}</i>}
@@ -47,4 +48,3 @@ const Button = forwardRef(function ButtonComponent(
 });
 
 export default Button;
-
