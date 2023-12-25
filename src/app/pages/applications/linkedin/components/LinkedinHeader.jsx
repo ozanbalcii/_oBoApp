@@ -280,7 +280,7 @@ export default function LinkedinHeader() {
                     />
                     <div className="text-[12px] text-center">For business</div>
                   </div>
-                  <Button className="text-[#C6AA88] font-cantarell text-[11.5px] underline hover:text-darky transition-all whitespace-pre-line text-center">
+                  <Button className="text-[#C6AA88]  font-normal font-cantarell text-[11.5px] underline hover:text-darky transition-all whitespace-pre-line text-center">
                     Try Premium for <br /> 0$
                   </Button>
                 </div>

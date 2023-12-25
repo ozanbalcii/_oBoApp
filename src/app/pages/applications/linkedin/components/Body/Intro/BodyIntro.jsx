@@ -1,58 +1,18 @@
 import { useEffect } from "react";
 import Button from "../../../../../../components/common/Button/index";
-import {
-  BodyIntroContext,
-  useBodyIntroContext,
-} from "../../../../../../contexts/LinkedinPage/BodyIntroProvider";
+import { LinkedinPageDataContext, useLinkedinPageDataContext } from "../../../../../../contexts/LinkedinPageProvider";
 import { getLinkedinUsersData } from "../../../services/index";
 import SVG from "../../../../../../assets/svg/SVG";
-import xd from "../../../../../../assets/LinkedinPagePhoto/currentCompany.png";
+
 export default function BodyIntro() {
+
   const {
-    userName,
-    setUserName,
-    loading,
-    setLoading,
     mainDataOfUser,
-    setMainDataOfUser,
-  } = useBodyIntroContext(BodyIntroContext);
+  } = useLinkedinPageDataContext(LinkedinPageDataContext);
 
-  const fetchGetLinkedinUsersData = async () => {
-    try {
-      setLoading(true);
-      const users = await getLinkedinUsersData();
-      const filteredUsers = users?.data
-        ?.map((item) => {
-          if (item.userId === "0") {
-            return {
-              name_surname: item?.name_surname ? item?.name_surname : "-",
-              job: item?.job ? item?.job : "-",
-              location: item?.location ? item?.location : "-",
-              connections: item?.connections ? item?.connections : "-",
-              currentCompany: item?.currentCompany ? item?.currentCompany : "-",
-              currentCompanyPhoto: item?.currentCompanyPhoto
-                ? item?.currentCompanyPhoto
-                : "???",
-              photo: item?.photo ? item?.photo : "???",
-              profileBackground: item?.profileBackground
-                ? item?.profileBackground
-                : "???",
-            };
-          }
-          return null;
-        })
-        .filter(Boolean);
-      setMainDataOfUser(filteredUsers);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
-  useEffect(() => {
-    fetchGetLinkedinUsersData();
-  }, []);
+ 
+
   return (
     <>
       {mainDataOfUser?.map((data) => (
@@ -69,19 +29,30 @@ export default function BodyIntro() {
               className="rounded-full fill absolute -bottom-9 left-4 p-4 w-[140px] h-[140px] "
             />
           </div>
-
-          <div className=" bg-white pt-10 p-4 ">
+          <div className="bg-white pt-10 p-4">
+            <div className="flex justify-end ">
+              <Button
+                icon={
+                  <SVG
+                    icon="bell"
+                    className="rounded-md font-bold transition-all hover:bg-gray-500 hover:rounded-full"
+                    size={20.5}
+                  />
+                }
+                className="w-[14px] h-[9px] text-darky "
+              />
+            </div>
             <div className="flex items-center  justify-between gap-2">
               <div className="text-xl  font-bold">
-                {data?.name_surname}{" "}
+                {data?.name_surname}
                 <span className="text-xs font-normal">1st</span>
               </div>
-              <div className="flex items-center justify-end pr-10  md:hidden xl:flex">
-                <div className="h-[32px] w-[32px]">
+              <div className="flex items-center justify-end pr-[100px] md:hidden xl:flex ">
+                <div className="h-[32px] w-[32px] ">
                   <img
                     src={data?.currentCompanyPhoto}
                     alt="current company"
-                    className="h-full w-full cursor-pointer object-cover"
+                    className="h-full w-full cursor-pointer object-cover "
                   />
                 </div>
                 <div className="ml-2 text-sm font-bold ">
@@ -89,7 +60,6 @@ export default function BodyIntro() {
                 </div>
               </div>
             </div>
-
             <div className="font-normal">
               <div>{data?.job}</div>
               <div className="flex items-center pt-1">
@@ -111,9 +81,13 @@ export default function BodyIntro() {
                 <Button className="rounded-[2rem] text-center text-[14.5px] p-0 bg-[#fff] text-darky border border-gray-600 hover:border-[1px] hover:border-darky text-xs font-bold hover:bg-neutral-200 w-[5.4.5rem] h-[2rem] flex items-center justify-center  ">
                   More
                 </Button>
+            
               </div>
+               
             </div>
+          
           </div>
+         
         </>
       ))}
     </>

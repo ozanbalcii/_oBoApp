@@ -152,9 +152,7 @@ export default function RecipeReviewCard() {
               </div>
             </div>
           </div>
-
           <LinkedinHeader />
-   
           <Collapse className="bg-[#F4F2EE]" in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
               <Typography>
