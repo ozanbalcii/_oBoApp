@@ -36,15 +36,35 @@ export const LinkedinPageProvider = ({ children }) => {
                 desc: value?.desc ? value?.desc : "-",
                 skills: value?.skills ? value?.skills : "-",
               })),
-              experience: item?.experience?.map((exp)=> ({
+              experience: item?.experience?.map((exp) => ({
                 id: exp?.id ? exp?.id : "Error: Id is doesn't exist",
                 title: exp?.title ? exp?.title : "-",
-                photo: exp?.photo ? exp?.photo : "Error: Photo is doesn't exist",
+                photo: exp?.photo
+                  ? exp?.photo
+                  : "Error: Photo is doesn't exist",
                 company: exp?.company ? exp?.company : "-",
                 date: exp?.date ? exp?.date : "-",
                 desc: exp?.desc ? exp?.desc : "-",
               })),
-
+              education: item?.education?.map((edu) => ({
+                id: edu?.id ? edu?.id : "Error: Id is doesn't exist",
+                info: edu?.info ? edu?.info : "-",
+                picture: edu?.picture
+                  ? edu?.picture
+                  : "Error: picture is doesn't exist",
+                name: edu?.name ? edu?.name : "-",
+                activities: edu?.activities ? edu?.activities : "-",
+                date: edu?.date ? edu?.date : "-",
+              })),
+              licenses_certifications: item?.licenses_certifications?.map((lc) => ({
+                id: lc?.id ? lc?.id : "Error: Id is doesn't exist",
+                title: lc?.title ? lc?.title : "-",
+                picture: lc?.picture
+                  ? lc?.picture
+                  : "Error: picture is doesn't exist",
+                company: lc?.company ? lc?.company : "-",
+                date: lc?.date ? lc?.date : "-",
+              })),
 
               currentCompanyPhoto: item?.currentCompanyPhoto
                 ? item?.currentCompanyPhoto
@@ -53,7 +73,6 @@ export const LinkedinPageProvider = ({ children }) => {
               profileBackground: item?.profileBackground
                 ? item?.profileBackground
                 : "???",
-            
             };
           }
           return null;
@@ -71,30 +90,29 @@ export const LinkedinPageProvider = ({ children }) => {
     fetchGetLinkedinUsersData();
   }, []);
 
-
-      const data = {
-        loading,
-        setLoading,
-        mainDataOfUser,
-        setMainDataOfUser,
-        userName,
-        setUserName,
-        companyName,
-        setCompanyName,
-        companyPage,
-        setCompanyPage,
-        job,
-        setJob,
-        location,
-        setLocation,
-        connections,
-        setConnections,
-      };
+  const data = {
+    loading,
+    setLoading,
+    mainDataOfUser,
+    setMainDataOfUser,
+    userName,
+    setUserName,
+    companyName,
+    setCompanyName,
+    companyPage,
+    setCompanyPage,
+    job,
+    setJob,
+    location,
+    setLocation,
+    connections,
+    setConnections,
+  };
 
   return (
-      <LinkedinPageDataContext.Provider value={data}>
-        {children}
-      </LinkedinPageDataContext.Provider>
+    <LinkedinPageDataContext.Provider value={data}>
+      {children}
+    </LinkedinPageDataContext.Provider>
   );
 };
 export const useLinkedinPageDataContext = () =>

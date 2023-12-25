@@ -24,25 +24,34 @@ export const linkedinUsersData = [
           "Bootstrap · UI · UX · Git · Web Design · React.js · Tailwind CSS",
       },
     ],
-    education: {
-      name: "Suleyman Demirel University",
-      title: "License degree, Electric and Electronic Engineer · (2019 - 2023)",
-    },
+    education: [
+      {
+        id: '0',
+        name: "Suleyman Demirel University",
+        picture: "/src/app/assets/LinkedinPagePhoto/sdu.jpg",
+        info: "License degree, Electric and Electronic Engineer  ",
+        date: "2017 - Jul 2023",
+        activities: "Software, sport",
+      },
+    ],
     licenses_certifications: [
       {
         id: 0,
+        picture: "/src/app/assets/LinkedinPagePhoto/udemy.jpg",
         title: "JavaScript, HTML, CSS",
         company: "Udemy",
-        date: "Issued Mar 2021",
+        date: "Issued Jul 2022",
       },
       {
         id: 1,
+        picture: "/src/app/assets/LinkedinPagePhoto/udemy.jpg",
         title: "Build Web Apps with React & Firebase",
         company: "Udemy",
-        date: "Issued Mar 2021",
+        date: "Issued Jul 2023",
       },
       {
         id: 2,
+        picture: "/src/app/assets/LinkedinPagePhoto/udemy.jpg",
         title: "Python",
         company: "Udemy",
         date: "Issued Mar 2021",
@@ -56,7 +65,7 @@ export const linkedinUsersData = [
         title: "Frontend Developer",
         company: "Netpus",
         date: "Sep 2023 - Dec 2023 · 4 mos",
-       desc: 'In the course of this work experience, I undertook various responsibilities and utilized the following technologies: React, Tailwind, Bootstrap, Git-GitHub, and ChatGPT. My tasks involved developing, repairing, and implementing external additions for large companies admin dashboards, management systems, payment systems, and company pages using React, Tailwind and Bootstrap. I also created Figma designs with CSS, incorporating Tailwind and Bootstrap. Throughout these endeavors, I achieved seamless teamwork and effective communication between back-end and front-end developers. I successfully projects created on customer demands. Faster coding ability through the use of documentation research and AI technologies.',
+        desc: "In the course of this work experience, I undertook various responsibilities and utilized the following technologies: React, Tailwind, Bootstrap, Git-GitHub, and ChatGPT. My tasks involved developing, repairing, and implementing external additions for large companies admin dashboards, management systems, payment systems, and company pages using React, Tailwind and Bootstrap. I also created Figma designs with CSS, incorporating Tailwind and Bootstrap. Throughout these endeavors, I achieved seamless teamwork and effective communication between back-end and front-end developers. I successfully projects created on customer demands. Faster coding ability through the use of documentation research and AI technologies.",
       },
       {
         id: 1,
@@ -64,7 +73,7 @@ export const linkedinUsersData = [
         title: "Engineer Intern",
         company: "Meditera",
         date: "Aug 2021 - Jan 2022 · 6 mos",
-       desc: 'In the course of this work experience, I undertook various responsibilities and utilized the following technologies: React, Tailwind, Bootstrap, Git-GitHub, and ChatGPT. My tasks involved developing, repairing, and implementing external additions for large companies admin dashboards, management systems, payment systems, and company pages using React, Tailwind and Bootstrap. I also created Figma designs with CSS, incorporating Tailwind and Bootstrap. Throughout these endeavors, I achieved seamless teamwork and effective communication between back-end and front-end developers. I successfully projects created on customer demands. Faster coding ability through the use of documentation research and AI technologies.',
+        desc: "In the course of this work experience, I undertook various responsibilities and utilized the following technologies: React, Tailwind, Bootstrap, Git-GitHub, and ChatGPT. My tasks involved developing, repairing, and implementing external additions for large companies admin dashboards, management systems, payment systems, and company pages using React, Tailwind and Bootstrap. I also created Figma designs with CSS, incorporating Tailwind and Bootstrap. Throughout these endeavors, I achieved seamless teamwork and effective communication between back-end and front-end developers. I successfully projects created on customer demands. Faster coding ability through the use of documentation research and AI technologies.",
       },
     ],
     skills: [
@@ -142,4 +151,3 @@ export const linkedinUsersData = [
     currentCompanyPhoto: "/src/app/assets/LinkedinPagePhoto/currentCompany.png",
   },
 ];
-

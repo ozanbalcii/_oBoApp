@@ -14,7 +14,7 @@ export default function About() {
     <>
       {mainDataOfUser?.map((data) => (
         <>
-          <div className="pt-5">
+          <div className="pt-2">
             <div className="bg-white text-darky rounded-[0.395rem] p-6">
               <div className="font-bold text-[20px] pb-2">About</div>
               <div className=" text-sm font-normal">{data?.about}</div>
