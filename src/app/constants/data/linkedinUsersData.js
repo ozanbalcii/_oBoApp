@@ -80,6 +80,7 @@ export const linkedinUsersData = [
       {
         id: "0",
         title: "React",
+        picture: "/src/app/assets/LinkedinPagePhoto/netpus.jpg",
         job: "Frontend Developer at Netpus Yazılım",
         endorsements: "1 endorsement",
       },

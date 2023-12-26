@@ -1,11 +1,9 @@
 import SVG from "../../../../../../assets/svg/SVG";
 import Button from "../../../../../../components/common/Button";
-import {
-  LinkedinPageDataContext,
-  useLinkedinPageDataContext,
-} from "../../../../../../contexts/LinkedinPageProvider";
+import { LinkedinPageDataContext, useLinkedinPageDataContext } from "../../../../../../contexts/LinkedinPageProvider";
 
-export default function LicensesCertifications() {
+
+export default function Skills() {
   const { mainDataOfUser } = useLinkedinPageDataContext(
     LinkedinPageDataContext
   );
@@ -13,11 +11,11 @@ export default function LicensesCertifications() {
   return (
     <>
       {mainDataOfUser?.map((data) => (
-        <>
-          <div className="bg-white border-[0.1rem] pt-2 rounded-[0.495rem]">
-            <div className=" text-darky pr-6 pl-6 pt-">
+        <div className="pt-2">
+          <div className="pt-5 bg-white border-[0.1rem] rounded-[0.495rem] ">
+            <div className=" text-darky pr-6 pl-6 ">
               <div className="font-bold text-[20px] pb-2">
-                Licenses & certifications
+              Skills
               </div>
               <div className="grid grid-cols-12">
                 {data?.licenses_certifications?.map((exp) => (
@@ -42,17 +40,17 @@ export default function LicensesCertifications() {
             </div>
             <Button
               size={15}
-              className="text-gray-500 w-full h-full font-[600] hover:bg-gray-200 transition-all p-2 gap-1"
+              className="text-gray-500  w-full h-full font-[600] hover:bg-gray-200 transition-all p-2 gap-1"
             >
-              Show all licenses & certifications
+              Show all skills
               <SVG
                 icon="arrow-right2"
-                className="rounded-md font-bold transition-all "
+                className="rounded-md font-bold transition-all"
                 size={15.5}
               />
             </Button>
           </div>
-        </>
+        </div>
       ))}
     </>
   );

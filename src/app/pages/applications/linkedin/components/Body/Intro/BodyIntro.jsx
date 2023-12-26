@@ -18,7 +18,7 @@ export default function BodyIntro() {
             <img
               src={data?.profileBackground}
               alt="linkedin-profile-background"
-              className=" w-[623px] h-[201px] rounded-[0.395rem] "
+              className=" w-[622px] h-[201px] rounded-t-[0.395rem] "
             />
             <img
               src={data?.photo}
@@ -26,7 +26,7 @@ export default function BodyIntro() {
               className="rounded-full fill absolute -bottom-9 left-4 p-4 w-[140px] h-[140px] "
             />
           </div>
-          <div className="bg-white pt-10 p-4">
+          <div className="bg-white rounded-b-xl border-[0.1rem] pt-10 p-4">
             <div className="flex justify-end ">
               <Button
                 icon={

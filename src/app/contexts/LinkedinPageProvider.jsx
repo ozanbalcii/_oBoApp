@@ -18,6 +18,7 @@ export const LinkedinPageProvider = ({ children }) => {
     try {
       setLoading(true);
       const users = await getLinkedinUsersData();
+      
       const filteredUsers = users?.data
         ?.map((item) => {
           if (item.userId === "0") {
@@ -64,6 +65,16 @@ export const LinkedinPageProvider = ({ children }) => {
                   : "Error: picture is doesn't exist",
                 company: lc?.company ? lc?.company : "-",
                 date: lc?.date ? lc?.date : "-",
+              })),
+
+              skills: item?.skills?.map((skill) => ({
+                id: skill?.id ? skill?.id : "Error: Id is doesn't exist",
+                title: skill?.title ? skill?.title : "-",
+                picture: skill?.picture
+                  ? skill?.picture
+                  : "Error: picture is doesn't exist",
+                job: skill?.job ? skill?.job : "-",
+                endorsements: skill?.endorsements ? skill?.endorsements : "-",
               })),
 
               currentCompanyPhoto: item?.currentCompanyPhoto

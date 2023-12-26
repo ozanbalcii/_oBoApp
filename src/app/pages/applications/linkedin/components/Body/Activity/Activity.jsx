@@ -15,7 +15,7 @@ export default function Activity() {
       {mainDataOfUser?.map((data) => (
         <>
           <div className="pt-2">
-            <div className="bg-white text-darky rounded-[0.395rem] pt-6">
+            <div className="bg-white border-[0.1rem] text-darky rounded-[0.495rem] pt-6">
               <div className="pl-5 pr-5">
                 <div className="font-bold text-[20px] ">Activity</div>
                 <div className=" text-sm font-normal">{data?.followers}</div>

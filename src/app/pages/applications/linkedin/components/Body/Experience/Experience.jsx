@@ -19,7 +19,7 @@ const longText = longTextArray ? longTextArray.join(' ') : '';
       {mainDataOfUser?.map((data) => (
         <>
           <div className="pt-2">
-            <div className="bg-white text-darky rounded-[0.395rem] p-5">
+            <div className="bg-white border-[0.1rem] text-darky rounded-[0.495rem] p-5">
               <div className="font-bold text-[20px] pb-2">Experience</div>
               <div className="grid grid-cols-12">
                 {data?.experience?.map((exp) => (
