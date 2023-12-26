@@ -22,7 +22,7 @@ export default function LicensesCertifications() {
               <div className="grid grid-cols-12">
                 {data?.licenses_certifications?.map((exp) => (
                   <>
-                    <div className="col-span-1">
+                    <div className="col-span-1 xl:hidden 2xl:flex md:hidden">
                       <img
                         src={exp?.picture}
                         alt="linkedin-company-picture"

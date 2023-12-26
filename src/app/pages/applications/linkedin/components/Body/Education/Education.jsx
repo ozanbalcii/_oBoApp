@@ -15,7 +15,7 @@ export default function Education() {
               <div className="grid grid-cols-12">
                 {data?.education?.map((edu) => (
                   <>
-                    <div className="col-span-1">
+                    <div className="col-span-1 xl:hidden 2xl:flex md:hidden">
                       <img
                         src={edu?.picture}
                         alt="linkedin-school-picture"

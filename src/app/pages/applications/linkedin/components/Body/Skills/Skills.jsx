@@ -12,7 +12,7 @@ export default function Skills() {
     <>
       {mainDataOfUser?.map((data) => (
         <div className="pt-2">
-          <div className="pt-5 bg-white border-[0.1rem] rounded-[0.495rem] ">
+          <div className="pt-5 bg-white border-[0.1rem] rounded-[0.495rem]">
             <div className=" text-darky pr-6 pl-6 ">
               <div className="font-bold text-[20px] pb-2">
               Skills
@@ -20,7 +20,7 @@ export default function Skills() {
               <div className="grid grid-cols-12">
                 {data?.licenses_certifications?.map((exp) => (
                   <>
-                    <div className="col-span-1">
+                    <div className="col-span-1 xl:hidden 2xl:flex md:hidden">
                       <img
                         src={exp?.picture}
                         alt="linkedin-company-picture"

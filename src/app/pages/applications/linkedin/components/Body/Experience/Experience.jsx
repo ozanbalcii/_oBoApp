@@ -24,7 +24,7 @@ const longText = longTextArray ? longTextArray.join(' ') : '';
               <div className="grid grid-cols-12">
                 {data?.experience?.map((exp) => (
                   <>
-                    <div className="col-span-1">
+                    <div className="col-span-1 xl:hidden 2xl:flex md:hidden">
                       <img
                         src={exp?.photo}
                         alt="linkedin-company-picture"
