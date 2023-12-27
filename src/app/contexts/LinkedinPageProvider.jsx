@@ -132,52 +132,12 @@ export const LinkedinPageProvider = ({ children }) => {
     }
   };
 
-  const fetchGetLinkedinFooterData = async () => {
-    try {
-      setLoading(true);
-      const footer = await getLinkedinFooterData();
-      console.log(footer, "footer");
-      const resultFooter = footer?.data?.map((data) => {
-      
-          footer: data?.footer?.map((foot) => ({
-            col1: foot?.col1?.map((col) => ({
-              id: col?.id ? col?.id : "Error: Id doesn't exist",
-              title: col?.title ? col?.title : "-",
-            })),
-            col2: foot?.col1?.map((col) => ({
-              id: col?.id ? col?.id : "Error: Id doesn't exist",
-              title: col?.title ? col?.title : "-",
-            })),
-            col3: foot?.col1?.map((col) => ({
-              id: col?.id ? col?.id : "Error: Id doesn't exist",
-              title: col?.title ? col?.title : "-",
-            })),
-            col4: foot?.col1?.map((col) => ({
-              id: col?.id ? col?.id : "Error: Id doesn't exist",
-              title: col?.title ? col?.title : "-",
-            })),
-            selectOptions: foot?.col1?.map((col) => ({
-              id: col?.id ? col?.id : "Error: Id doesn't exist",
-              title: col?.title ? col?.title : "-",
-            })),
-          })),
-        setFooterData(resultFooter);
-      });
-    } catch (error) {
-      console.log(
-        error,
-        "An error occured while fetching linkedin footer data"
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
 
-  console.log(footerData, 'footerDatafooterDatafooterData')
+
+
 
   useEffect(() => {
     fetchGetLinkedinUsersData();
-    fetchGetLinkedinFooterData();
   }, []);
 
   const data = {
@@ -185,7 +145,6 @@ export const LinkedinPageProvider = ({ children }) => {
     setLoading,
     mainDataOfUser,
     setMainDataOfUser,
-    footerData,
     userName,
     setUserName,
     companyName,

@@ -28,7 +28,7 @@ export default function RecipeReviewCard() {
     <div className="flex justify-center ">
       <div
         className="scroll-container"
-        style={{ maxHeight: "840px", overflowY: "auto" }}
+        style={{ maxHeight: "800px", overflowY: "auto" }}
       >
         <Card className="" sx={{ maxWidth: 1600 }}>
           <div className="bg-[#09060f] flex items-center gap-2 p-1 pl-4 pt-1 pb-1">
