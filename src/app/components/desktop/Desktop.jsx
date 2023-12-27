@@ -17,7 +17,6 @@ export default function Desktop() {
 
   const handleClose = () => {
     setShowsubMenu(false);
-    console.log(showsubMenu, "closed");
   };
 
   return (

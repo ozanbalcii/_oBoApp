@@ -12,7 +12,6 @@ export default function Experience() {
 
   const longTextArray = mainDataOfUser?.flatMap((data) => data?.experience?.map((exp) => exp?.desc));
 const longText = longTextArray ? longTextArray.join(' ') : '';
-  const maxLength = 50;
 
   return (
     <>

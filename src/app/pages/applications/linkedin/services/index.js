@@ -1,5 +1,6 @@
 // import axios from 'axios';
 import { linkedinUsersData } from "../../../../constants/data/linkedinUsersData";
+import { linkedinFooterData } from "../../../../constants/data/linkedinFooterData";
 // import { getStoredBearerToken } from "../../../../services/axios/index";
 
 // const API_URL = process.env.REACT_APP_API_URL;
@@ -17,6 +18,20 @@ export const getLinkedinUsersData = async () => {
     return {
       success: false,
       message: "An erro occured while fetchinng linkedin users data",
+    };
+  }
+};
+
+export const getLinkedinFooterData = async () => {
+  try {
+    await sleep(50);
+    const resp = linkedinFooterData;
+    return { success: true, data: resp };
+  } catch (error) {
+    console.log("An erro occured while fetchinng linkedin footer data");
+    return {
+      success: false,
+      message: "An erro occured while fetchinng linkedin footer data",
     };
   }
 };

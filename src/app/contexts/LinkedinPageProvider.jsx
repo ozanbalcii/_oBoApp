@@ -1,12 +1,16 @@
 import React, { useEffect } from "react";
 import { createContext, useContext, useState } from "react";
-import { getLinkedinUsersData } from "../pages/applications/linkedin/services";
+import {
+  getLinkedinFooterData,
+  getLinkedinUsersData,
+} from "../pages/applications/linkedin/services";
 
 export const LinkedinPageDataContext = createContext();
 
 export const LinkedinPageProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [mainDataOfUser, setMainDataOfUser] = useState();
+  const [footerData, setFooterData] = useState();
   const [userName, setUserName] = useState();
   const [companyName, setCompanyName] = useState();
   const [companyPage, setCompanyPage] = useState();
@@ -14,14 +18,10 @@ export const LinkedinPageProvider = ({ children }) => {
   const [location, setLocation] = useState();
   const [connections, setConnections] = useState();
 
-
-
-
   const fetchGetLinkedinUsersData = async (limit = 3) => {
     try {
       setLoading(true);
       const users = await getLinkedinUsersData();
-      
       const filteredUsers = users?.data
         ?.map((item) => {
           if (item.userId === "0") {
@@ -49,6 +49,7 @@ export const LinkedinPageProvider = ({ children }) => {
                 date: exp?.date ? exp?.date : "-",
                 desc: exp?.desc ? exp?.desc : "-",
               })),
+
               education: item?.education?.map((edu) => ({
                 id: edu?.id ? edu?.id : "Error: Id is doesn't exist",
                 info: edu?.info ? edu?.info : "-",
@@ -59,15 +60,18 @@ export const LinkedinPageProvider = ({ children }) => {
                 activities: edu?.activities ? edu?.activities : "-",
                 date: edu?.date ? edu?.date : "-",
               })),
-              licenses_certifications: item?.licenses_certifications?.map((lc) => ({
-                id: lc?.id ? lc?.id : "Error: Id is doesn't exist",
-                title: lc?.title ? lc?.title : "-",
-                picture: lc?.picture
-                  ? lc?.picture
-                  : "Error: picture is doesn't exist",
-                company: lc?.company ? lc?.company : "-",
-                date: lc?.date ? lc?.date : "-",
-              })),
+
+              licenses_certifications: item?.licenses_certifications?.map(
+                (lc) => ({
+                  id: lc?.id ? lc?.id : "Error: Id is doesn't exist",
+                  title: lc?.title ? lc?.title : "-",
+                  picture: lc?.picture
+                    ? lc?.picture
+                    : "Error: picture is doesn't exist",
+                  company: lc?.company ? lc?.company : "-",
+                  date: lc?.date ? lc?.date : "-",
+                })
+              ),
               skills: item?.skills?.map((sk) => ({
                 id: sk?.id ? sk?.id : "Error: Id is doesn't exist",
                 title: sk?.title ? sk?.title : "-",
@@ -81,28 +85,33 @@ export const LinkedinPageProvider = ({ children }) => {
                 id: lang?.id ? lang?.id : "Error: Id is doesn't exist",
                 title: lang?.title ? lang?.title : "-",
                 level: lang?.level ? lang?.level : "-",
-            
               })),
-
-              // interests:  item?.interests?.map((int) => (
-              //  int?.companies?.map((comp) => ({
-              //   id: comp?.id ? comp?.id : "Error: Id is doesn't exist",
-              //   name: comp?.name ? comp?.name : "-",
-              //   picture: comp?.picture
-              //     ? comp?.picture
-              //     : "Error: picture is doesn't exist",
-              //   followers: comp?.followers ? comp?.followers : "-",
-              //  })),
-              //  int?.groups?.map((gr) => ({
-              //   id: gr?.id ? gr?.id : "Error: Id is doesn't exist",
-              //   name: gr?.name ? gr?.name : "-",
-              //   picture: gr?.picture
-              //     ? gr?.picture
-              //     : "Error: picture is doesn't exist",
-              //   followers: gr?.followers ? gr?.followers : "-",
-              //  }))
-              // )),
-              
+              interests: item?.interests?.map((int) => ({
+                companies: int?.companies?.map((comp) => ({
+                  id: comp?.id ? comp?.id : "Error: Id doesn't exist",
+                  name: comp?.name ? comp?.name : "-",
+                  picture: comp?.picture
+                    ? comp?.picture
+                    : "Error: Picture doesn't exist",
+                  followers: comp?.followers ? comp?.followers : "-",
+                })),
+                groups: int?.groups?.map((gr) => ({
+                  id: gr?.id ? gr?.id : "Error: Id doesn't exist",
+                  name: gr?.name ? gr?.name : "-",
+                  picture: gr?.picture
+                    ? gr?.picture
+                    : "Error: Picture doesn't exist",
+                  followers: gr?.followers ? gr?.followers : "-",
+                })),
+                newsletters: int?.newsletters?.map((nl) => ({
+                  id: nl?.id ? nl?.id : "Error: Id doesn't exist",
+                  name: nl?.name ? nl?.name : "-",
+                  picture: nl?.picture
+                    ? nl?.picture
+                    : "Error: Picture doesn't exist",
+                  text: nl?.text ? nl?.text : "-",
+                })),
+              })),
               currentCompanyPhoto: item?.currentCompanyPhoto
                 ? item?.currentCompanyPhoto
                 : "???",
@@ -123,10 +132,52 @@ export const LinkedinPageProvider = ({ children }) => {
     }
   };
 
+  const fetchGetLinkedinFooterData = async () => {
+    try {
+      setLoading(true);
+      const footer = await getLinkedinFooterData();
+      console.log(footer, "footer");
+      const resultFooter = footer?.data?.map((data) => {
+      
+          footer: data?.footer?.map((foot) => ({
+            col1: foot?.col1?.map((col) => ({
+              id: col?.id ? col?.id : "Error: Id doesn't exist",
+              title: col?.title ? col?.title : "-",
+            })),
+            col2: foot?.col1?.map((col) => ({
+              id: col?.id ? col?.id : "Error: Id doesn't exist",
+              title: col?.title ? col?.title : "-",
+            })),
+            col3: foot?.col1?.map((col) => ({
+              id: col?.id ? col?.id : "Error: Id doesn't exist",
+              title: col?.title ? col?.title : "-",
+            })),
+            col4: foot?.col1?.map((col) => ({
+              id: col?.id ? col?.id : "Error: Id doesn't exist",
+              title: col?.title ? col?.title : "-",
+            })),
+            selectOptions: foot?.col1?.map((col) => ({
+              id: col?.id ? col?.id : "Error: Id doesn't exist",
+              title: col?.title ? col?.title : "-",
+            })),
+          })),
+        setFooterData(resultFooter);
+      });
+    } catch (error) {
+      console.log(
+        error,
+        "An error occured while fetching linkedin footer data"
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  console.log(footerData, 'footerDatafooterDatafooterData')
 
   useEffect(() => {
     fetchGetLinkedinUsersData();
+    fetchGetLinkedinFooterData();
   }, []);
 
   const data = {
@@ -134,7 +185,8 @@ export const LinkedinPageProvider = ({ children }) => {
     setLoading,
     mainDataOfUser,
     setMainDataOfUser,
-    userName, 
+    footerData,
+    userName,
     setUserName,
     companyName,
     setCompanyName,

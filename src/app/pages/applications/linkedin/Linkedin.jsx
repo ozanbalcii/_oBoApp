@@ -8,6 +8,7 @@ import SVG from "../../../assets/svg/SVG";
 import LinkedinHeader from "./components/LinkedinHeader";
 import LinkedinBodyLeftSide from "./components/Body/LinkedinBodyLeftSide";
 import LinkedinBodyRightSide from "./components/LinkedinBodyRightSide";
+import LinkedinFooter from "./components/LinkedinFooter";
 
 export default function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);
@@ -133,6 +134,8 @@ export default function RecipeReviewCard() {
                     <LinkedinBodyRightSide />
                   </div>
                 </div>
+                <LinkedinFooter/>
+
               </Typography>
             </CardContent>
           </Collapse>

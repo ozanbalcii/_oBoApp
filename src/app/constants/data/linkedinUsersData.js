@@ -147,68 +147,74 @@ export const linkedinUsersData = [
         level: "Professional working proficiency",
       },
     ],
-    interests: [
-      {
-        companies: [
-          {
-            id: "0",
-            name: "IBM",
-            picture: "/src/app/assets/LinkedinPagePhoto/ibm.jpg",
-            followers: "4,422,070 followers",
-          },
-          {
-            id: "1",
-            name: "Microsoft",
-            picture: "/src/app/assets/LinkedinPagePhoto/microsoft.jpg",
-            followers: "4,500,830 followers",
-          },
-        ],
-        groups: [
-          {
-            id: "0",
-            name: "React Developer",
-            picture: "/src/app/assets/LinkedinPagePhoto/ibm.jpg",
-            followers: "4,422,070 followers",
-          },
-          {
-            id: "1",
-            name: "JavaScript",
-            picture: "/src/app/assets/LinkedinPagePhoto/react.jpg",
-            followers: "4,500,830 followers",
-          },
-        ],
+     interests: [
+       {
+         companies: [
+           {
+             id: "0",
+             name: "IBM",
+             picture: "/src/app/assets/LinkedinPagePhoto/ibm.jpg",
+             followers: "4,422,070 followers",
+           },
+           {
+             id: "1",
+             name: "Microsoft",
+             picture: "/src/app/assets/LinkedinPagePhoto/microsoft.jpg",
+             followers: "4,500,830 followers",
+           },
+           {
+             id: "2",
+             name: "Tesla",
+             picture: "/src/app/assets/LinkedinPagePhoto/microsoft.jpg",
+             followers: "4,500,830 followers",
+           },
+         ],
+         groups: [
+           {
+             id: "0",
+             name: "React Developer",
+             picture: "/src/app/assets/LinkedinPagePhoto/react.jpg",
+             followers: "4,422,070 followers",
+           },
+           {
+             id: "1",
+             name: "JavaScript",
+             picture: "/src/app/assets/LinkedinPagePhoto/javaScript.jpg",
+             followers: "4,500,830 followers",
+           },
+         ],
 
-        newsletters: [
-          {
-            id: "0",
-            name: "IBM",
-            picture: "/src/app/assets/LinkedinPagePhoto/ibm.jpg",
-            followers: "4,422,070 followers",
-          },
-          {
-            id: "1",
-            name: "Microsoft",
-            picture: "/src/app/assets/LinkedinPagePhoto/microsoft.jpg",
-            followers: "4,500,830 followers",
-          },
-        ],
+         newsletters: [
+           {
+             id: "0",
+             name: "IBM",
+             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
+             picture: "/src/app/assets/LinkedinPagePhoto/ibm.jpg",
+           },
+           {
+             id: "1",
+             name: "Microsoft",
+             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
+             picture: "/src/app/assets/LinkedinPagePhoto/microsoft.jpg",
+           },
+         ],
 
-        schools: [
-          {
-            id: "0",
-            name: "IBM",
-            picture: "/src/app/assets/LinkedinPagePhoto/ibm.jpg",
-            followers: "4,422,070 followers",
-          },
-          {
-            id: "1",
-            name: "Microsoft",
-            picture: "/src/app/assets/LinkedinPagePhoto/microsoft.jpg",
-            followers: "4,500,830 followers",
-          },
-        ],
-      }
-    ],
+         schools: [
+           {
+             id: "0",
+             name: "IBM",
+             picture: "/src/app/assets/LinkedinPagePhoto/ibm.jpg",
+             followers: "4,422,070 followers",
+           },
+           {
+             id: "1",
+             name: "Microsoft",
+             picture: "/src/app/assets/LinkedinPagePhoto/microsoft.jpg",
+             followers: "4,500,830 followers",
+           },
+         ],
+       }
+     ],
     photo: "/src/app/assets/LinkedinPagePhoto/me.jpeg",
     companyPhoto: "/src/app/assets/LinkedinPagePhoto/profileBackground.jpeg",
     profileBackground:

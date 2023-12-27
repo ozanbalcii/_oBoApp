@@ -21,6 +21,7 @@ _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 - linkedin etc apps will be further developed,
 - the submenu will be beautified,
 - the white background bug will be fixed, when google console is opened,
+- loading button, loading effect/page,
 - more applications,
 - responsive design will be more stable,
 -  header menu design will be more corrected,
