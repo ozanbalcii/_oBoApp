@@ -32,7 +32,6 @@ export default function Activity() {
                 size={15}
                 className="text-gray-500 border-t w-full h-full font-[600]  hover:bg-gray-200 transition-all pt-2 pb-2 gap-1"
               >
-                {" "}
                 Show all activity{" "}
                 <SVG
                   icon="arrow-right2"

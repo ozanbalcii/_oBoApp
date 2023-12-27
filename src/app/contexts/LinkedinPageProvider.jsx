@@ -14,7 +14,10 @@ export const LinkedinPageProvider = ({ children }) => {
   const [location, setLocation] = useState();
   const [connections, setConnections] = useState();
 
-  const fetchGetLinkedinUsersData = async () => {
+
+
+
+  const fetchGetLinkedinUsersData = async (limit = 3) => {
     try {
       setLoading(true);
       const users = await getLinkedinUsersData();
@@ -31,7 +34,6 @@ export const LinkedinPageProvider = ({ children }) => {
               about: item?.about ? item?.about : "-",
               post: item?.post ? item?.post : "-",
               followers: item?.followers ? item?.followers : "-",
-
               allActivity: item?.allActivity?.map((value) => ({
                 activityPost: value?.activityPost ? value?.activityPost : "-",
                 desc: value?.desc ? value?.desc : "-",
@@ -66,17 +68,41 @@ export const LinkedinPageProvider = ({ children }) => {
                 company: lc?.company ? lc?.company : "-",
                 date: lc?.date ? lc?.date : "-",
               })),
-
-              skills: item?.skills?.map((skill) => ({
-                id: skill?.id ? skill?.id : "Error: Id is doesn't exist",
-                title: skill?.title ? skill?.title : "-",
-                picture: skill?.picture
-                  ? skill?.picture
+              skills: item?.skills?.map((sk) => ({
+                id: sk?.id ? sk?.id : "Error: Id is doesn't exist",
+                title: sk?.title ? sk?.title : "-",
+                picture: sk?.picture
+                  ? sk?.picture
                   : "Error: picture is doesn't exist",
-                job: skill?.job ? skill?.job : "-",
-                endorsements: skill?.endorsements ? skill?.endorsements : "-",
+                job: sk?.job ? sk?.job : "-",
+                endorsements: sk?.endorsements ? sk?.endorsements : "-",
+              })),
+              languages: item?.languages?.map((lang) => ({
+                id: lang?.id ? lang?.id : "Error: Id is doesn't exist",
+                title: lang?.title ? lang?.title : "-",
+                level: lang?.level ? lang?.level : "-",
+            
               })),
 
+              // interests:  item?.interests?.map((int) => (
+              //  int?.companies?.map((comp) => ({
+              //   id: comp?.id ? comp?.id : "Error: Id is doesn't exist",
+              //   name: comp?.name ? comp?.name : "-",
+              //   picture: comp?.picture
+              //     ? comp?.picture
+              //     : "Error: picture is doesn't exist",
+              //   followers: comp?.followers ? comp?.followers : "-",
+              //  })),
+              //  int?.groups?.map((gr) => ({
+              //   id: gr?.id ? gr?.id : "Error: Id is doesn't exist",
+              //   name: gr?.name ? gr?.name : "-",
+              //   picture: gr?.picture
+              //     ? gr?.picture
+              //     : "Error: picture is doesn't exist",
+              //   followers: gr?.followers ? gr?.followers : "-",
+              //  }))
+              // )),
+              
               currentCompanyPhoto: item?.currentCompanyPhoto
                 ? item?.currentCompanyPhoto
                 : "???",
@@ -97,6 +123,8 @@ export const LinkedinPageProvider = ({ children }) => {
     }
   };
 
+
+
   useEffect(() => {
     fetchGetLinkedinUsersData();
   }, []);
@@ -106,7 +134,7 @@ export const LinkedinPageProvider = ({ children }) => {
     setLoading,
     mainDataOfUser,
     setMainDataOfUser,
-    userName,
+    userName, 
     setUserName,
     companyName,
     setCompanyName,

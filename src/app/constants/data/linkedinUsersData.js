@@ -36,21 +36,21 @@ export const linkedinUsersData = [
     ],
     licenses_certifications: [
       {
-        id: 0,
+        id: '0',
         picture: "/src/app/assets/LinkedinPagePhoto/udemy.jpg",
         title: "JavaScript, HTML, CSS",
         company: "Udemy",
         date: "Issued Jul 2022",
       },
       {
-        id: 1,
+        id: '1',
         picture: "/src/app/assets/LinkedinPagePhoto/udemy.jpg",
         title: "Build Web Apps with React & Firebase",
         company: "Udemy",
         date: "Issued Jul 2023",
       },
       {
-        id: 2,
+        id:'2',
         picture: "/src/app/assets/LinkedinPagePhoto/udemy.jpg",
         title: "Python",
         company: "Udemy",
@@ -75,6 +75,14 @@ export const linkedinUsersData = [
         date: "Aug 2021 - Jan 2022 · 6 mos",
         desc: "In the course of this work experience, I undertook various responsibilities and utilized the following technologies: React, Tailwind, Bootstrap, Git-GitHub, and ChatGPT. My tasks involved developing, repairing, and implementing external additions for large companies admin dashboards, management systems, payment systems, and company pages using React, Tailwind and Bootstrap. I also created Figma designs with CSS, incorporating Tailwind and Bootstrap. Throughout these endeavors, I achieved seamless teamwork and effective communication between back-end and front-end developers. I successfully projects created on customer demands. Faster coding ability through the use of documentation research and AI technologies.",
       },
+      // {
+      //   id: 2,
+      //   photo: "/src/app/assets/LinkedinPagePhoto/meditera.jpg",
+      //   title: "Engineer Intern",
+      //   company: "Meditera",
+      //   date: "Aug 2021 - Jan 2022 · 6 mos",
+      //   desc: "In the course of this work experience, I undertook various responsibilities and utilized the following technologies: React, Tailwind, Bootstrap, Git-GitHub, and ChatGPT. My tasks involved developing, repairing, and implementing external additions for large companies admin dashboards, management systems, payment systems, and company pages using React, Tailwind and Bootstrap. I also created Figma designs with CSS, incorporating Tailwind and Bootstrap. Throughout these endeavors, I achieved seamless teamwork and effective communication between back-end and front-end developers. I successfully projects created on customer demands. Faster coding ability through the use of documentation research and AI technologies.",
+      // },
     ],
     skills: [
       {
@@ -87,36 +95,42 @@ export const linkedinUsersData = [
       {
         id: "1",
         title: "Tailwind",
+         picture: "/src/app/assets/LinkedinPagePhoto/netpus.jpg",
         job: "Frontend Developer at Netpus Yazılım",
         endorsements: "1 endorsement",
       },
       {
         id: "2",
         title: "Bootstrap",
+         picture: "/src/app/assets/LinkedinPagePhoto/netpus.jpg",
         job: "Frontend Developer at Netpus Yazılım",
         endorsements: "1 endorsement",
       },
       {
         id: "3",
         title: "Git-GitHub",
+         picture: "/src/app/assets/LinkedinPagePhoto/netpus.jpg",
         job: "Frontend Developer at Netpus Yazılım",
         endorsements: "1 endorsement",
       },
       {
         id: "4",
         title: "Redux",
+         picture: "/src/app/assets/LinkedinPagePhoto/netpus.jpg",
         job: "Frontend Developer at Netpus Yazılım",
         endorsements: "1 endorsement",
       },
       {
         id: "5",
         title: "HTML-CSS",
+         picture: "/src/app/assets/LinkedinPagePhoto/netpus.jpg",
         job: "Frontend Developer at Netpus Yazılım",
         endorsements: "1 endorsement",
       },
       {
         id: "6",
         title: "Web Development",
+         picture: "/src/app/assets/LinkedinPagePhoto/netpus.jpg",
         job: "Frontend Developer at Netpus Yazılım",
         endorsements: "1 endorsement",
       },
@@ -135,15 +149,65 @@ export const linkedinUsersData = [
     ],
     interests: [
       {
-        id: "0",
-        company: "Microsoft",
-        followers: "4,422,070 followers",
-      },
-      {
-        id: "1",
-        company: "Tesla",
-        followers: "4,500,830 followers",
-      },
+        companies: [
+          {
+            id: "0",
+            name: "IBM",
+            picture: "/src/app/assets/LinkedinPagePhoto/ibm.jpg",
+            followers: "4,422,070 followers",
+          },
+          {
+            id: "1",
+            name: "Microsoft",
+            picture: "/src/app/assets/LinkedinPagePhoto/microsoft.jpg",
+            followers: "4,500,830 followers",
+          },
+        ],
+        groups: [
+          {
+            id: "0",
+            name: "React Developer",
+            picture: "/src/app/assets/LinkedinPagePhoto/ibm.jpg",
+            followers: "4,422,070 followers",
+          },
+          {
+            id: "1",
+            name: "JavaScript",
+            picture: "/src/app/assets/LinkedinPagePhoto/react.jpg",
+            followers: "4,500,830 followers",
+          },
+        ],
+
+        newsletters: [
+          {
+            id: "0",
+            name: "IBM",
+            picture: "/src/app/assets/LinkedinPagePhoto/ibm.jpg",
+            followers: "4,422,070 followers",
+          },
+          {
+            id: "1",
+            name: "Microsoft",
+            picture: "/src/app/assets/LinkedinPagePhoto/microsoft.jpg",
+            followers: "4,500,830 followers",
+          },
+        ],
+
+        schools: [
+          {
+            id: "0",
+            name: "IBM",
+            picture: "/src/app/assets/LinkedinPagePhoto/ibm.jpg",
+            followers: "4,422,070 followers",
+          },
+          {
+            id: "1",
+            name: "Microsoft",
+            picture: "/src/app/assets/LinkedinPagePhoto/microsoft.jpg",
+            followers: "4,500,830 followers",
+          },
+        ],
+      }
     ],
     photo: "/src/app/assets/LinkedinPagePhoto/me.jpeg",
     companyPhoto: "/src/app/assets/LinkedinPagePhoto/profileBackground.jpeg",

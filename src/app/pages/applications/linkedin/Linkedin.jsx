@@ -27,20 +27,21 @@ export default function RecipeReviewCard() {
     <div className="flex justify-center ">
       <div
         className="scroll-container"
-        style={{ maxHeight: "85ws0px", overflowY: "auto" }}
+        style={{ maxHeight: "840px", overflowY: "auto" }}
       >
         <Card className="" sx={{ maxWidth: 1600 }}>
           <div className="bg-[#09060f] flex items-center gap-2 p-1 pl-4 pt-1 pb-1">
             <Button className=" bg-slate-700 hover:bg-red-400 rounded-full  w-[14px] h-[9px]  " />
+     
+            <Button className=" bg-slate-700 hover:bg-yellow-400  rounded-full w-[14px] h-[9px]  flex items-center justify-center" />
             <Button
               onMouseEnter={handleOpenIcon}
-              className="relative bg-slate-700 hover:bg-yellow-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
+              className="relative bg-slate-700 hover:bg-green-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
               expand={expanded}
               onClick={handleExpandClick}
               aria-expanded={expanded}
               aria-label="show more"
             />
-            <Button className=" bg-slate-700 hover:bg-green-400  rounded-full w-[14px] h-[9px]  flex items-center justify-center" />
             <div className="pl-5">
               <div className="flex items-center justify-center gap-1 text-white border border-gray-700 rounded-xl p-2 hover:bg-slate-900 ">
                 <Button

@@ -22,20 +22,24 @@ export default function LicensesCertifications() {
               <div className="grid grid-cols-12">
                 {data?.licenses_certifications?.map((exp) => (
                   <>
-                    <div className="col-span-1 xl:hidden 2xl:flex md:hidden">
-                      <img
-                        src={exp?.picture}
-                        alt="linkedin-company-picture"
-                        className="fill  w-[45px] h-[45px] cursor-pointer"
-                      />
-                    </div>
-                    <div className="col-span-11 pb-4 pt-2 pl-2 border-b border-gray-300">
-                      <div className="font-bold">{exp?.title}</div>
-                      <div className="text-[14px]">{exp?.company}</div>
-                      <div className="text-[14px] text-gray-700">
-                        {exp?.date}
-                      </div>
-                    </div>
+                    {["0", "1", "2"].includes(exp.id) && (
+                      <>
+                        <div className="col-span-1 xl:hidden 2xl:flex md:hidden">
+                          <img
+                            src={exp?.picture}
+                            alt="linkedin-company-picture"
+                            className="fill  w-[45px] h-[45px] cursor-pointer"
+                          />
+                        </div>
+                        <div className="col-span-11 pb-4 pt-2 pl-2 border-b border-gray-300">
+                          <div className="font-bold">{exp?.title}</div>
+                          <div className="text-[14px]">{exp?.company}</div>
+                          <div className="text-[14px] text-gray-700">
+                            {exp?.date}
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </>
                 ))}
               </div>
