@@ -15,7 +15,7 @@ export default function LicensesCertifications() {
       {mainDataOfUser?.map((data) => (
         <>
           <div className="bg-white border-[0.1rem] pt-2 rounded-[0.495rem]">
-            <div className=" text-darky pr-6 pl-6 pt-">
+            <div className=" text-darky pr-6 pl-6 ">
               <div className="font-bold text-[20px] pb-2">
                 Licenses & certifications
               </div>

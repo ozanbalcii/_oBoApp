@@ -10,8 +10,10 @@ export default function Experience() {
     LinkedinPageDataContext
   );
 
-  const longTextArray = mainDataOfUser?.flatMap((data) => data?.experience?.map((exp) => exp?.desc));
-const longText = longTextArray ? longTextArray.join(' ') : '';
+  const longTextArray = mainDataOfUser?.flatMap((data) =>
+    data?.experience?.map((exp) => exp?.desc)
+  );
+  const longText = longTextArray ? longTextArray.join(" ") : "";
 
   return (
     <>
@@ -30,7 +32,7 @@ const longText = longTextArray ? longTextArray.join(' ') : '';
                         className="fill  w-[45px] h-[45px] cursor-pointer"
                       />
                     </div>
-                    <div className="col-span-11 pt-1 pb-3 pl-2 border-b border-gray-300">
+                    <div className="col-span-11 pt-1 pb-3 pl-2  border-gray-300">
                       <div className="font-bold">{exp?.title}</div>
                       <div className="text-[14px]">{exp?.company}</div>
                       <div className="text-[14px] text-gray-700">

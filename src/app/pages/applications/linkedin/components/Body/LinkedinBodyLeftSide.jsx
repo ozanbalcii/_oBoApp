@@ -12,7 +12,7 @@ import Interests from "./Interests/Interests";
 export default function LinkedinBodyLeftSide() {
   return (
     <>
-      <div className="">
+      <div>
         <BodyIntro />
         <About />
         <Activity />

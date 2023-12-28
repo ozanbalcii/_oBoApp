@@ -110,5 +110,3 @@ export const linkedinFooterData = [
     ],
   },
 ];
-
-

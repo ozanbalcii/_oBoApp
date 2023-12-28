@@ -130,7 +130,7 @@ export default function RecipeReviewCard() {
                   <div className="col-span-7  p-4 rounded-l-md">
                     <LinkedinBodyLeftSide />
                   </div>
-                  <div className="col-span-3  p-4 rounded-r-md pl-10">
+                  <div className="col-span-3 pt-4 rounded-r-md !pl-0">
                     <LinkedinBodyRightSide />
                   </div>
                 </div>

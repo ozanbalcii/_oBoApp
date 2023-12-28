@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { createContext, useContext, useState } from "react";
 import {
-  getLinkedinFooterData,
   getLinkedinUsersData,
 } from "../pages/applications/linkedin/services";
 
@@ -131,10 +130,6 @@ export const LinkedinPageProvider = ({ children }) => {
       setLoading(false);
     }
   };
-
-
-
-
 
   useEffect(() => {
     fetchGetLinkedinUsersData();

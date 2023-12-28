@@ -27,7 +27,7 @@ export default function BodyIntro() {
             />
           </div>
           <div className="bg-white rounded-b-xl border-[0.1rem] pt-10 p-4">
-            <div className="flex justify-end ">
+            <div className="flex justify-end">
               <Button
                 icon={
                   <SVG
@@ -39,8 +39,8 @@ export default function BodyIntro() {
                 className="w-[14px] h-[9px] text-darky "
               />
             </div>
-            <div className="flex items-center  justify-between gap-2">
-              <div className="text-xl  font-bold">
+            <div className="flex items-center justify-between gap-2">
+              <div className="text-xl font-bold">
                 {data?.name_surname}
                 <span className="text-xs font-normal">1st</span>
               </div>
@@ -65,16 +65,11 @@ export default function BodyIntro() {
                   Contact Info
                 </Button>
               </div>
-
-
-                {/* //! Normal button used */}
-    
-                <button className="text-xs font-bold text-blue-700 hover:underline pt-1 md:hidden xl:flex">
-                  {data?.connections}
-                </button>
               {/* //! Normal button used */}
-
-
+              <button className="text-xs font-bold text-blue-700 hover:underline pt-1 md:hidden xl:flex">
+                {data?.connections}
+              </button>
+              {/* //! Normal button used */}
               <div className=" flex items-center pt-3 p-0 gap-2 transition-all">
                 <Button className="rounded-[2rem] bg-[#0B65C2] text-white text-xs font-bold hover:bg-blue-900 w-[6.95rem] h-[2rem] flex items-center justify-center gap-2 ">
                   <SVG icon="paper-send" size={14} />
