@@ -6,14 +6,17 @@ import { SubmenuProvider } from "./app/contexts/SubmenuProvider.jsx";
 import { HeaderButtonsProvider } from "./app/contexts/HeaderButtonsProvider.jsx";
 import { LinkedinPageProvider } from "./app/contexts/LinkedinPageProvider";
 import { LinkedinCustomProvider } from "./app/contexts/trashContexts/LinkedinCustomProvider.jsx";
+import { AppOpenCloseProvider } from "./app/contexts/trashContexts/AppOpenClose.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <DesktopProvider>
     <SubmenuProvider>
       <HeaderButtonsProvider>
         <LinkedinPageProvider>
-        <LinkedinCustomProvider> 
-          <App />
+          <LinkedinCustomProvider>
+            <AppOpenCloseProvider>
+              <App />
+            </AppOpenCloseProvider>
           </LinkedinCustomProvider>
         </LinkedinPageProvider>
       </HeaderButtonsProvider>

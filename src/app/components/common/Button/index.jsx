@@ -16,6 +16,7 @@ const Button = forwardRef(function ButtonComponent(
     icon,
     text,
     onMouseEnter,
+    
   },
   ref
 ) {

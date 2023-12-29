@@ -9,16 +9,23 @@ import LinkedinHeader from "./components/LinkedinHeader";
 import LinkedinBodyLeftSide from "./components/Body/LinkedinBodyLeftSide";
 import LinkedinBodyRightSide from "./components/LinkedinBodyRightSide";
 import LinkedinFooter from "./components/LinkedinFooter";
+import {
+  AppOpenCloseContext,
+  useAppOpenCloseContext,
+} from "../../../contexts/trashContexts/AppOpenClose";
 
 export default function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);
   const [iconAppear, setIconAppear] = React.useState(false);
 
+  const { open, handleButtonClick } =
+    useAppOpenCloseContext(AppOpenCloseContext);
+
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
   const [url, setUrl] = React.useState(
-    "http://localhost:5173/linkedin-ozanbalci98"
+    "https://www.linkedin.com/in/ozanbalci98/"
   );
   const handleOpenIcon = () => {
     setIconAppear(!iconAppear);
@@ -30,11 +37,13 @@ export default function RecipeReviewCard() {
         className="scroll-container"
         style={{ maxHeight: "800px", overflowY: "auto" }}
       >
-        <Card className="" sx={{ maxWidth: 1600 }}>
+        <Card sx={{ maxWidth: 1600 }}>
           <div className="bg-[#09060f] flex items-center gap-2 p-1 pl-4 pt-1 pb-1">
-            <Button className=" bg-slate-700 hover:bg-red-400 rounded-full  w-[14px] h-[9px]  " />
-     
-            <Button className=" bg-slate-700 hover:bg-yellow-400  rounded-full w-[14px] h-[9px]  flex items-center justify-center" />
+            <Button
+              onClick={handleButtonClick}
+              className="bg-slate-700 hover:bg-red-400 rounded-full  w-[14px] h-[9px]"
+            />
+            <Button className="bg-slate-700 hover:bg-yellow-400  rounded-full w-[14px] h-[9px] flex items-center justify-center" />
             <Button
               onMouseEnter={handleOpenIcon}
               className="relative bg-slate-700 hover:bg-green-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
@@ -49,8 +58,8 @@ export default function RecipeReviewCard() {
                   icon={
                     <SVG icon="linkedin" className="rounded-md" size={23} />
                   }
-                  className="flex gap-3 items-center  "
-                ></Button>
+                  className="flex gap-3 items-center"
+                />
                 <text className="text-[15px] font-pFont ">Linkedin</text>
                 <Button
                   className="ml-auto"
@@ -117,6 +126,7 @@ export default function RecipeReviewCard() {
               </div>
             </div>
           </div>
+
           <LinkedinHeader />
           <Collapse
             className="bg-[#F4F2EE]"
@@ -134,8 +144,7 @@ export default function RecipeReviewCard() {
                     <LinkedinBodyRightSide />
                   </div>
                 </div>
-                <LinkedinFooter/>
-
+                <LinkedinFooter />
               </Typography>
             </CardContent>
           </Collapse>

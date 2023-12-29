@@ -23,10 +23,9 @@ export default function BodyIntro() {
             <img
               src={data?.photo}
               alt="linkedin-profile-picture"
-              className="rounded-full fill absolute -bottom-9 left-4 p-4 w-[140px] h-[140px] "
+              className="rounded-full fill absolute -bottom-9 left-4 p-4 w-[140px] h-[140px]  "
             />
           </div>
-
           <div className="bg-white grid grid-cols-10 rounded-b-xl border-[0.1rem] pt-10 p-4">
             <div className="col-span-7">
               <div className="text-xl font-bold">{data?.name_surname}</div>

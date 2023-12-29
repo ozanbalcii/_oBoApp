@@ -21,6 +21,11 @@ export function LinkedinCustomProvider({children}) {
                 // mutual: user?.mutual ? user?.mutual : "-",
                 // connections: user?.connections ? user?.connections : "-",
               })),
+              peopleYouMayKnow: value?.peopleYouMayKnow?.map((peo) => ({
+                picture: peo?.picture ? peo?.picture : "-",
+                userNameSurname: peo?.userNameSurname ? peo?.userNameSurname : "-",
+                job: peo?.job ? peo?.job : "-",
+              })),
               promotions: value?.promotions?.map((promo) => ({
                 picture: promo?.picture ? promo?.picture : "-",
                 id: promo?.id ? promo?.id : "-",

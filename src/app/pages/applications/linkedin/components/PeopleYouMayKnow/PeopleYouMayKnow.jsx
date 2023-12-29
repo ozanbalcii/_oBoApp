@@ -7,7 +7,7 @@ export default function PeopleYouMayKnow() {
   const { customData } = useLinkedinCustomDataContext(
     LinkedinCustomDataContext
   );
-
+console.log(customData, '22222')
   return (
     <>
       {customData?.map((data) => (
