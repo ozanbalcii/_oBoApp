@@ -21,7 +21,7 @@ export default function About() {
               <div className="pt-5">
                 <div className="border rounded-md ">
                   <div className="flex">
-                    <div className=" p-3 gap-2">
+                    <div className="xl:flex hidden p-3 pt-4 gap-2">
                       <SVG
                         icon="diamond"
                         className="rounded-md font-bold transition-all"

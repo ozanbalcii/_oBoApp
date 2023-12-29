@@ -1,11 +1,9 @@
+
 import SVG from "../../../../../assets/svg/SVG";
 import Button from "../../../../../components/common/Button";
-import {
-  LinkedinCustomDataContext,
-  useLinkedinCustomDataContext,
-} from "../../../../../contexts/trashContexts/LinkedinCustomProvider";
+import { LinkedinCustomDataContext, useLinkedinCustomDataContext } from "../../../../../contexts/trashContexts/LinkedinCustomProvider";
 
-export default function PeopleAlsoViewed() {
+export default function PeopleYouMayKnow() {
   const { customData } = useLinkedinCustomDataContext(
     LinkedinCustomDataContext
   );
@@ -17,10 +15,10 @@ export default function PeopleAlsoViewed() {
           <div className="pt-2 overflow-auto xl:grid hidden  ">
             <div className="bg-white border-[0.1rem] text-darky rounded-[0.495rem] ">
               <div className="font-bold text-[15px] pl-5 pt-5">
-                People also viewed
+              People you may know
               </div>
               <div className="grid grid-rows-12">
-                {data?.peopleAlsoViewed?.map((peo) => (
+                {data?.peopleYouMayKnow?.map((peo) => (
                   <div className="pt-3 pr-4 pl-5">
                     <div className="grid grid-row-12">
                       <div className="rows-span-6 2xl:flex pt-2">
@@ -52,7 +50,6 @@ export default function PeopleAlsoViewed() {
                         </div>
                       </div>
                     </div>
-                 
                     <hr />
                   </div>
                 ))}

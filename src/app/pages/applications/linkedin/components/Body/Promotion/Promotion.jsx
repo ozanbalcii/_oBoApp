@@ -6,7 +6,6 @@ export default function Promotion() {
   const { customData } = useLinkedinCustomDataContext(
     LinkedinCustomDataContext
   );
-  console.log(customData, "customData");
   return (
     <>
       <div className="cursor-pointer">
@@ -15,9 +14,10 @@ export default function Promotion() {
             {data?.promotions?.map((promo) => (
               <>
                 <img
+                  key={promo.id}
                   src={promo?.picture}
                   alt="linkedin-promotoin"
-                  className="h-[251px] sm:hidden rounded-[0.395rem] "
+                  className="max-w-full h-auto  xl:grid hidden rounded-[0.395rem]"
                 />
               </>
             ))}
