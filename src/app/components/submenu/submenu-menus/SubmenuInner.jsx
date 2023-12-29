@@ -5,9 +5,13 @@ import {
   useSubmenuContext,
 } from "../../../contexts/SubmenuProvider";
 import { NavLink } from "react-router-dom";
+import {
+  AppOpenCloseContext,
+  useAppOpenCloseContext,
+} from "../../../contexts/trashContexts/AppOpenClose";
 export default function SubmenuInner() {
   const { showsubMenu, setShowsubMenu } = useSubmenuContext(SubmenuContext);
-
+  const { open } = useAppOpenCloseContext(AppOpenCloseContext);
   const handleOpen = () => {
     setShowsubMenu(true);
   };
@@ -29,7 +33,12 @@ export default function SubmenuInner() {
                   <SVG icon="finder" className={"rounded-xl"} />
                 </div>
                 <NavLink to="/linkedin-ozanbalci98" className="rounded-lg ">
-                  <SVG icon="linkedin" className={"rounded-xl"} />
+                  <SVG
+                    icon="linkedin"
+                    className={`rounded-xl transition-all ${
+                      open ? "border-[5px] border-yellow-400 " : ""
+                    }`}
+                  />
                 </NavLink>
                 <div className=" rounded-lg ">
                   <SVG icon="spotify" className={"rounded-xl"} />

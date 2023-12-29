@@ -11,10 +11,12 @@ import {
   AppOpenCloseContext,
   useAppOpenCloseContext,
 } from "../../contexts/trashContexts/AppOpenClose";
+// import DraggableItem from "./components/DraggableItem/DraggableItem";
 
 export default function Desktop() {
   const { setShowsubMenu } = useSubmenuContext(SubmenuContext);
-  const { open, handleButtonClick } = useAppOpenCloseContext(AppOpenCloseContext);
+  const { handleButtonClick, open } =
+    useAppOpenCloseContext(AppOpenCloseContext);
 
   const handleClose = () => {
     setShowsubMenu(false);
@@ -40,6 +42,37 @@ export default function Desktop() {
         </div>
         {open && <Linkedin className="z-40" />}
       </div>
+
+      {!open && (
+        <div className="flex justify-center text-white">
+          <div className="border p-5 rounded-lg">
+            <div className="font-bold text-[20px] text-center">
+              InfoBox
+              <hr />
+              <div className="text-[30px] text-red-500">add what has been done</div>
+            </div>
+            <div className="font-cantarell pt-2">
+              / to be added /
+              <li>linkedin etc apps will be further developed, </li>
+              <li>the submenu will be beautified, </li>
+              <li>search bar should be improved, </li>
+              <li>
+                The white background bug will be fixed when Google console is
+                opened.
+              </li>
+              <li>Loading button, loading effect/page.</li>
+              <li>More applications (like LinkedIn...).</li>
+              <li>Responsive design will be more stable.</li>
+              <li>Header menu design will be more corrected.</li>
+              <li>Header menu design will be further refined.</li>
+              <li>Redux can be added to the project.</li>
+              <li>Draggable Item maybe can be added for Desktop.</li>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* <DraggableItem /> */}
       <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full pl-[4.063rem] pr-[4.063rem] pb-[0.313rem] transition-all">
         <div className="opacity-0 text-xs " onMouseEnter={handleClose}>
           -

@@ -26,4 +26,5 @@ https://icomoon.io/app/#/select/image
 - responsive design will be more stable,
 - header menu design will be more corrected,
 - header menu design will be further refined,
-- redux can be added to the project
+- redux can be added to the project,
+- draggable Item maybe can be added for Desktop,

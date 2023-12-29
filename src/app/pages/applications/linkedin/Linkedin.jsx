@@ -13,12 +13,13 @@ import {
   AppOpenCloseContext,
   useAppOpenCloseContext,
 } from "../../../contexts/trashContexts/AppOpenClose";
+import 'animate.css/animate.min.css'; 
 
 export default function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);
   const [iconAppear, setIconAppear] = React.useState(false);
 
-  const { open, handleButtonClick } =
+  const { handleButtonClick, handleButtonWait, open,  } =
     useAppOpenCloseContext(AppOpenCloseContext);
 
   const handleExpandClick = () => {
@@ -31,8 +32,9 @@ export default function RecipeReviewCard() {
     setIconAppear(!iconAppear);
     console.log(iconAppear, "iconAppear");
   };
+ // {`flex justify-center ${open ? 'animate__animated animate__backInUp ' : ''}`}
   return (
-    <div className="flex justify-center ">
+    <div className= {`flex justify-center transition-all ${open ? 'animate__animated animate__backInUp ' : ''}   `}>
       <div
         className="scroll-container"
         style={{ maxHeight: "800px", overflowY: "auto" }}
@@ -43,7 +45,9 @@ export default function RecipeReviewCard() {
               onClick={handleButtonClick}
               className="bg-slate-700 hover:bg-red-400 rounded-full  w-[14px] h-[9px]"
             />
-            <Button className="bg-slate-700 hover:bg-yellow-400  rounded-full w-[14px] h-[9px] flex items-center justify-center" />
+            <Button 
+              onClick={handleButtonClick}
+            className="bg-slate-700 hover:bg-yellow-400  rounded-full w-[14px] h-[9px] flex items-center justify-center" />
             <Button
               onMouseEnter={handleOpenIcon}
               className="relative bg-slate-700 hover:bg-green-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
