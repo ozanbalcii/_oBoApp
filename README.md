@@ -1,6 +1,6 @@
 # oBoApp
 oBozan application
-Start day: 06.12.2023 - 01.00 
+
 
 
 
