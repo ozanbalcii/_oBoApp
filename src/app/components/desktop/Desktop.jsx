@@ -49,8 +49,8 @@ export default function Desktop() {
             <div className="font-bold text-[20px] text-center">
               InfoBox
               <hr />
-              <div className="text-[30px] text-red-500">add what has been done</div>
-              <div className="text-[30px] text-red-500">Documentation about the project should be added.</div>
+              <div className="text-[22px] text-red-500">add what has been done</div>
+              <div className="text-[22px] text-red-500">Documentation about the project should be added.</div>
             </div>
             <div className="font-cantarell pt-2">
               / to be added /
