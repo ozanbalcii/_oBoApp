@@ -28,11 +28,12 @@ export default function RecipeReviewCard() {
   const [url, setUrl] = React.useState(
     "https://www.linkedin.com/in/ozanbalci98/"
   );
+
   const handleOpenIcon = () => {
     setIconAppear(!iconAppear);
     console.log(iconAppear, "iconAppear");
   };
- // {`flex justify-center ${open ? 'animate__animated animate__backInUp ' : ''}`}
+
   return (
     <div className= {`flex justify-center transition-all ${open ? 'animate__animated animate__backInUp ' : ''}   `}>
       <div
@@ -43,11 +44,11 @@ export default function RecipeReviewCard() {
           <div className="bg-[#09060f] flex items-center gap-2 p-1 pl-4 pt-1 pb-1">
             <Button
               onClick={handleButtonClick}
-              className="bg-slate-700 hover:bg-red-400 rounded-full  w-[14px] h-[9px]"
+              className="bg-slate-700 hover:bg-red-400 rounded-full w-[14px] h-[9px]"
             />
             <Button 
               onClick={handleButtonClick}
-            className="bg-slate-700 hover:bg-yellow-400  rounded-full w-[14px] h-[9px] flex items-center justify-center" />
+            className="bg-slate-700 hover:bg-yellow-400  rounded-full w-[14px] h-[9px] flex items-center justify-center"/>
             <Button
               onMouseEnter={handleOpenIcon}
               className="relative bg-slate-700 hover:bg-green-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"

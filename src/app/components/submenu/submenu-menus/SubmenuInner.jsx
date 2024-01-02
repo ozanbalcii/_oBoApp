@@ -4,14 +4,15 @@ import {
   SubmenuContext,
   useSubmenuContext,
 } from "../../../contexts/SubmenuProvider";
-import { NavLink } from "react-router-dom";
 import {
   AppOpenCloseContext,
   useAppOpenCloseContext,
 } from "../../../contexts/trashContexts/AppOpenClose";
+import Button from "../../common/Button";
 export default function SubmenuInner() {
   const { showsubMenu, setShowsubMenu } = useSubmenuContext(SubmenuContext);
-  const { open } = useAppOpenCloseContext(AppOpenCloseContext);
+  const { open, handleButtonClick } =
+    useAppOpenCloseContext(AppOpenCloseContext);
   const handleOpen = () => {
     setShowsubMenu(true);
   };
@@ -29,17 +30,18 @@ export default function SubmenuInner() {
               animate={{ opacity: 1, y: 0 }}
             >
               <div className="flex items-center justify-center gap-5 border-[0.006rem] shadow-3xl border-gray-500  rounded-3xl pt-[0.89rem]  pb-[0.89rem] text-[1.563rem] backdrop-filter bg-zinc-800 bg-opacity-50  ">
-                <div className="rounded-lg ">
+                <Button className="rounded-lg !p-0">
                   <SVG icon="finder" className={"rounded-xl"} />
-                </div>
-                <NavLink to="/linkedin-ozanbalci98" className="rounded-lg ">
+                </Button>
+
+                <Button onClick={handleButtonClick} className={`rounded-xl `}>
                   <SVG
                     icon="linkedin"
                     className={`rounded-xl transition-all ${
                       open ? "border-[5px] border-yellow-400 " : ""
                     }`}
                   />
-                </NavLink>
+                </Button>
                 <div className=" rounded-lg ">
                   <SVG icon="spotify" className={"rounded-xl"} />
                 </div>

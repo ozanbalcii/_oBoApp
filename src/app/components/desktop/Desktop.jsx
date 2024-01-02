@@ -27,7 +27,7 @@ export default function Desktop() {
       <div className=" pt-12 ">
         <div className="pl-6">
           <Button
-            className={`flex flex-col text-white items-center z-30 ${
+            className={`flex flex-col text-white items-center  ${
               open ? "hidden" : "flex"
             }`}
             onClick={handleButtonClick}
@@ -49,8 +49,19 @@ export default function Desktop() {
             <div className="font-bold text-[20px] text-center">
               InfoBox
               <hr />
-              <div className="text-[22px] text-red-500">add what has been done</div>
-              <div className="text-[22px] text-red-500">Documentation about the project should be added.</div>
+              <a
+                href="https://github.com/ozanbalcii/_oBoApp"
+                target="_blank"
+                className="text-[22px] text-green-600 "
+              >
+                source codes: https://github.com/ozanbalcii/_oBoApp
+              </a>
+              <ul className="list-none text-[17px]" >
+                reminders:
+                <li>the submenu works like on mac,</li>
+                <li>twill be active in the next times</li>
+                <span>(for example, you can click the apple button)</span>
+              </ul>
             </div>
             <div className="font-cantarell pt-2">
               / to be added /
@@ -68,6 +79,12 @@ export default function Desktop() {
               <li>Header menu design will be further refined.</li>
               <li>Redux can be added to the project.</li>
               <li>Draggable Item maybe can be added for Desktop.</li>
+              <div className="text-[22px] text-red-500">
+                add what has been done
+              </div>
+              <div className="text-[22px] text-red-500">
+                documentation about the project should be added.
+              </div>
             </div>
           </div>
         </div>

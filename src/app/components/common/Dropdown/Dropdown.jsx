@@ -89,8 +89,9 @@ export default function CustomDropdown({ loading, buttonName}) {
     user-select: none;
     display: flex; 
     align-items: center; 
+    backdrop-filter: blur(99px);
     // box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    color: rgb(255 255 255);
+    color: 		rgb(104,104,104)
     &.${menuItemClasses.focusVisible} {
       outline: 3px solid ${
         theme.palette.mode === "dark" ? blue[600] : blue[200]
@@ -155,7 +156,7 @@ export default function CustomDropdown({ loading, buttonName}) {
       <Menu slots={{ listbox: Listbox }} className="backdrop-filter pl-2 ">
         {buttonName?.map((options) => (
           <>
-          <MenuItem onClick={createHandleMenuClick("Profile")}>
+          <MenuItem className="text-white hover:bg-green-700" onClick={createHandleMenuClick("Profile")}>
             {options?.label}
           </MenuItem>
           <div className="pr-[0.4rem] pl-[0.4rem]">
