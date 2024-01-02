@@ -1,6 +1,6 @@
 import React from "react";
 import Promotion from "./Body/Promotion/Promotion";
-import PeopleAlsoViewed from "./PeopleAlsoViewed/peopleAlsoViewed";
+import PeopleAlsoViewed from "./PeopleAlsoViewed/PeopleAlsoViewed";
 import PeopleYouMayKnow from "./PeopleYouMayKnow/PeopleYouMayKnow";
 
 export default function LinkedinBodyRightSide() {
