@@ -11,39 +11,75 @@ import {
   AppOpenCloseContext,
   useAppOpenCloseContext,
 } from "../../contexts/trashContexts/AppOpenClose";
-// import DraggableItem from "./components/DraggableItem/DraggableItem";
+import { useEffect } from "react";
+import PdfCv from "../../pages/applications/pdfCv/PdfCv";
 
 export default function Desktop() {
   const { setShowsubMenu } = useSubmenuContext(SubmenuContext);
-  const { handleButtonClick, open } =
+  const { handleButtonClick, open, setType, cvOpen, close } =
     useAppOpenCloseContext(AppOpenCloseContext);
 
   const handleClose = () => {
     setShowsubMenu(false);
   };
+  console.log(close, "closeeee");
 
   return (
     <div className="w-full h-screen bg-no-repeat sm:bg-gradient-to-r sm:from-purple-900 sm:via-[#3311A7] sm:to-[#3311A7]">
-      <div className=" pt-12 ">
-        <div className="pl-6">
-          <Button
-            className={`flex flex-col text-white items-center  ${
-              open ? "hidden" : "flex"
-            }`}
-            onClick={handleButtonClick}
-          >
-            <SVG
-              icon="linkedin"
-              size={55}
-              className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mt-2 rounded-xl"
-            />
-            <div className="!font-normal pt-[6px] ">Linkedin</div>
-          </Button>
+      <div className="flex">
+        <div className=" pt-12 ">
+          <div className="pl-6">
+            <Button
+              className={`flex flex-col text-white items-center ${
+                open ? "hidden" : "flex"
+              }`}
+              onClick={() => {
+                setType("linkedin");
+                handleButtonClick();
+                setTimeout(() => {
+                  setType("");
+                }, 1000);
+              }}
+            >
+              <SVG
+                icon="linkedin"
+                size={55}
+                className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mt-2 rounded-xl"
+              />
+              <div className="!font-normal pt-[6px] ">Linkedin</div>
+            </Button>
+          </div>
         </div>
-        {open && <Linkedin className="z-40" />}
+
+        <div className=" pt-12 ">
+          <div className="pl-6">
+            <Button
+              className={`flex flex-col text-white items-center  ${
+                open ? "hidden" : "flex"
+              }`}
+              onClick={() => {
+                handleButtonClick();
+                setType("cv");
+                setTimeout(() => {
+                  setType("");
+                }, 1000);
+              }}
+            >
+              <SVG
+                icon="document-file-pdf"
+                size={55}
+                className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mt-2 rounded-xl"
+              />
+              <div className="!font-normal pt-[6px] ">ozanbalci.pdf</div>
+            </Button>
+          </div>
+        </div>
       </div>
 
-      {!open && (
+      {open && <Linkedin className="z-40" />}
+      {close && <PdfCv className="z-40" />}
+
+      {!open || close && (
         <div className="flex justify-center text-white">
           <div className="border p-5 rounded-lg">
             <div className="font-bold text-[20px] text-center">
@@ -56,7 +92,7 @@ export default function Desktop() {
               >
                 source codes: https://github.com/ozanbalcii/_oBoApp
               </a>
-              <ul className="list-none text-[17px]" >
+              <ul className="list-none text-[17px]">
                 reminders:
                 <li>the submenu works like on mac,</li>
                 <li>twill be active in the next times</li>

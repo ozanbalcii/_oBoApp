@@ -6,11 +6,6 @@ import Header from "../components/Header/Header";
 import Linkedin from '../pages/applications/linkedin/Linkedin'
 
 export default function MasterLayout() {
-  const [linkedinVisible, setLinkedinVisible] = useState(false);
-
-  const handleButtonClick = () => {
-    setLinkedinVisible(!linkedinVisible);
-  };
   return (
     <div className="bg-no-repeat sm:bg-gradient-to-r sm:from-purple-900 sm:via-[#3311A7] sm:to-[#3311A7]">
       <Header />

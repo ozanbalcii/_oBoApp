@@ -13,13 +13,13 @@ import {
   AppOpenCloseContext,
   useAppOpenCloseContext,
 } from "../../../contexts/trashContexts/AppOpenClose";
-import 'animate.css/animate.min.css'; 
+import "animate.css/animate.min.css";
 
 export default function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);
   const [iconAppear, setIconAppear] = React.useState(false);
 
-  const { handleButtonClick, handleButtonWait, open,  } =
+  const { open, setType, handleCloseLinkedin, setClose } =
     useAppOpenCloseContext(AppOpenCloseContext);
 
   const handleExpandClick = () => {
@@ -31,11 +31,14 @@ export default function RecipeReviewCard() {
 
   const handleOpenIcon = () => {
     setIconAppear(!iconAppear);
-    console.log(iconAppear, "iconAppear");
   };
 
   return (
-    <div className= {`flex justify-center transition-all ${open ? 'animate__animated animate__backInUp ' : ''}   `}>
+    <div
+      className={`flex justify-center transition-all ${
+        open ? "animate__animated animate__backInUp " : ""
+      }`}
+    >
       <div
         className="scroll-container"
         style={{ maxHeight: "800px", overflowY: "auto" }}
@@ -43,12 +46,19 @@ export default function RecipeReviewCard() {
         <Card sx={{ maxWidth: 1600 }}>
           <div className="bg-[#09060f] flex items-center gap-2 p-1 pl-4 pt-1 pb-1">
             <Button
-              onClick={handleButtonClick}
+              onClick={() => {
+                setType("linkedin");
+                handleCloseLinkedin();
+              }}
               className="bg-slate-700 hover:bg-red-400 rounded-full w-[14px] h-[9px]"
             />
-            <Button 
-              onClick={handleButtonClick}
-            className="bg-slate-700 hover:bg-yellow-400  rounded-full w-[14px] h-[9px] flex items-center justify-center"/>
+            <Button
+              onClick={() => {
+                setType("linkedin");
+                handleCloseLinkedin();
+              }}
+              className="bg-slate-700 hover:bg-yellow-400  rounded-full w-[14px] h-[9px] flex items-center justify-center"
+            />
             <Button
               onMouseEnter={handleOpenIcon}
               className="relative bg-slate-700 hover:bg-green-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
