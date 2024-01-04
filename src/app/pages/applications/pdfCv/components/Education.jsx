@@ -9,12 +9,11 @@ export default function Education() {
   return (
     <>
       {info?.map((item) => (
-        <div className=" CVborder p-4 !pb-0 ">
-          <div className="text-darky font-bold p-4 !pb-0  text-[20px]">
-            PERSONAL INFO
+        <div className="!pb-0 pt-4 ">
+          <div className="text-darky font-bold !pb-0 border-b-[3px] border-darky text-[20px]">
+          EDUCATION
           </div>
-          <hr />
-          <div className="p-4 !pb-0 ">
+          <div className=" !pb-0 ">
             <div>
               {item?.education?.map((edu) => (
                 <>

@@ -11,13 +11,12 @@ import {
   AppOpenCloseContext,
   useAppOpenCloseContext,
 } from "../../../contexts/trashContexts/AppOpenClose";
-import PersonalInfo from "./components/PersonalInfo";
-import Education from "./components/Education";
+import Pdf from "./components/Pdf";
 
 export default function PdfCv() {
   const [expanded, setExpanded] = React.useState(false);
   const [iconAppear, setIconAppear] = React.useState(false);
-  const { open, setType, handleButtonPdf } =
+  const { close, handleButtonPdf } =
     useAppOpenCloseContext(AppOpenCloseContext);
   const { loading, info } = usePdfCvContext(PdfCvContext);
   const handleExpandClick = () => {
@@ -31,14 +30,14 @@ export default function PdfCv() {
   return (
     <div
       className={`flex justify-center transition-all ${
-        open ? "animate__animated animate__backInUp " : ""
+        close ? "animate__animated animate__backInUp " : ""
       }`}
     >
       <div
         className="scroll-container"
         style={{ maxHeight: "800px", overflowY: "auto" }}
       >
-        <Card sx={{ maxWidth: 1900 }}>
+      <Card sx={{ maxWidth: 1600 }}>
           <div className="bg-[#09060f] flex items-center gap-2 p-1 pl-4 pt-1 pb-1">
             <Button
               onClick={() => {
@@ -144,8 +143,7 @@ export default function PdfCv() {
               <Button className="bg-green-600 text-white">Download</Button>
             </div>
           </div>
-          <PersonalInfo />
-          <Education />
+          <Pdf />
           <Collapse
             className="bg-[#F4F2EE]"
             in={expanded}
@@ -154,10 +152,7 @@ export default function PdfCv() {
           >
             <CardContent className="!pt-0">
               <Typography>
-                <div className="grid grid-cols-12 ">
-                  <div className="col-span-4 bg-red-300 p-4">1</div>
-                  <div className="col-span-8 pt-4 bg-blue-300 !pl-0">2</div>
-                </div>
+              <Pdf />
               </Typography>
             </CardContent>
           </Collapse>

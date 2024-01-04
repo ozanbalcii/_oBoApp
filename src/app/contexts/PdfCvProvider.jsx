@@ -35,6 +35,13 @@ export const PdfCvProvider = ({ children }) => {
           job: edu?.job ? edu?.job : "-",
           graduationDate: edu?.graduationDate ? edu?.graduationDate : "-",
         })),
+        workExperience: item?.workExperience?.map((wor) => ({
+          id: wor?.id,
+          job: wor?.job ? wor?.job : "-",
+          company: wor?.company ? wor?.company : "-",
+          date: wor?.date ? wor?.date : "-",
+          desc: wor?.desc ? wor?.desc : "",
+        })),
       }));
 
       setInfo(result);

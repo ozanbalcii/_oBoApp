@@ -27,5 +27,35 @@ export const ozanBalcipdf = [
         graduationDate: "2017- 20.07.2022 ",
       },
     ],
+    workExperience: [
+      {
+        id: 1,
+        job: 'Electrical and Electronical Engineering Intern',
+        company: "Neta Norm Elektrik",
+        date: "2021 (July-August)",
+        desc: ''
+      },
+      {
+        id: 2,
+        job: 'Electrical and Electronical Engineering Intern',
+        company: "Etkim",
+        date: "2021 (August-September)",
+        desc: ''
+      },
+      {
+        id: 3,
+        job: 'Electrical and Electronical Engineering Intern',
+        company: "Meditera(Altera)",
+        date: "2021-2022 (October-January)",
+        desc: ''
+      },
+      {
+        id: 4,
+        job: 'Front-end Developer',
+        company: "Netpus",
+        date: "2023 (September-December)",
+        desc: "In the course of this work experience, I undertook various responsibilities and utilized the following technologies: React, Tailwind, Bootstrap, Git-GitHub, and ChatGPT. My tasks involved developing, repairing, and implementing external additions for large companies admin dashboards, management systems, payment systems, and company pages using React, Tailwind and Bootstrap. I also created Figma designs with CSS, incorporating Tailwind and Bootstrap. Throughout these endeavors, I achieved seamless teamwork and effective communication between back-end and front-end developers. I successfully projects created on customer demands. Faster coding ability through the use of documentation research and AI technologies.",
+      },
+    ],
   },
 ];

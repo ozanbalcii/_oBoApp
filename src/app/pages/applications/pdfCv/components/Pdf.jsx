@@ -4,16 +4,18 @@ import {
   usePdfCvContext,
 } from "../../../../contexts/PdfCvProvider";
 import SVG from "../../../../assets/svg/SVG";
+import Education from "./Education";
+import WorkExperience from "./WorkExperience";
 
-export default function PersonalInfo() {
+export default function Pdf() {
   const { loading, info } = usePdfCvContext(PdfCvContext);
 
   return (
     <>
       {info?.map((item) => (
-        <div className=" CVborder grid grid-cols-12 p-4 !pb-0">
+        <div className="CVborder grid grid-cols-12 p-4 !pb-0">
           <div className="col-span-4 p-4">
-            <div className="text-darky font-bold text-[20px]">
+            <div className="text-darky font-bold border-b-[3px] border-darky text-[20px]">
               PERSONAL INFO
             </div>
             <hr className="text-black [4px]" />
@@ -71,27 +73,31 @@ export default function PersonalInfo() {
                     <div className=" pt-[3px] font-normal">
                       <div>{data?.dateOfBirth}</div>
                     </div>
+       
                
                   </div>
                 </>
               ))}
+                 <Education />
+                 
             </>
           </div>
-          <div className="col-span-8 pt-4 bg-[#EAEBEC] pl-5">
+          <div className="col-span-8 p-5 pr-[100px] bg-[#EAEBEC]">
             {item?.summary?.map((sum) => (
               <div>
                 <div
                   key={sum?.id}
-                  className="text-darky font-[300] text-[50px] pl-5 !pb-0 !pt-0"
+                  className="text-darky font-[300] text-[50px] !pb-0 !pt-0"
                 >
                   <div>{sum?.nameSurname} </div>
-                  <div className="text-[19px] pl-2 ">{sum?.jobTitle}</div>
-                  <div className="text-[15px] pl-2 pr-2 pt-3 text-darky ">
+                  <div className="text-[19px]  ">{sum?.jobTitle}</div>
+                  <div className="text-[15px]  pr-2 pt-3 text-darky ">
                     {sum?.text}
                   </div>
                 </div>
               </div>
             ))}
+            <WorkExperience />
           </div>
         </div>
       ))}

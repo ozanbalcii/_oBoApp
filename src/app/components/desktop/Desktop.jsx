@@ -30,7 +30,7 @@ export default function Desktop() {
           <div className="pl-6">
             <Button
               className={`flex flex-col text-white items-center ${
-                open ? "hidden" : "flex"
+                (open || close) ? "hidden" : "flex"
               }`}
               onClick={() => {
                 handleButtonLinkedin();
@@ -50,7 +50,7 @@ export default function Desktop() {
           <div className="pl-6">
             <Button
               className={`flex flex-col text-white items-center  ${
-                open ? "hidden" : "flex"
+                (open || close)  ? "hidden" : "flex"
               }`}
               onClick={() => {
                 handleButtonPdf();
