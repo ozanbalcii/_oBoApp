@@ -24,7 +24,6 @@ export default function Apple() {
         }
         return null; 
       }).filter(Boolean); 
-      console.log(results, 'resultsresults');
       setButtonName(results);
     } catch (error) {
       console.log("An error occurred", error);

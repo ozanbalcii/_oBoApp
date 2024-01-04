@@ -19,7 +19,7 @@ export default function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);
   const [iconAppear, setIconAppear] = React.useState(false);
 
-  const { open, setType, handleCloseLinkedin, setClose } =
+  const { open, setType, handleButtonLinkedin} =
     useAppOpenCloseContext(AppOpenCloseContext);
 
   const handleExpandClick = () => {
@@ -48,14 +48,14 @@ export default function RecipeReviewCard() {
             <Button
               onClick={() => {
                 setType("linkedin");
-                handleCloseLinkedin();
+                handleButtonLinkedin();
               }}
               className="bg-slate-700 hover:bg-red-400 rounded-full w-[14px] h-[9px]"
             />
             <Button
               onClick={() => {
                 setType("linkedin");
-                handleCloseLinkedin();
+                handleButtonLinkedin();
               }}
               className="bg-slate-700 hover:bg-yellow-400  rounded-full w-[14px] h-[9px] flex items-center justify-center"
             />

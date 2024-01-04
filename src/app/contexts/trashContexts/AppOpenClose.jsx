@@ -9,26 +9,28 @@ export function AppOpenCloseProvider({ children }) {
 
   const [cvOpen, setCvOpen] = useState(false);
 
-  //! To open the page with one click: I need to write 2 separate functions.
-  const handleButtonClick = () => {
-    switch (type) {
-      case "linkedin":
+  //! mybe..
+  // const handleButtonClick = () => {
+  //   switch (type) {
+  //     case "linkedin":
+  //       setOpen((prevOpen) => !prevOpen);
+  //       break;
+  //     case "cv":
+  //       setClose((prevCvClose) => !prevCvClose);
+  //       break;
+  //     default:
+  //   }
+  // };
+
+  const handleButtonLinkedin = () => {
         setOpen((prevOpen) => !prevOpen);
-        break;
-      case "cv":
-        setClose((prevCvClose) => !prevCvClose);
-        break;
-      default:
     }
-  };
 
-  const handleCloseLinkedin = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
 
-  const handleClosePdf = () => {
+  const handleButtonPdf = () => {
     setClose((prevClose) => !prevClose);
   };
+
 
   const data = {
     setType,
@@ -37,9 +39,8 @@ export function AppOpenCloseProvider({ children }) {
     setOpen,
     cvOpen,
     setCvOpen,
-    handleButtonClick,
-    handleCloseLinkedin,
-    handleClosePdf,
+    handleButtonLinkedin,
+    handleButtonPdf,
     setClose,
     close,
   };

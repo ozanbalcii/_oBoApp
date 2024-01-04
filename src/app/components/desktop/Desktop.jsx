@@ -16,13 +16,12 @@ import PdfCv from "../../pages/applications/pdfCv/PdfCv";
 
 export default function Desktop() {
   const { setShowsubMenu } = useSubmenuContext(SubmenuContext);
-  const { handleButtonClick, open, setType, cvOpen, close } =
+  const { handleButtonLinkedin, handleButtonPdf, open, cvOpen, close } =
     useAppOpenCloseContext(AppOpenCloseContext);
 
   const handleClose = () => {
     setShowsubMenu(false);
   };
-  console.log(close, "closeeee");
 
   return (
     <div className="w-full h-screen bg-no-repeat sm:bg-gradient-to-r sm:from-purple-900 sm:via-[#3311A7] sm:to-[#3311A7]">
@@ -34,11 +33,7 @@ export default function Desktop() {
                 open ? "hidden" : "flex"
               }`}
               onClick={() => {
-                setType("linkedin");
-                handleButtonClick();
-                setTimeout(() => {
-                  setType("");
-                }, 1000);
+                handleButtonLinkedin();
               }}
             >
               <SVG
@@ -58,11 +53,7 @@ export default function Desktop() {
                 open ? "hidden" : "flex"
               }`}
               onClick={() => {
-                handleButtonClick();
-                setType("cv");
-                setTimeout(() => {
-                  setType("");
-                }, 1000);
+                handleButtonPdf();
               }}
             >
               <SVG
@@ -79,52 +70,58 @@ export default function Desktop() {
       {open && <Linkedin className="z-40" />}
       {close && <PdfCv className="z-40" />}
 
-      {!open || close && (
-        <div className="flex justify-center text-white">
-          <div className="border p-5 rounded-lg">
-            <div className="font-bold text-[20px] text-center">
-              InfoBox
-              <hr />
-              <a
-                href="https://github.com/ozanbalcii/_oBoApp"
-                target="_blank"
-                className="text-[22px] text-green-600 "
-              >
-                source codes: https://github.com/ozanbalcii/_oBoApp
-              </a>
-              <ul className="list-none text-[17px]">
-                reminders:
-                <li>the submenu works like on mac,</li>
-                <li>twill be active in the next times</li>
-                <span>(for example, you can click the apple button)</span>
-              </ul>
-            </div>
-            <div className="font-cantarell pt-2">
-              / to be added /
-              <li>linkedin etc apps will be further developed, </li>
-              <li>the submenu will be beautified, </li>
-              <li>search bar should be improved, </li>
-              <li>
-                The white background bug will be fixed when Google console is
-                opened.
-              </li>
-              <li>Loading button, loading effect/page.</li>
-              <li>More applications (like LinkedIn...).</li>
-              <li>Responsive design will be more stable.</li>
-              <li>Header menu design will be more corrected.</li>
-              <li>Header menu design will be further refined.</li>
-              <li>Redux can be added to the project.</li>
-              <li>Draggable Item maybe can be added for Desktop.</li>
-              <div className="text-[22px] text-red-500">
-                add what has been done
+      {/* {(!open || !close) && (
+        <>
+          <div className="z-0 bg-white text-darky">
+            {" "}
+            2 there is an error when the page opens, I need to fix it.
+          </div>
+          <div className="flex justify-center text-white">
+            <div className="border p-5 rounded-lg">
+              <div className="font-bold text-[20px] text-center">
+                InfoBox
+                <hr />
+                <a
+                  href="https://github.com/ozanbalcii/_oBoApp"
+                  target="_blank"
+                  className="text-[22px] text-green-600 "
+                >
+                  source codes: https://github.com/ozanbalcii/_oBoApp
+                </a>
+                <ul className="list-none text-[17px]">
+                  reminders:
+                  <li>the submenu works like on mac,</li>
+                  <li>twill be active in the next times</li>
+                  <span>(for example, you can click the apple button)</span>
+                </ul>
               </div>
-              <div className="text-[22px] text-red-500">
-                documentation about the project should be added.
+              <div className="font-cantarell pt-2">
+                / to be added /
+                <li>linkedin etc apps will be further developed, </li>
+                <li>the submenu will be beautified, </li>
+                <li>search bar should be improved, </li>
+                <li>
+                  The white background bug will be fixed when Google console is
+                  opened.
+                </li>
+                <li>Loading button, loading effect/page.</li>
+                <li>More applications (like LinkedIn...).</li>
+                <li>Responsive design will be more stable.</li>
+                <li>Header menu design will be more corrected.</li>
+                <li>Header menu design will be further refined.</li>
+                <li>Redux can be added to the project.</li>
+                <li>Draggable Item maybe can be added for Desktop.</li>
+                <div className="text-[22px] text-red-500">
+                  add what has been done
+                </div>
+                <div className="text-[22px] text-red-500">
+                  documentation about the project should be added.
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        </>
+      )} */}
 
       {/* <DraggableItem /> */}
       <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full pl-[4.063rem] pr-[4.063rem] pb-[0.313rem] transition-all">

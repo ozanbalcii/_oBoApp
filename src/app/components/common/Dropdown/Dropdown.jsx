@@ -13,7 +13,6 @@ export default function CustomDropdown({ loading, buttonName}) {
       console.log(`Clicked on ${menuItem}`);
     };
   };
-  console.log(buttonName?.map(item =>{item.label}), "buttonName:");
 
   const blue = {
     50: "#F0F7FF",
