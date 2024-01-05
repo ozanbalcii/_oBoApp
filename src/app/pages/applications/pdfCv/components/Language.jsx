@@ -5,7 +5,7 @@ export default function Language() {
   return (
     <>
       {info?.map((item) => (
-        <>
+        <div className="pb-4">
            <div className="text-darky font-bold !pb-0 pt-4 border-b-[3px] border-darky text-[20px]">
           LANGUAGE
           </div>
@@ -19,7 +19,7 @@ export default function Language() {
               </div>
             </div>
           ))}
-        </>
+        </div>
       ))}
     </>
   );

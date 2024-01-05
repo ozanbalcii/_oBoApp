@@ -12,6 +12,7 @@ import Certificates from "./Certificates";
 import Language from "./Language";
 import Hobbies from "./Hobbies";
 import References from "./References";
+import Projects from "./Projects";
 
 export default function Pdf() {
   const { loading, info } = usePdfCvContext(PdfCvContext);
@@ -75,8 +76,8 @@ export default function Pdf() {
                   </div>
                   <div className="flex text-[17px] gap-1 items-center pt-3">
                     <div className="font-bold  ">Date of birth:</div>
-                    <div className=" pt-[3px] font-normal">
-                      <div>{data?.dateOfBirth}</div>
+                    <div className="  font-normal">
+                    {data?.dateOfBirth}
                     </div>
                   </div>
                 </>
@@ -92,6 +93,7 @@ export default function Pdf() {
           <div className="col-span-8 p-5 pr-[100px] bg-[#EAEBEC]">
             <Summary />
             <WorkExperience />
+            <Projects />
           </div>
         </div>
       ))}

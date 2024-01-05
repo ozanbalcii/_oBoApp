@@ -8,7 +8,7 @@ export default function References() {
   return (
     <>
       {info?.map((item) => (
-        <>
+        <div className="pb-4">
           <div className="text-darky font-bold !pb-0 pt-4 border-b-[3px] border-darky text-[20px]">
             REFERENCES
           </div>
@@ -25,7 +25,7 @@ export default function References() {
           <div className="font-bold text-[15px] pt-2">
             A number will be provided if necessary.
           </div>
-        </>
+        </div>
       ))}
     </>
   );

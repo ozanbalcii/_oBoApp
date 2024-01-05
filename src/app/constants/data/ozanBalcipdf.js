@@ -159,5 +159,33 @@ export const ozanBalcipdf = [
       jobTitle: "Maintenance and Repair Manager - Meditera",
      }
     ],
+    projects: [
+       {
+        id: '0',
+        title: "Altınordu - Management System, Admin Dashboard (React, TailwindCSS)",
+       },
+       {
+        id: '1',
+        title: "Paropara - Admin Dashboard (Tailwind, jQuery)",
+       },
+       {
+        id: '2',
+        title: "Ucuzyolu - Website (React, TailwindCSS)",
+       },
+       {
+        id: '3',
+        title: "E-Invoice Portal - Payment and Management system (React, Bootstrap)",
+       },
+       {
+        id: '4',
+        title: "I continue to develop my projects.",
+       }
+     ],
+     projectsInfo: [
+      {
+        text1: "https://github.com/ozanbalcii",
+        text2: "https://github.com/ozanbalcii/_oBoApp",
+       },
+     ]
   },
 ];

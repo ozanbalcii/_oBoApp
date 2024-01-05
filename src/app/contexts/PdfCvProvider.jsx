@@ -63,6 +63,15 @@ export const PdfCvProvider = ({ children }) => {
           nameSurname: ref?.nameSurname ? ref?.nameSurname : "-",
           jobTitle: ref?.jobTitle ? ref?.jobTitle : "-",
         })),
+        projects: item?.projects?.map((proj) => ({
+          id: proj?.id,
+          title: proj?.title ? proj?.title : "-",
+        })),
+        projectsInfo: item?.projectsInfo?.map((projInfo) => ({
+          id: projInfo?.id,
+          text1: projInfo?.text1 ? projInfo?.text1 : "-",
+          text2: projInfo?.text2 ? projInfo?.text2 : "-",
+        })),
       }));
       setInfo(result);
     } catch (error) {}

@@ -9,7 +9,7 @@ export default function Education() {
   return (
     <>
       {info?.map((item) => (
-        <div className="!pb-0 pt-4">
+        <div className="pt-4">
           <div className="text-darky font-bold !pb-0 border-b-[3px] border-darky text-[20px]">
             EDUCATION
           </div>
