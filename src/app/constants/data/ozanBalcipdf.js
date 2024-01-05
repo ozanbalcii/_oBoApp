@@ -29,33 +29,135 @@ export const ozanBalcipdf = [
     ],
     workExperience: [
       {
-        id: 1,
+        id: 0,
         job: 'Electrical and Electronical Engineering Intern',
         company: "Neta Norm Elektrik",
         date: "2021 (July-August)",
         desc: ''
       },
       {
-        id: 2,
+        id: 1,
         job: 'Electrical and Electronical Engineering Intern',
         company: "Etkim",
         date: "2021 (August-September)",
         desc: ''
       },
       {
-        id: 3,
+        id: 2,
         job: 'Electrical and Electronical Engineering Intern',
         company: "Meditera(Altera)",
         date: "2021-2022 (October-January)",
         desc: ''
       },
       {
-        id: 4,
+        id: 3,
         job: 'Front-end Developer',
         company: "Netpus",
         date: "2023 (September-December)",
         desc: "In the course of this work experience, I undertook various responsibilities and utilized the following technologies: React, Tailwind, Bootstrap, Git-GitHub, and ChatGPT. My tasks involved developing, repairing, and implementing external additions for large companies admin dashboards, management systems, payment systems, and company pages using React, Tailwind and Bootstrap. I also created Figma designs with CSS, incorporating Tailwind and Bootstrap. Throughout these endeavors, I achieved seamless teamwork and effective communication between back-end and front-end developers. I successfully projects created on customer demands. Faster coding ability through the use of documentation research and AI technologies.",
       },
+    ],
+    skills: [
+      {
+        id: "0",
+        title: "React",
+      },
+      {
+        id: "1",
+        title: "Tailwind",
+      },
+      {
+        id: "2",
+        title: "Bootstrap",
+      },
+      {
+        id: "3",
+        title: "Git-GitHub",
+      },
+      {
+        id: "4",
+        title: "Redux",
+      },
+      {
+        id: "5",
+        title: "HTML-CSS",
+      },
+      {
+        id: "6",
+        title: "Web Development",
+      },
+      {
+        id: "7",
+        title: "Postman",
+      },
+      {
+        id: "8",
+        title: "Firebase (Base Level)",
+      },
+      {
+        id: "9",
+        title: "Python (Base Level)",
+      },
+      {
+        id: "10",
+        title: "NodeJs (Base Level)",
+      },
+      {
+        id: "11",
+        title: "MongoDB (Base Level)",
+      },
+    ],
+    certificates: [
+      {
+        id: '0',
+        title: "Udemy - JavaScript, HTML, CSS",
+        date: "Issued - Jul 2022",
+      },
+      {
+        id: '1',
+        title: " Udemy - Build Web Apps with React & Firebase",
+        date: "Issued - Jul 2023",
+      },
+      {
+        id:'2',
+        title: "Udemy - Python",
+        date: "Issued - Mar 2021",
+      },
+      {
+        id:'3',
+        title: "Udemy - English Course",
+        date: "Issued - Mar 2022",
+      },
+      {
+        id:'4',
+        title: "Amerikan Kültür - English Course",
+        date: "Issued - Mar 2022",
+      },
+ 
+    ],
+    language: [
+     {
+      id: '0',
+      title: "English - B2",
+     }
+    ],
+    hobbies: [
+     {
+      id: '0',
+      text: "Fitness, travel and technology",
+     }
+    ],
+    references: [
+     {
+      id: '1',
+      nameSurname: 'Muhteşem Kurt',
+      jobTitle: "Technical Advisor",
+     },
+     {
+      id: '1',
+      nameSurname: 'Hakan Sözer',
+      jobTitle: "Maintenance and Repair Manager - Meditera",
+     }
     ],
   },
 ];

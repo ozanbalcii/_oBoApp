@@ -6,10 +6,15 @@ import {
 import SVG from "../../../../assets/svg/SVG";
 import Education from "./Education";
 import WorkExperience from "./WorkExperience";
+import Summary from "./Summary";
+import Skills from "./Skills";
+import Certificates from "./Certificates";
+import Language from "./Language";
+import Hobbies from "./Hobbies";
+import References from "./References";
 
 export default function Pdf() {
   const { loading, info } = usePdfCvContext(PdfCvContext);
-
   return (
     <>
       {info?.map((item) => (
@@ -36,7 +41,7 @@ export default function Pdf() {
                       <SVG icon="envelop" size={17} />
                     </div>
                     <div className="text-[17px] pt-[3px] font-normal">
-                      <div>{data?.mail}</div>
+                      <a href={`mailto:${data?.mail}`}>{data?.mail}</a>
                     </div>
                   </div>
                   <div key={data?.id} className="flex gap-3 items-center pt-3">
@@ -73,30 +78,19 @@ export default function Pdf() {
                     <div className=" pt-[3px] font-normal">
                       <div>{data?.dateOfBirth}</div>
                     </div>
-       
-               
                   </div>
                 </>
               ))}
-                 <Education />
-                 
+              <Education />
+              <Skills />
+              <Certificates />
+              <Language />
+              <Hobbies />
+              <References />
             </>
           </div>
           <div className="col-span-8 p-5 pr-[100px] bg-[#EAEBEC]">
-            {item?.summary?.map((sum) => (
-              <div>
-                <div
-                  key={sum?.id}
-                  className="text-darky font-[300] text-[50px] !pb-0 !pt-0"
-                >
-                  <div>{sum?.nameSurname} </div>
-                  <div className="text-[19px]  ">{sum?.jobTitle}</div>
-                  <div className="text-[15px]  pr-2 pt-3 text-darky ">
-                    {sum?.text}
-                  </div>
-                </div>
-              </div>
-            ))}
+            <Summary />
             <WorkExperience />
           </div>
         </div>

@@ -20,22 +20,20 @@ export default function WorkExperience() {
                   <div key={edu?.id} className="flex-col">
                     <div className="flex gap-5 pt-1 ">
                       <div>
-                       <div className="flex gap-5">
-                        <div>
-                        <div className="pt-2">{edu?.job}</div>
+                        <div className="flex gap-5">
+                          <div>
+                            <div className="pt-2">{edu?.job}</div>
+                          </div>
+                          <div>
+                            <div className="pt-[8px]">{edu?.date}</div>
+                          </div>
                         </div>
-                        <div>
-                        <div className="pt-[8px]">{edu?.date}</div>
-
-                        </div>
-                       </div>
                         <div className="font-bold pb-2 border-b-[1px] border-darky">
                           {edu?.company}
                         </div>
                         <div className="font-bold pt-1">{edu?.desc}</div>
                       </div>
-                      <div>
-                      </div>
+                      <div></div>
                     </div>
                   </div>
                 </>

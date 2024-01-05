@@ -11,8 +11,6 @@ export const PdfCvProvider = ({ children }) => {
     try {
       setLoading(true);
       const person = await getOzanBalciInfos();
-      console.log(person);
-
       const result = person?.data?.map((item) => ({
         personalInfo: item?.personalInfo?.map((value) => ({
           id: value?.id,
@@ -42,8 +40,30 @@ export const PdfCvProvider = ({ children }) => {
           date: wor?.date ? wor?.date : "-",
           desc: wor?.desc ? wor?.desc : "",
         })),
+        skills: item?.skills?.map((skill) => ({
+          id: skill?.id,
+          title: skill?.title ? skill?.title : "-",
+        })),
+        certificates: item?.certificates?.map((cert) => ({
+          id: cert?.id,
+          title: cert?.title ? cert?.title : "-",
+          company: cert?.company ? cert?.company : "-",
+          date: cert?.date ? cert?.date : "-",
+        })),
+        language: item?.language?.map((lang) => ({
+          id: lang?.id,
+          title: lang?.title ? lang?.title : "-",
+        })),
+        hobbies: item?.hobbies?.map((hob) => ({
+          id: hob?.id,
+          text: hob?.text ? hob?.text : "-",
+        })),
+        references: item?.references?.map((ref) => ({
+          id: ref?.id,
+          nameSurname: ref?.nameSurname ? ref?.nameSurname : "-",
+          jobTitle: ref?.jobTitle ? ref?.jobTitle : "-",
+        })),
       }));
-
       setInfo(result);
     } catch (error) {}
   };

@@ -9,9 +9,9 @@ export default function Education() {
   return (
     <>
       {info?.map((item) => (
-        <div className="!pb-0 pt-4 ">
+        <div className="!pb-0 pt-4">
           <div className="text-darky font-bold !pb-0 border-b-[3px] border-darky text-[20px]">
-          EDUCATION
+            EDUCATION
           </div>
           <div className=" !pb-0 ">
             <div>
@@ -20,7 +20,7 @@ export default function Education() {
                   <div key={edu?.id} className="flex-col">
                     <div>{edu?.school}</div>
                     <div>{edu?.job}</div>
-                    <div className="">{edu?.graduationDate}</div>
+                    <div>{edu?.graduationDate}</div>
                   </div>
                 </>
               ))}
