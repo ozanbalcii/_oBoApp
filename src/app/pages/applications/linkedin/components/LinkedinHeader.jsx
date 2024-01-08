@@ -168,7 +168,7 @@ export default function LinkedinHeader() {
             sx={{ display: { xs: "none", sm: "block" } }}
           ></Typography>
 
-          <div className="flex items-center justify-center">
+          <div className="flex  items-center justify-center w-[1600px] z-50">
             {/* begin header left side  */}
             <div className="flex items-center justify-center p-2">
               <Button

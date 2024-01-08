@@ -14,12 +14,13 @@ import {
   useAppOpenCloseContext,
 } from "../../../contexts/trashContexts/AppOpenClose";
 import "animate.css/animate.min.css";
+import { AppBar } from "@mui/material";
 
 export default function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);
   const [iconAppear, setIconAppear] = React.useState(false);
 
-  const { open, setType, handleButtonLinkedin} =
+  const { open, setType, handleButtonLinkedin } =
     useAppOpenCloseContext(AppOpenCloseContext);
 
   const handleExpandClick = () => {
@@ -43,18 +44,17 @@ export default function RecipeReviewCard() {
         className="scroll-container"
         style={{ maxHeight: "800px", overflowY: "auto" }}
       >
+        
         <Card sx={{ maxWidth: 1600 }}>
           <div className="bg-[#09060f] flex items-center gap-2 p-1 pl-4 pt-1 pb-1">
             <Button
               onClick={() => {
-                setType("linkedin");
                 handleButtonLinkedin();
               }}
               className="bg-slate-700 hover:bg-red-400 rounded-full w-[14px] h-[9px]"
             />
             <Button
               onClick={() => {
-                setType("linkedin");
                 handleButtonLinkedin();
               }}
               className="bg-slate-700 hover:bg-yellow-400  rounded-full w-[14px] h-[9px] flex items-center justify-center"
@@ -77,6 +77,9 @@ export default function RecipeReviewCard() {
                 />
                 <text className="text-[15px] font-pFont ">Linkedin</text>
                 <Button
+                   onClick={() => {
+                    handleButtonLinkedin();
+                  }}
                   className="ml-auto"
                   icon={<SVG icon="x, cancel, close" size={11} />}
                 />

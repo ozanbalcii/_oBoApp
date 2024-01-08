@@ -73,6 +73,9 @@ export default function PdfCv() {
                 />
                 <text className="text-[15px] font-pFont ">ozanbalci.pdf</text>
                 <Button
+                   onClick={() => {
+                    handleButtonPdf();
+                  }}
                   className="ml-auto"
                   icon={<SVG icon="x, cancel, close" size={11} />}
                 />
@@ -152,7 +155,7 @@ export default function PdfCv() {
           >
             <CardContent className="!pt-0">
               <Typography>
-              <Pdf />
+                alsaopdsjı  
               </Typography>
             </CardContent>
           </Collapse>

@@ -11,7 +11,6 @@ import {
   AppOpenCloseContext,
   useAppOpenCloseContext,
 } from "../../contexts/trashContexts/AppOpenClose";
-import { useEffect } from "react";
 import PdfCv from "../../pages/applications/pdfCv/PdfCv";
 
 export default function Desktop() {

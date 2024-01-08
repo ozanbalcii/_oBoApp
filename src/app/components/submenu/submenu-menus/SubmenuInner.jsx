@@ -11,7 +11,7 @@ import {
 import Button from "../../common/Button";
 export default function SubmenuInner() {
   const { showsubMenu, setShowsubMenu } = useSubmenuContext(SubmenuContext);
-  const { open, handleButtonClick } =
+  const { open, close, handleButtonClick } =
     useAppOpenCloseContext(AppOpenCloseContext);
   const handleOpen = () => {
     setShowsubMenu(true);
@@ -39,6 +39,14 @@ export default function SubmenuInner() {
                     icon="linkedin"
                     className={`rounded-xl transition-all ${
                       open ? "border-[5px] border-yellow-400 " : ""
+                    }`}
+                  />
+                </Button>
+                <Button onClick={handleButtonClick} className={`rounded-xl `}>
+                  <SVG
+                    icon="document-file-pdf"
+                    className={`rounded-xl text-white transition-all ${
+                      close ? "border-[5px] border-yellow-400 " : ""
                     }`}
                   />
                 </Button>
