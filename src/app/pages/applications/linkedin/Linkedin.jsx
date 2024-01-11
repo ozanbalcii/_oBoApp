@@ -20,7 +20,7 @@ export default function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);
   const [iconAppear, setIconAppear] = React.useState(false);
 
-  const { open, setType, handleButtonLinkedin } =
+  const { open, handleButtonLinkedin } =
     useAppOpenCloseContext(AppOpenCloseContext);
 
   const handleExpandClick = () => {

@@ -5,6 +5,7 @@ import {
 
 import SubmenuWrapper from "../submenu/SubmenuWrapper";
 import Linkedin from "../../pages/applications/linkedin/Linkedin";
+
 import Button from "../common/Button";
 import SVG from "../../assets/svg/SVG";
 import {
@@ -12,11 +13,18 @@ import {
   useAppOpenCloseContext,
 } from "../../contexts/trashContexts/AppOpenClose";
 import PdfCv from "../../pages/applications/pdfCv/PdfCv";
+import VsCode from "../../pages/applications/vsCode/VsCode";
 
 export default function Desktop() {
   const { setShowsubMenu } = useSubmenuContext(SubmenuContext);
-  const { handleButtonLinkedin, handleButtonPdf, open, cvOpen, close } =
-    useAppOpenCloseContext(AppOpenCloseContext);
+  const {
+    handleButtonLinkedin,
+    handleButtonPdf,
+    open,
+    handleButtonVsCode,
+    close,
+    vsCodeOpen,
+  } = useAppOpenCloseContext(AppOpenCloseContext);
 
   const handleClose = () => {
     setShowsubMenu(false);
@@ -29,7 +37,7 @@ export default function Desktop() {
           <div className="pl-6">
             <Button
               className={`flex flex-col text-white items-center ${
-                (open || close) ? "hidden" : "flex"
+                open || close || vsCodeOpen ? "hidden" : "flex"
               }`}
               onClick={() => {
                 handleButtonLinkedin();
@@ -49,7 +57,7 @@ export default function Desktop() {
           <div className="pl-6">
             <Button
               className={`flex flex-col text-white items-center  ${
-                (open || close)  ? "hidden" : "flex"
+                open || close || vsCodeOpen ? "hidden" : "flex"
               }`}
               onClick={() => {
                 handleButtonPdf();
@@ -64,10 +72,30 @@ export default function Desktop() {
             </Button>
           </div>
         </div>
+        <div className=" pt-12 ">
+          <div className="pl-6">
+            <Button
+              className={`flex flex-col text-white items-center  ${
+                open || close || vsCodeOpen ? "hidden" : "flex"
+              }`}
+              onClick={() => {
+                handleButtonVsCode();
+              }}
+            >
+              <SVG
+                icon="vsCode"
+                size={55}
+                className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mt-2 rounded-xl"
+              />
+              <div className="!font-normal pt-[6px] ">vsCode</div>
+            </Button>
+          </div>
+        </div>
       </div>
 
       {open && <Linkedin className="z-40" />}
       {close && <PdfCv className="z-40" />}
+      {vsCodeOpen && <VsCode className="z-40" />}
 
       {/* {(!open || !close) && (
         <>

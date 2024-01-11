@@ -6,6 +6,7 @@ export function AppOpenCloseProvider({ children }) {
   const [type, setType] = useState("");
   const [open, setOpen] = useState(false);
   const [close, setClose] = useState(false);
+  const [vsCodeOpen, setVsCodeOpen] = useState(false);
 
   const [cvOpen, setCvOpen] = useState(false);
 
@@ -26,9 +27,12 @@ export function AppOpenCloseProvider({ children }) {
         setOpen((prevOpen) => !prevOpen);
     }
 
-
   const handleButtonPdf = () => {
     setClose((prevClose) => !prevClose);
+  };
+
+  const handleButtonVsCode = () => {
+    setVsCodeOpen((prevVsCodeOpen) => !prevVsCodeOpen);
   };
 
 
@@ -36,13 +40,12 @@ export function AppOpenCloseProvider({ children }) {
     setType,
     type,
     open,
-    setOpen,
     cvOpen,
-    setCvOpen,
     handleButtonLinkedin,
     handleButtonPdf,
-    setClose,
+    handleButtonVsCode,
     close,
+    vsCodeOpen,
   };
 
   return (

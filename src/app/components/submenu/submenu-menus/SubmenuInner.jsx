@@ -9,9 +9,10 @@ import {
   useAppOpenCloseContext,
 } from "../../../contexts/trashContexts/AppOpenClose";
 import Button from "../../common/Button";
+
 export default function SubmenuInner() {
   const { showsubMenu, setShowsubMenu } = useSubmenuContext(SubmenuContext);
-  const { open, close, handleButtonClick } =
+  const { open, close, handleButtonPdf, handleButtonLinkedin } =
     useAppOpenCloseContext(AppOpenCloseContext);
   const handleOpen = () => {
     setShowsubMenu(true);
@@ -34,7 +35,12 @@ export default function SubmenuInner() {
                   <SVG icon="finder" className={"rounded-xl"} />
                 </Button>
 
-                <Button onClick={handleButtonClick} className={`rounded-xl `}>
+                <Button
+                  onClick={() => {
+                    handleButtonLinkedin();
+                  }}
+                  className={`rounded-xl `}
+                >
                   <SVG
                     icon="linkedin"
                     className={`rounded-xl transition-all ${
@@ -42,7 +48,12 @@ export default function SubmenuInner() {
                     }`}
                   />
                 </Button>
-                <Button onClick={handleButtonClick} className={`rounded-xl `}>
+                <Button
+                  onClick={() => {
+                    handleButtonPdf();
+                  }}
+                  className={`rounded-xl `}
+                >
                   <SVG
                     icon="document-file-pdf"
                     className={`rounded-xl text-white transition-all ${
@@ -50,6 +61,11 @@ export default function SubmenuInner() {
                     }`}
                   />
                 </Button>
+                
+                <Button className="rounded-lg ">
+                  <SVG icon="vsCode" className={"rounded-xl bg-white p-2"} />
+                </Button>
+
                 <div className=" rounded-lg ">
                   <SVG icon="spotify" className={"rounded-xl"} />
                 </div>
@@ -59,9 +75,7 @@ export default function SubmenuInner() {
                 <div className="rounded-lg ">
                   <SVG icon="github" className={"rounded-xl"} />
                 </div>
-                <div className="rounded-lg ">
-                  <SVG icon="vsCode" className={"rounded-xl bg-white p-2"} />
-                </div>
+            
               </div>
             </motion.div>
           </div>
