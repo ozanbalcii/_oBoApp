@@ -72,38 +72,42 @@ export const ozanBalcipdf = [
       },
       {
         id: "3",
-        title: "Git-GitHub",
+        title: "Mui Library",
       },
       {
         id: "4",
-        title: "Redux",
+        title: "Git-GitHub",
       },
       {
         id: "5",
-        title: "HTML-CSS",
+        title: "Redux",
       },
       {
         id: "6",
-        title: "Web Development",
+        title: "HTML-CSS",
       },
       {
         id: "7",
-        title: "Postman",
+        title: "Web Development",
       },
       {
         id: "8",
-        title: "Firebase (Base Level)",
+        title: "Postman",
       },
       {
         id: "9",
-        title: "Python (Base Level)",
+        title: "Firebase (Base Level)",
       },
       {
         id: "10",
-        title: "NodeJs (Base Level)",
+        title: "Python (Base Level)",
       },
       {
         id: "11",
+        title: "NodeJs (Base Level)",
+      },
+      {
+        id: "12",
         title: "MongoDB (Base Level)",
       },
     ],

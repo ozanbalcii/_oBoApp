@@ -4,6 +4,8 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import Button from "../../../../components/common/Button";
+import SVG from "../../../../assets/svg/SVG";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -47,68 +49,80 @@ export default function VerticalTabs() {
   return (
     <Box
       className="bg-[#333333] text-white"
-      sx={{ flexGrow: 1, display: "flex", height: 524 }}
+      sx={{ flexGrow: 1, display: "flex", height: 664, width: 550 }}
     >
-      <Tabs
-        orientation="vertical"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        sx={{ borderLeft: 1, borderColor: "divider" }}
-      >
-        <Tab
-          sx={{
-            color: "#D1D5DA",
-            "&:hover": {
-              color: "white",
-            },
-          }}
-          label="Item One"
-          {...a11yProps(0)}
-        />
-        <Tab
-          sx={{
-            color: "#D1D5DA",
-            "&:hover": {
-              color: "white",
-            },
-          }}
-          label="Item Two"
-          {...a11yProps(1)}
-        />
-        <Tab
-          sx={{
-            color: "#D1D5DA",
-            "&:hover": {
-              color: "white",
-            },
-          }}
-          label="Item Three"
-          {...a11yProps(2)}
-        />
-        <Tab
-          sx={{
-            color: "#D1D5DA",
-            "&:hover": {
-              color: "white",
-            },
-          }}
-          label="Item Four"
-          {...a11yProps(3)}
-        />
-        <Tab
-          sx={{
-            color: "#D1D5DA",
-            "&:hover": {
-              color: "white",
-            },
-          }}
-          label="Item Five"
-          {...a11yProps(4)}
-        />
-      </Tabs>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Tabs
+          orientation="vertical"
+          variant="scrollable"
+          value={value}
+          onChange={handleChange}
+          sx={{ borderLeft: 1, borderColor: "divider" }}
+        >
+          <Tab
+            sx={{
+              color: "#D1D5DA",
+              "&:hover": {
+                color: "white",
+              },
+            }}
+            icon={<SVG icon="documents" size={20} />}
+            {...a11yProps(0)}
+          />
+          <Tab
+            sx={{
+              color: "#D1D5DA",
+              "&:hover": {
+                color: "white",
+              },
+            }}
+            icon={<SVG icon="search" size={20} />}
+            {...a11yProps(1)}
+          />
+          <Tab
+            sx={{
+              color: "#D1D5DA",
+              "&:hover": {
+                color: "white",
+              },
+            }}
+            icon={<SVG icon="branch" size={20} />}
+            {...a11yProps(2)}
+          />
+          <Tab
+            sx={{
+              color: "#D1D5DA",
+              "&:hover": {
+                color: "white",
+              },
+            }}
+            icon={<SVG icon="bug" size={20} />}
+            {...a11yProps(3)}
+          />
+          <Tab
+            sx={{
+              color: "#D1D5DA",
+              "&:hover": {
+                color: "white",
+              },
+            }}
+            icon={<SVG icon="puzzle" size={20} />}
+            {...a11yProps(4)}
+          />
+          <Tab
+            sx={{
+              color: "#D1D5DA",
+              "&:hover": {
+                color: "white",
+              },
+            }}
+            icon={<SVG icon="folder" size={20} />}
+            {...a11yProps(4)}
+          />
+        </Tabs>{" "}
+      </div>
 
-      <div className="bg-[#252526] text-white">
+      <div className="bg-[#252526] text-white w-full">
         <TabPanel value={value} index={0}>
           Item One
         </TabPanel>
