@@ -7,8 +7,13 @@ https://mui.com/material-ui/react-drawer/
 https://icomoon.io/app/#/select/image
 
 
-/ to be added  /
+** important things to fix:
+-  structure of context folder,
 
+
+
+/ to be added  /
+- table ( POST, DELETE, UPDATE, GET requests)
 - linkedin etc apps will be further developed,
 - the submenu will be beautified,
 - search bar should be improved,

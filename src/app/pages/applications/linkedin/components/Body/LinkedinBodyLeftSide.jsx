@@ -19,9 +19,9 @@ export default function LinkedinBodyLeftSide() {
         <Experience />
         <Education />
         <LicensesCertifications />
-         <Skills /> 
-         <Languages /> 
-         <Interests /> 
+        <Skills />
+        <Languages />
+        <Interests />
       </div>
     </>
   );

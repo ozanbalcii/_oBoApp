@@ -14,7 +14,6 @@ import {
   useAppOpenCloseContext,
 } from "../../../contexts/trashContexts/AppOpenClose";
 import "animate.css/animate.min.css";
-import { AppBar } from "@mui/material";
 
 export default function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);

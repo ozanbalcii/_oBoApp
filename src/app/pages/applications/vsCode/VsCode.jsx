@@ -4,7 +4,6 @@ import CardContent from "@mui/material/CardContent";
 import Collapse from "@mui/material/Collapse";
 import Typography from "@mui/material/Typography";
 
-
 import {
   AppOpenCloseContext,
   useAppOpenCloseContext,
@@ -13,25 +12,18 @@ import "animate.css/animate.min.css";
 import { AppBar } from "@mui/material";
 import Button from "../../../components/common/Button";
 import SVG from "../../../assets/svg/SVG";
-import LinkedinHeader from "../linkedin/components/LinkedinHeader";
-import LinkedinBodyLeftSide from "../linkedin/components/Body/LinkedinBodyLeftSide";
-import LinkedinBodyRightSide from "../linkedin/components/LinkedinBodyRightSide";
-import LinkedinFooter from "../linkedin/components/LinkedinFooter";
 import Sidebar from "./components/Sidebar";
 
 export default function VsCode() {
   const [expanded, setExpanded] = React.useState(false);
   const [iconAppear, setIconAppear] = React.useState(false);
 
-  const { open, handleButtonVsCode} =
+  const { open, handleButtonVsCode } =
     useAppOpenCloseContext(AppOpenCloseContext);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  const [url, setUrl] = React.useState(
-    "https://www.linkedin.com/in/ozanbalci98/"
-  );
 
   const handleOpenIcon = () => {
     setIconAppear(!iconAppear);
@@ -45,10 +37,9 @@ export default function VsCode() {
     >
       <div
         className="scroll-container"
-        style={{ maxHeight: "800px", overflowY: "auto" }}
+        style={{ maxHeight: "900px", overflowY: "auto" }}
       >
-        
-        <Card sx={{ maxWidth: 1600 }}>
+        <Card sx={{ maxWidth: 1900 }}>
           <div className="bg-[#333333] flex items-center gap-2 p-3">
             <Button
               onClick={() => {
@@ -60,7 +51,7 @@ export default function VsCode() {
               onClick={() => {
                 handleButtonVsCode();
               }}
-              className="bg-[#1E1E1E] hover:bg-yellow-400  rounded-full w-[14px] h-[9px] flex items-center justify-center"
+              className="bg-[#1E1E1E] hover:bg-yellow-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
             />
             <Button
               onMouseEnter={handleOpenIcon}
@@ -71,27 +62,24 @@ export default function VsCode() {
               aria-label="show more"
             />
           </div>
-          <Sidebar />
-              
+          <div className="flex">
+            <Sidebar />
+            <div className="bg-gray-300 w-full ">merhaba</div>
+          </div>
 
-          <LinkedinHeader />
           <Collapse
-            className="bg-[#F4F2EE]"
+            className="bg-[#333333] border-r-[0.5px] border-t-[0.5px] border-gray-300 text-white h-full flex items-center justify-center"
             in={expanded}
             timeout="auto"
             unmountOnExit
           >
             <CardContent>
               <Typography>
+                {/*  Terminal will come here */}
                 <div className="grid grid-cols-10 pl-[19.5rem] pr-[19.5rem] gap-5 ">
-                  <div className="col-span-7  p-4 rounded-l-md">
-                    <LinkedinBodyLeftSide />
-                  </div>
-                  <div className="col-span-3 pt-4 rounded-r-md !pl-0">
-                    <LinkedinBodyRightSide />
-                  </div>
+                  <div className="col-span-7  p-4 rounded-l-md"></div>
+                  <div className="col-span-3 pt-4 rounded-r-md !pl-0"></div>
                 </div>
-                <LinkedinFooter />
               </Typography>
             </CardContent>
           </Collapse>
