@@ -44,27 +44,28 @@ export default function VsCode() {
         style={{ maxHeight: "900px", maxWidth: "1080px", overflowY: "auto" }}
       >
         <Card sx={{ maxWidth: 1900 }}>
-          <div className="bg-[#333333] flex items-center gap-2 p-3">
-            <Button
-              onClick={() => {
-                handleButtonVsCode();
-              }}
-              className="bg-[#1E1E1E] hover:bg-red-400 rounded-full w-[14px] h-[9px]"
-            />
-            <Button
-              onClick={() => {
-                handleButtonVsCode();
-              }}
-              className="bg-[#1E1E1E] hover:bg-yellow-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
-            />
-            <Button
-              onMouseEnter={handleOpenIcon}
-              className="relative bg-[#1E1E1E] hover:bg-green-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
-              expand={expanded}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more"
-            />
+          <div className="bg-[#333333] flex items-center gap-2 pt-3 pl-3 pr-3">
+       <Button
+          
+          onClick={() => {
+            handleButtonVsCode();
+          }}
+          className="bg-[#1E1E1E]  hover:bg-red-400 rounded-full w-[14px] h-[9px]"
+        />
+        <Button
+          onClick={() => {
+            handleButtonVsCode();
+          }}
+          className="bg-[#1E1E1E] hover:bg-yellow-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
+        />
+        <Button
+          onMouseEnter={handleOpenIcon}
+          className="relative bg-[#1E1E1E] hover:bg-green-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        />
           </div>
           <div className="flex">
             <Sidebar />
