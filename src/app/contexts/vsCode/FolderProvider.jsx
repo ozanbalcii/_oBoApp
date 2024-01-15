@@ -3,15 +3,35 @@ import { createContext, useContext, useState } from "react";
 export const FolderContext = createContext();
 
 export function FolderProvider({ children }) {
-  const [folder, setFolder] = useState(false);
+  const [oBoApp, setOboApp] = useState(false);
+  const [projects, setProjects] = useState(false);
+  const [readme, setReadme] = useState(false);
 
-  const handleFolder = () => {
-    setFolder((prevFolder) => !prevFolder);
+  const handleOboApp = () => {
+    setOboApp((oBoApp) => !oBoApp);
+    setProjects(false);
+    setReadme(false);
+  };
+
+  const handleProjects = () => {
+    setProjects((projects) => !projects);
+    setOboApp(false);
+    setReadme(false);
+  };
+  const handleReadme = () => {
+    setReadme((readme) => !readme);
+    setOboApp(false);
+    setProjects(false);
   };
 
   const data = {
-    folder,
-    handleFolder,
+    handleOboApp,
+    oBoApp,
+    handleProjects,
+    projects,
+    handleReadme,
+    readme,
+    
   };
 
   return (

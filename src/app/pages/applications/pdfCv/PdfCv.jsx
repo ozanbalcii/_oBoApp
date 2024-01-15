@@ -1,8 +1,5 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Collapse from "@mui/material/Collapse";
-import Typography from "@mui/material/Typography";
 import "animate.css/animate.min.css";
 import Button from "../../../components/common/Button";
 import SVG from "../../../assets/svg/SVG";
@@ -16,9 +13,8 @@ import Pdf from "./components/Pdf";
 export default function PdfCv() {
   const [expanded, setExpanded] = React.useState(false);
   const [iconAppear, setIconAppear] = React.useState(false);
-  const { close, handleButtonPdf } =
-    useAppOpenCloseContext(AppOpenCloseContext);
-  const { loading, info } = usePdfCvContext(PdfCvContext);
+  const { close, handleButtonPdf, handleButtonSize, size } =
+    useAppOpenCloseContext(AppOpenCloseContext );
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -26,7 +22,6 @@ export default function PdfCv() {
   const handleOpenIcon = () => {
     setIconAppear(!iconAppear);
   };
-  console.log(info, "wc molası");
   return (
     <div
       className={`flex justify-center transition-all ${
@@ -35,7 +30,7 @@ export default function PdfCv() {
     >
       <div
         className="scroll-container"
-        style={{ maxHeight: "800px", overflowY: "auto" }}
+        style={{ maxHeight: size ? '900px' : '500px',  maxWidth: size ? '2080px' : '1080px', overflowY: "auto", }}
       >
       <Card sx={{ maxWidth: 1600 }}>
           <div className="bg-[#09060f] flex items-center gap-2 p-1 pl-4 pt-1 pb-1">
@@ -53,11 +48,8 @@ export default function PdfCv() {
             />
             <Button
               onMouseEnter={handleOpenIcon}
-              className="relative bg-slate-700 hover:bg-green-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
-              expand={expanded}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more"
+              className={`relative bg-slate-700 hover:bg-green-400 rounded-full w-[14px] h-[9px] flex items-center justify-center${size && "bg-[#333333]"}`}
+              onClick={() => {handleButtonSize()}}
             />
             <div className="pl-5">
               <div className="flex items-center justify-center gap-1 text-white border border-gray-700 rounded-xl p-2 hover:bg-slate-900 ">
@@ -147,18 +139,6 @@ export default function PdfCv() {
             </div>
           </div>
           <Pdf />
-          <Collapse
-            className="bg-[#F4F2EE]"
-            in={expanded}
-            timeout="auto"
-            unmountOnExit
-          >
-            <CardContent className="!pt-0">
-              <Typography>
-                alsaopdsjı  
-              </Typography>
-            </CardContent>
-          </Collapse>
         </Card>
       </div>
     </div>

@@ -35,7 +35,7 @@ const Button = forwardRef(function SideBarButton(
           text={text}
         >
           {children}
-          <div className="flex items-center">
+          <div className="flex items-center ">
             <div>{<i className="text-[18px]">{icon}</i>}</div>
             <div className="pl-2 text-gray-200">{text}</div>
           </div>

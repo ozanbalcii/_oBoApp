@@ -7,10 +7,11 @@ import Box from "@mui/material/Box";
 import Button from "../../../../components/common/Button";
 import SVG from "../../../../assets/svg/SVG";
 import Folder from "./Folder";
+import { FolderContext, useFolderContext } from "../../../../contexts/vsCode/FolderProvider";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
+  const { oBoApp } = useFolderContext(FolderContext);
   return (
     <div
       role="tabpanel"
@@ -120,7 +121,7 @@ export default function VerticalTabs() {
             icon={<SVG icon="folder" size={20} />}
             {...a11yProps(4)}
           />
-        </Tabs>{" "}
+        </Tabs>
       </div>
 
       <div className="bg-[#252526] text-white w-full">

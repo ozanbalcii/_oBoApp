@@ -3,20 +3,24 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Collapse from "@mui/material/Collapse";
 import Typography from "@mui/material/Typography";
-
 import {
   AppOpenCloseContext,
   useAppOpenCloseContext,
 } from "../../../contexts/trashContexts/AppOpenClose";
 import "animate.css/animate.min.css";
-import { AppBar } from "@mui/material";
 import Button from "../../../components/common/Button";
-import SVG from "../../../assets/svg/SVG";
 import Sidebar from "./components/Sidebar";
+import {
+  FolderContext,
+  useFolderContext,
+} from "../../../contexts/vsCode/FolderProvider";
+import MyProjects from "./components/myProjects";
+import Readme from "./components/Readme";
 
 export default function VsCode() {
   const [expanded, setExpanded] = React.useState(false);
   const [iconAppear, setIconAppear] = React.useState(false);
+  const { oBoApp, projects, readme } = useFolderContext(FolderContext);
 
   const { open, handleButtonVsCode } =
     useAppOpenCloseContext(AppOpenCloseContext);
@@ -37,7 +41,7 @@ export default function VsCode() {
     >
       <div
         className="scroll-container"
-        style={{ maxHeight: "900px", overflowY: "auto" }}
+        style={{ maxHeight: "900px", maxWidth: "1080px", overflowY: "auto" }}
       >
         <Card sx={{ maxWidth: 1900 }}>
           <div className="bg-[#333333] flex items-center gap-2 p-3">
@@ -64,7 +68,12 @@ export default function VsCode() {
           </div>
           <div className="flex">
             <Sidebar />
-            <div className="bg-gray-300 w-full ">merhaba</div>
+            {readme && <div className="bg-gray-300 w-full "> <Readme/></div>}
+            {projects && (
+              <div className="bg-gray-300 w-full ">
+                <MyProjects />
+              </div>
+            )}
           </div>
 
           <Collapse

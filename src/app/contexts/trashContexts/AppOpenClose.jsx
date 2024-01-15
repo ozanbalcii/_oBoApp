@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import "animate.css/animate.min.css";
+
 export const AppOpenCloseContext = createContext();
 
 export function AppOpenCloseProvider({ children }) {
@@ -7,6 +8,8 @@ export function AppOpenCloseProvider({ children }) {
   const [open, setOpen] = useState(false);
   const [close, setClose] = useState(false);
   const [vsCodeOpen, setVsCodeOpen] = useState(false);
+  const [finder, setFinder] = useState(true);
+  const [size, setSize] = useState(false);
 
   const [cvOpen, setCvOpen] = useState(false);
 
@@ -25,14 +28,27 @@ export function AppOpenCloseProvider({ children }) {
 
   const handleButtonLinkedin = () => {
         setOpen((prevOpen) => !prevOpen);
+        setVsCodeOpen(false)
+        setClose(false)
+        setFinder(!finder)
     }
 
   const handleButtonPdf = () => {
     setClose((prevClose) => !prevClose);
+    setOpen(false)
+    setVsCodeOpen(false)
+    setFinder(!finder)
   };
 
   const handleButtonVsCode = () => {
     setVsCodeOpen((prevVsCodeOpen) => !prevVsCodeOpen);
+    setOpen(false);
+    setClose(false);
+    setFinder(!finder)
+  };
+
+  const handleButtonSize= () => {
+    setSize((size) => !size);
   };
 
 
@@ -44,8 +60,11 @@ export function AppOpenCloseProvider({ children }) {
     handleButtonLinkedin,
     handleButtonPdf,
     handleButtonVsCode,
+    handleButtonSize,
+    size,
     close,
     vsCodeOpen,
+    finder,
   };
 
   return (

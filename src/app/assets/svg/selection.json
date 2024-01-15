@@ -242,6 +242,90 @@
     {
       "icon": {
         "paths": [
+          "M150.016 873.984c-96.436-93.233-156.308-223.762-156.308-368.276 0-282.77 229.23-512 512-512 144.514 0 275.043 59.872 368.137 156.164l0.138 0.144c88.925 91.979 143.724 217.436 143.724 355.692 0 282.77-229.23 512-512 512-138.256 0-263.713-54.799-355.836-143.863l0.144 0.138zM460.8 563.2v204.8h102.4v-307.2h-102.4v102.4zM460.8 256v102.4h102.4v-102.4h-102.4z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "information-solid"
+        ],
+        "grid": 20
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 1,
+        "id": 5,
+        "prevSize": 20,
+        "name": "info"
+      },
+      "setIdx": 8,
+      "setId": 10,
+      "iconIdx": 0
+    },
+    {
+      "icon": {
+        "paths": [
+          "M864 128l-480 480-224-224-160 160 384 384 640-640z"
+        ],
+        "tags": [
+          "checkmark",
+          "tick",
+          "correct",
+          "accept",
+          "ok"
+        ],
+        "defaultCode": 59920,
+        "grid": 16,
+        "attrs": []
+      },
+      "attrs": [],
+      "properties": {
+        "ligatures": "checkmark, tick",
+        "name": "checkmark",
+        "order": 8,
+        "id": 273,
+        "prevSize": 32
+      },
+      "setIdx": 17,
+      "setId": 1,
+      "iconIdx": 272
+    },
+    {
+      "icon": {
+        "paths": [
+          "M397.434 917.696l-397.868-391.6 197.378-194.27 200.49 197.332 429.62-422.852 197.378 194.27-626.998 617.12zM107.912 526.096l289.524 284.962 518.656-510.482-89.036-87.632-429.62 422.852-200.49-197.334-89.034 87.634z"
+        ],
+        "tags": [
+          "checkmark",
+          "tick",
+          "correct",
+          "accept",
+          "ok"
+        ],
+        "defaultCode": 59921,
+        "grid": 16,
+        "attrs": []
+      },
+      "attrs": [],
+      "properties": {
+        "ligatures": "checkmark2, tick2",
+        "name": "checkmark2",
+        "order": 7,
+        "id": 274,
+        "prevSize": 32
+      },
+      "setIdx": 17,
+      "setId": 1,
+      "iconIdx": 273
+    },
+    {
+      "icon": {
+        "paths": [
           "M832 960l192-512h-832l-192 512zM128 384l-128 576v-832h288l128 128h416v128z"
         ],
         "tags": [
