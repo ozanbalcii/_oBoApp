@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "../../../../components/common/Button";
 import SVG from "../../../../assets/svg/SVG";
+import Folder from "./Folder";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -18,7 +19,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: 2 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -124,7 +125,7 @@ export default function VerticalTabs() {
 
       <div className="bg-[#252526] text-white w-full">
         <TabPanel value={value} index={0}>
-          Item One
+         <Folder/>
         </TabPanel>
         <TabPanel value={value} index={1}>
           Item Two
