@@ -69,23 +69,27 @@ export default function VsCode() {
             />
           </div>
           <Tab />
-          <div className="flex">
-            <Sidebar />
-            {readme && (
-              <div className="bg-gray-300 w-full ">
-                <Readme />
-              </div>
-            )}
-            {oBoApp && (
-              <div className="bg-gray-300 w-full ">
-                <OBoApp />
-              </div>
-            )}
-            {projects && (
-              <div className="bg-gray-300 w-full ">
-                <MyProjects />
-              </div>
-            )}
+          <div>
+            <div className="flex">
+              <Sidebar />
+              {readme && (
+                <div className="bg-gray-300 w-full ">
+                  <Readme />
+                </div>
+              )}
+              {oBoApp && (
+                <div className="bg-gray-300 w-full ">
+                  <OBoApp />
+                </div>
+              )}
+            </div>
+            <div>
+              {projects && (
+                <div className="bg-gray-300 w-full ">
+                  <MyProjects />
+                </div>
+              )}
+            </div>
           </div>
           <Collapse
             className="bg-[#333333] border-r-[0.5px] border-t-[0.5px] border-gray-300 text-white h-full flex items-center justify-center"

@@ -4,33 +4,44 @@ export const FolderContext = createContext();
 
 export function FolderProvider({ children }) {
   const [oBoApp, setOboApp] = useState(false);
+  const [tabOBoApp, setTabOboApp] = useState(false);
   const [projects, setProjects] = useState(false);
+  const [tabProjects, setTabProjects] = useState(false);
   const [readme, setReadme] = useState(false);
+  const [tabReadme, setTabReadme] = useState(false);
+
   const [toggle, setToggle] = useState(false);
   const [windowSize, setWindowSize] = useState(false);
 
   const handleOboApp = () => {
     setOboApp((oBoApp) => !oBoApp);
-    setProjects(false);
-    setReadme(false);
+  };
+
+  const handleTabOboApp = () => {
+    setTabOboApp((tabOBoApp) => !tabOBoApp);
   };
 
   const handleProjects = () => {
     setProjects((projects) => !projects);
-    setOboApp(false);
-    setReadme(false);
   };
+
+  const handleTabProjects = () => {
+    setTabProjects((tabProjects) => !tabProjects);
+  };
+
   const handleReadme = () => {
     setReadme((readme) => !readme);
-    setOboApp(false);
-    setProjects(false);
+  };
+
+  const handleTabReadme = () => {
+    setTabReadme((tabReadme) => !tabReadme);
   };
 
   const handleSidebarToggle = () => {
-    setToggle(!toggle)
-  }
+    setToggle(!toggle);
+  };
 
-  const handleButtonSize= () => {
+  const handleButtonSize = () => {
     setWindowSize((windowSize) => !windowSize);
   };
 
@@ -42,9 +53,15 @@ export function FolderProvider({ children }) {
     handleReadme,
     readme,
     handleSidebarToggle,
-    toggle,  
+    toggle,
     handleButtonSize,
-    windowSize
+    windowSize,
+    handleTabOboApp,
+    tabOBoApp,
+    handleTabProjects,
+    tabProjects,
+    handleTabReadme,
+    tabReadme,
   };
 
   return (

@@ -11,10 +11,12 @@ import {
 export default function Folder() {
   const {
     handleOboApp,
-    oBoApp,
     handleProjects,
-    projects,
     handleReadme,
+    handleTabOboApp,
+    handleTabProjects,
+    handleTabReadme,
+    projects,
     readme,
   } = useFolderContext(FolderContext);
   return (
@@ -30,6 +32,7 @@ export default function Folder() {
           <SideBarButton
             onClick={() => {
               handleReadme();
+              handleTabReadme();
             }}
             nodeId="2"
             text="readme.md"
@@ -43,11 +46,12 @@ export default function Folder() {
           <SideBarButton
             onClick={() => {
               handleOboApp();
+              handleTabOboApp();
             }}
             nodeId="4"
             text="index.jsx"
             className={`hover:bg-[#333333] ${projects && "bg-[#333333]"}`}
-            icon={<SVG icon="javascript" size={11} />}
+            icon={<SVG icon="react" size={11} />}
           />
         </TreeItem>
       </TreeItem>
@@ -55,6 +59,7 @@ export default function Folder() {
         <SideBarButton
           onClick={() => {
             handleProjects();
+            handleTabProjects();
           }}
           nodeId="4"
           text="myProjects.js"
