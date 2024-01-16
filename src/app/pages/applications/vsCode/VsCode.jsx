@@ -18,21 +18,14 @@ import MyProjects from "./components/myProjects";
 import Readme from "./components/readme/Readme";
 import OBoApp from "./components/oBoApp/OBoApp";
 import Tab from "./components/Tabs/Tab";
+import Welcome from "./components/Welcome";
 export default function VsCode() {
   const [expanded, setExpanded] = React.useState(false);
-  const [iconAppear, setIconAppear] = React.useState(false);
   const { oBoApp, projects, readme, handleButtonSize, windowSize } =
     useFolderContext(FolderContext);
   const { open, handleButtonVsCode } =
     useAppOpenCloseContext(AppOpenCloseContext);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-  const handleOpenIcon = () => {
-    setIconAppear(!iconAppear);
-  };
-
+console.log(windowSize, 'windowSize')
   return (
     <div
       className={`flex justify-center transition-all w-full ${
@@ -41,11 +34,7 @@ export default function VsCode() {
     >
       <div
         className="scroll-container"
-        style={{
-          maxHeight: windowSize ? "1900px" : "1900px",
-          maxWidth: windowSize ? "1900px" : "1900px",
-          overflowY: "hidden",
-        }}
+        style={{ maxHeight: !windowSize ? '999px' : '700px',  maxWidth: !windowSize ? '999px' : '500px', overflowY: "auto", }}
       >
         <Card sx={{ maxWidth: 1900 }}>
           <div className="bg-[#282626fc]  flex items-center gap-2 pt-3 pb-3 pl-3 pr-3">
@@ -72,6 +61,7 @@ export default function VsCode() {
           <div>
             <div className="flex">
               <Sidebar />
+              <Welcome />
               {readme && (
                 <div className="bg-gray-300 w-full ">
                   <Readme />
