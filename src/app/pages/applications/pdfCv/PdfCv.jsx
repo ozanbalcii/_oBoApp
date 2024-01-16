@@ -3,7 +3,6 @@ import Card from "@mui/material/Card";
 import "animate.css/animate.min.css";
 import Button from "../../../components/common/Button";
 import SVG from "../../../assets/svg/SVG";
-import { PdfCvContext, usePdfCvContext } from "../../../contexts/PdfCvProvider";
 import {
   AppOpenCloseContext,
   useAppOpenCloseContext,
@@ -11,13 +10,10 @@ import {
 import Pdf from "./components/Pdf";
 
 export default function PdfCv() {
-  const [expanded, setExpanded] = React.useState(false);
   const [iconAppear, setIconAppear] = React.useState(false);
   const { close, handleButtonPdf, handleButtonSize, size } =
     useAppOpenCloseContext(AppOpenCloseContext );
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+;
   const [url, setUrl] = React.useState("https:www.obozan.com/cv/ozanbalci/");
   const handleOpenIcon = () => {
     setIconAppear(!iconAppear);

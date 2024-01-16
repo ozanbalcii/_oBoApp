@@ -53,12 +53,12 @@ export default function VerticalTabs() {
 
   return (
     <>
-      {!toggle && (
+    
         <Box
-          className="bg-[#333333] text-white "
-          sx={{ flexGrow: 1, display: "flex", height: 664, width: 550 }}
+          className="bg-[#292929] text-white"
+          sx={{ flexGrow: 1, display: "flex", height: 664, width: 470 }}
         >
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ border:'1px', display: "flex", justifyContent: "center" }}>
             <Tabs
               orientation="vertical"
               variant="scrollable"
@@ -129,10 +129,10 @@ export default function VerticalTabs() {
               />
             </Tabs>
           </div>
-
+          {/* {!toggle && (  )} */}
           <div className="bg-[#252526]  text-white w-full">
             <TabPanel value={value} index={0}>
-              <Folder />
+            <Folder /> 
             </TabPanel>
             <TabPanel value={value} index={1}>
               Item Two
@@ -148,7 +148,7 @@ export default function VerticalTabs() {
             </TabPanel>
           </div>
         </Box>
-      )}
+     
     </>
   );
 }

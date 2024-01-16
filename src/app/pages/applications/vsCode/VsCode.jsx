@@ -16,67 +16,77 @@ import {
 } from "../../../contexts/vsCode/FolderProvider";
 import MyProjects from "./components/myProjects";
 import Readme from "./components/readme/Readme";
-
+import OBoApp from "./components/oBoApp/OBoApp";
+import Tab from "./components/Tabs/Tab";
 export default function VsCode() {
   const [expanded, setExpanded] = React.useState(false);
   const [iconAppear, setIconAppear] = React.useState(false);
-  const { oBoApp, projects, readme } = useFolderContext(FolderContext);
-
+  const { oBoApp, projects, readme, handleButtonSize, windowSize } =
+    useFolderContext(FolderContext);
   const { open, handleButtonVsCode } =
     useAppOpenCloseContext(AppOpenCloseContext);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
   const handleOpenIcon = () => {
     setIconAppear(!iconAppear);
   };
 
   return (
     <div
-      className={`flex justify-center transition-all ${
+      className={`flex justify-center transition-all w-full ${
         open ? "animate__animated animate__backInUp " : ""
       }`}
     >
       <div
         className="scroll-container"
-        style={{ maxHeight: "900px", maxWidth: "1080px", overflowY: "auto" }}
+        style={{
+          maxHeight: windowSize ? "1900px" : "1900px",
+          maxWidth: windowSize ? "1900px" : "1900px",
+          overflowY: "hidden",
+        }}
       >
         <Card sx={{ maxWidth: 1900 }}>
-          <div className="bg-[#333333] flex items-center gap-2 pt-3 pl-3 pr-3">
-       <Button
-          
-          onClick={() => {
-            handleButtonVsCode();
-          }}
-          className="bg-[#1E1E1E]  hover:bg-red-400 rounded-full w-[14px] h-[9px]"
-        />
-        <Button
-          onClick={() => {
-            handleButtonVsCode();
-          }}
-          className="bg-[#1E1E1E] hover:bg-yellow-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
-        />
-        <Button
-          onMouseEnter={handleOpenIcon}
-          className="relative bg-[#1E1E1E] hover:bg-green-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        />
+          <div className="bg-[#282626fc]  flex items-center gap-2 pt-3 pb-3 pl-3 pr-3">
+            <Button
+              onClick={() => {
+                handleButtonVsCode();
+              }}
+              className="bg-[#1E1E1E] hover:bg-red-400 rounded-full w-[14px] h-[9px]"
+            />
+            <Button
+              onClick={() => {
+                handleButtonVsCode();
+              }}
+              className="bg-[#1E1E1E] hover:bg-yellow-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
+            />
+            <Button
+              onClick={() => {
+                handleButtonSize();
+              }}
+              className="relative bg-[#1E1E1E] hover:bg-green-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
+            />
           </div>
+          <Tab />
           <div className="flex">
             <Sidebar />
-            {readme && <div className="bg-gray-300 w-full "> <Readme/></div>}
+            {readme && (
+              <div className="bg-gray-300 w-full ">
+                <Readme />
+              </div>
+            )}
+            {oBoApp && (
+              <div className="bg-gray-300 w-full ">
+                <OBoApp />
+              </div>
+            )}
             {projects && (
               <div className="bg-gray-300 w-full ">
                 <MyProjects />
               </div>
             )}
           </div>
-
           <Collapse
             className="bg-[#333333] border-r-[0.5px] border-t-[0.5px] border-gray-300 text-white h-full flex items-center justify-center"
             in={expanded}

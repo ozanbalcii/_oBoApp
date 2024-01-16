@@ -3,7 +3,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
-const ReadmeHighlighter = () => {
+const OBoAppHighlighter = () => {
   const codeString = ` const greeting = "Hello, React!"; console.log(greeting);
   <div className='bg-[#272822] w-full h-full'>
   `;
@@ -15,4 +15,4 @@ const ReadmeHighlighter = () => {
   );
 };
 
-export default ReadmeHighlighter;
+export default OBoAppHighlighter;
