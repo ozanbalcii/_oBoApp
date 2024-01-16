@@ -15,7 +15,7 @@ import {
   useFolderContext,
 } from "../../../contexts/vsCode/FolderProvider";
 import MyProjects from "./components/myProjects";
-import Readme from "./components/Readme";
+import Readme from "./components/readme/Readme";
 
 export default function VsCode() {
   const [expanded, setExpanded] = React.useState(false);

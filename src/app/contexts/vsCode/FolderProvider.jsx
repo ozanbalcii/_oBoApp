@@ -6,6 +6,7 @@ export function FolderProvider({ children }) {
   const [oBoApp, setOboApp] = useState(false);
   const [projects, setProjects] = useState(false);
   const [readme, setReadme] = useState(false);
+  const [toggle, setToggle] = useState(false);
 
   const handleOboApp = () => {
     setOboApp((oBoApp) => !oBoApp);
@@ -24,6 +25,10 @@ export function FolderProvider({ children }) {
     setProjects(false);
   };
 
+  const handleSidebarToggle = () => {
+    setToggle(!toggle)
+  }
+
   const data = {
     handleOboApp,
     oBoApp,
@@ -31,7 +36,8 @@ export function FolderProvider({ children }) {
     projects,
     handleReadme,
     readme,
-    
+    handleSidebarToggle,
+    toggle,  
   };
 
   return (

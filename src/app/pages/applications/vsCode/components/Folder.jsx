@@ -12,11 +12,12 @@ export default function Folder() {
   const { handleOboApp, oBoApp, handleProjects, projects, handleReadme, readme, } = useFolderContext(FolderContext);
   return (
     <TreeView
+
       defaultCollapseIcon={
         <SVG icon="folder-open" className={"text-blue-500"} size={11} />
       }
       defaultExpandIcon={<SVG icon="folder1" size={11} />}
-      sx={{ height: 500, flexGrow: 1, maxWidth: 200, overflowY: "auto" }}
+      sx={{ height: 650, flexGrow: 1, maxWidth: 200, overflowY: "auto" }}
     >
       <TreeItem nodeId="1" label="Guide">
         <TreeItem nodeId="2" label="Readme">

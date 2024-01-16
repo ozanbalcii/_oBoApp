@@ -7,11 +7,13 @@ import Box from "@mui/material/Box";
 import Button from "../../../../components/common/Button";
 import SVG from "../../../../assets/svg/SVG";
 import Folder from "./Folder";
-import { FolderContext, useFolderContext } from "../../../../contexts/vsCode/FolderProvider";
+import {
+  FolderContext,
+  useFolderContext,
+} from "../../../../contexts/vsCode/FolderProvider";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-  const { oBoApp } = useFolderContext(FolderContext);
   return (
     <div
       role="tabpanel"
@@ -43,104 +45,110 @@ function a11yProps(index) {
 
 export default function VerticalTabs() {
   const [value, setValue] = React.useState(0);
+  const { handleSidebarToggle, toggle } = useFolderContext(FolderContext);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <Box
-      className="bg-[#333333] text-white"
-      sx={{ flexGrow: 1, display: "flex", height: 664, width: 550 }}
-    >
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <Tabs
-          orientation="vertical"
-          variant="scrollable"
-          value={value}
-          onChange={handleChange}
-          sx={{ borderLeft: 1, borderColor: "divider" }}
+    <>
+      {!toggle && (
+        <Box
+          className="bg-[#333333] text-white "
+          sx={{ flexGrow: 1, display: "flex", height: 664, width: 550 }}
         >
-          <Tab
-            sx={{
-              color: "#D1D5DA",
-              "&:hover": {
-                color: "white",
-              },
-            }}
-            icon={<SVG icon="documents" size={20} />}
-            {...a11yProps(0)}
-          />
-          <Tab
-            sx={{
-              color: "#D1D5DA",
-              "&:hover": {
-                color: "white",
-              },
-            }}
-            icon={<SVG icon="search" size={20} />}
-            {...a11yProps(1)}
-          />
-          <Tab
-            sx={{
-              color: "#D1D5DA",
-              "&:hover": {
-                color: "white",
-              },
-            }}
-            icon={<SVG icon="branch" size={20} />}
-            {...a11yProps(2)}
-          />
-          <Tab
-            sx={{
-              color: "#D1D5DA",
-              "&:hover": {
-                color: "white",
-              },
-            }}
-            icon={<SVG icon="bug" size={20} />}
-            {...a11yProps(3)}
-          />
-          <Tab
-            sx={{
-              color: "#D1D5DA",
-              "&:hover": {
-                color: "white",
-              },
-            }}
-            icon={<SVG icon="puzzle" size={20} />}
-            {...a11yProps(4)}
-          />
-          <Tab
-            sx={{
-              color: "#D1D5DA",
-              "&:hover": {
-                color: "white",
-              },
-            }}
-            icon={<SVG icon="folder" size={20} />}
-            {...a11yProps(4)}
-          />
-        </Tabs>
-      </div>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Tabs
+              orientation="vertical"
+              variant="scrollable"
+              value={value}
+              onChange={handleChange}
+              sx={{ borderLeft: 1, borderColor: "divider" }}
+            >
+              <Tab
+                onClick={() => handleSidebarToggle()}
+                sx={{
+                  color: "#D1D5DA",
+                  "&:hover": {
+                    color: "white",
+                  },
+                }}
+                icon={<SVG icon="documents" size={20} />}
+                {...a11yProps(0)}
+              />
+              <Tab
+                sx={{
+                  color: "#D1D5DA",
+                  "&:hover": {
+                    color: "white",
+                  },
+                }}
+                icon={<SVG icon="search" size={20} />}
+                {...a11yProps(1)}
+              />
+              <Tab
+                sx={{
+                  color: "#D1D5DA",
+                  "&:hover": {
+                    color: "white",
+                  },
+                }}
+                icon={<SVG icon="branch" size={20} />}
+                {...a11yProps(2)}
+              />
+              <Tab
+                sx={{
+                  color: "#D1D5DA",
+                  "&:hover": {
+                    color: "white",
+                  },
+                }}
+                icon={<SVG icon="bug" size={20} />}
+                {...a11yProps(3)}
+              />
+              <Tab
+                sx={{
+                  color: "#D1D5DA",
+                  "&:hover": {
+                    color: "white",
+                  },
+                }}
+                icon={<SVG icon="puzzle" size={20} />}
+                {...a11yProps(4)}
+              />
+              <Tab
+                sx={{
+                  color: "#D1D5DA",
+                  "&:hover": {
+                    color: "white",
+                  },
+                }}
+                icon={<SVG icon="folder" size={20} />}
+                {...a11yProps(4)}
+              />
+            </Tabs>
+          </div>
 
-      <div className="bg-[#252526] text-white w-full">
-        <TabPanel value={value} index={0}>
-         <Folder/>
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          Item Two
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          Item Three
-        </TabPanel>
-        <TabPanel value={value} index={3}>
-          Item Four
-        </TabPanel>
-        <TabPanel value={value} index={4}>
-          Item Five
-        </TabPanel>
-      </div>
-    </Box>
+          <div className="bg-[#252526]  text-white w-full">
+            <TabPanel value={value} index={0}>
+              <Folder />
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              Item Two
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+              Item Three
+            </TabPanel>
+            <TabPanel value={value} index={3}>
+              Item Four
+            </TabPanel>
+            <TabPanel value={value} index={4}>
+              Item Five
+            </TabPanel>
+          </div>
+        </Box>
+      )}
+    </>
   );
 }
