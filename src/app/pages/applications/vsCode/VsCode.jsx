@@ -25,7 +25,7 @@ export default function VsCode() {
     useFolderContext(FolderContext);
   const { open, handleButtonVsCode } =
     useAppOpenCloseContext(AppOpenCloseContext);
-console.log(windowSize, 'windowSize')
+  console.log(windowSize, "windowSize");
   return (
     <div
       className={`flex justify-center transition-all w-full ${
@@ -34,7 +34,11 @@ console.log(windowSize, 'windowSize')
     >
       <div
         className="scroll-container"
-        style={{ maxHeight: !windowSize ? '999px' : '700px',  maxWidth: !windowSize ? '999px' : '500px', overflowY: "auto", }}
+        style={{
+          maxHeight: !windowSize ? "9999px" : "700px",
+          maxWidth: !windowSize ? "9999px" : "500px",
+          overflowY: "auto",
+        }}
       >
         <Card sx={{ maxWidth: 1900 }}>
           <div className="bg-[#282626fc]  flex items-center gap-2 pt-3 pb-3 pl-3 pr-3">
@@ -61,25 +65,29 @@ console.log(windowSize, 'windowSize')
           <div>
             <div className="flex">
               <Sidebar />
-              <Welcome />
-              {readme && (
-                <div className="bg-gray-300 w-full ">
-                  <Readme />
-                </div>
-              )}
-              {oBoApp && (
-                <div className="bg-gray-300 w-full ">
-                  <OBoApp />
-                </div>
+              {readme || oBoApp || projects ? (
+                <>
+                  {readme && (
+                    <div className="bg-gray-300 ">
+                      <Readme />
+                    </div>
+                  )}
+                  {oBoApp && (
+                    <div className="bg-gray-300 ">
+                      <OBoApp />
+                    </div>
+                  )}
+                  {projects && (
+                    <div className="bg-gray-300 ">
+                      <MyProjects />
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Welcome />
               )}
             </div>
-            <div>
-              {projects && (
-                <div className="bg-gray-300 w-full ">
-                  <MyProjects />
-                </div>
-              )}
-            </div>
+    
           </div>
           <Collapse
             className="bg-[#333333] border-r-[0.5px] border-t-[0.5px] border-gray-300 text-white h-full flex items-center justify-center"
