@@ -2,10 +2,8 @@ import {
   SubmenuContext,
   useSubmenuContext,
 } from "../../contexts/SubmenuProvider";
-
 import SubmenuWrapper from "../submenu/SubmenuWrapper";
 import Linkedin from "../../pages/applications/linkedin/Linkedin";
-
 import Button from "../common/Button";
 import SVG from "../../assets/svg/SVG";
 import {
@@ -14,8 +12,11 @@ import {
 } from "../../contexts/trashContexts/AppOpenClose";
 import PdfCv from "../../pages/applications/pdfCv/PdfCv";
 import VsCode from "../../pages/applications/vsCode/VsCode";
+import { CodeContext, useCodeContext } from "../../contexts/vsCode/Code";
+
 
 export default function Desktop() {
+  const { command, setCommand } = useCodeContext(CodeContext);
   const { setShowsubMenu } = useSubmenuContext(SubmenuContext);
   const {
     handleButtonLinkedin,

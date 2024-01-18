@@ -1,9 +1,12 @@
 import { createContext, useContext, useState } from "react";
 import "animate.css/animate.min.css";
+import { CodeContext, useCodeContext } from "../vsCode/Code";
 
 export const AppOpenCloseContext = createContext();
 
 export function AppOpenCloseProvider({ children }) {
+
+
   const [type, setType] = useState("");
   const [open, setOpen] = useState(false);
   const [close, setClose] = useState(false);
@@ -12,6 +15,8 @@ export function AppOpenCloseProvider({ children }) {
   const [size, setSize] = useState(false);
 
   const [cvOpen, setCvOpen] = useState(false);
+
+
 
   //! mybe..
   // const handleButtonClick = () => {
@@ -63,6 +68,7 @@ export function AppOpenCloseProvider({ children }) {
     handleButtonSize,
     size,
     close,
+    setClose,
     vsCodeOpen,
     finder,
   };

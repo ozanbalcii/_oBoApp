@@ -8,12 +8,13 @@ import {
   useAppOpenCloseContext,
 } from "../../../contexts/trashContexts/AppOpenClose";
 import Pdf from "./components/Pdf";
+import { CodeContext, useCodeContext } from "../../../contexts/vsCode/Code";
 
 export default function PdfCv() {
   const [iconAppear, setIconAppear] = React.useState(false);
   const { close, handleButtonPdf, handleButtonSize, size } =
-    useAppOpenCloseContext(AppOpenCloseContext );
-;
+    useAppOpenCloseContext(AppOpenCloseContext);
+  const {setCommand} = useCodeContext(CodeContext);
   const [url, setUrl] = React.useState("https:www.obozan.com/cv/ozanbalci/");
   const handleOpenIcon = () => {
     setIconAppear(!iconAppear);
@@ -26,26 +27,36 @@ export default function PdfCv() {
     >
       <div
         className="scroll-container"
-        style={{ maxHeight: size ? '900px' : '500px',  maxWidth: size ? '2080px' : '1080px', overflowY: "auto", }}
+        style={{
+          maxHeight: size ? "900px" : "500px",
+          maxWidth: size ? "2080px" : "1080px",
+          overflowY: "auto",
+        }}
       >
-      <Card sx={{ maxWidth: 1600 }}>
+        <Card sx={{ maxWidth: 1600 }}>
           <div className="bg-[#09060f] flex items-center gap-2 p-1 pl-4 pt-1 pb-1">
             <Button
               onClick={() => {
                 handleButtonPdf();
+                setCommand([]);
               }}
               className="bg-slate-700 hover:bg-red-400 rounded-full w-[14px] h-[9px]"
             />
             <Button
               onClick={() => {
                 handleButtonPdf();
+                setCommand([]);
               }}
               className="bg-slate-700 hover:bg-yellow-400  rounded-full w-[14px] h-[9px] flex items-center justify-center"
             />
             <Button
               onMouseEnter={handleOpenIcon}
-              className={`relative bg-slate-700 hover:bg-green-400 rounded-full w-[14px] h-[9px] flex items-center justify-center${size && "bg-[#333333]"}`}
-              onClick={() => {handleButtonSize()}}
+              className={`relative bg-slate-700 hover:bg-green-400 rounded-full w-[14px] h-[9px] flex items-center justify-center${
+                size && "bg-[#333333]"
+              }`}
+              onClick={() => {
+                handleButtonSize();
+              }}
             />
             <div className="pl-5">
               <div className="flex items-center justify-center gap-1 text-white border border-gray-700 rounded-xl p-2 hover:bg-slate-900 ">
@@ -61,7 +72,7 @@ export default function PdfCv() {
                 />
                 <text className="text-[15px] font-pFont ">ozanbalci.pdf</text>
                 <Button
-                   onClick={() => {
+                  onClick={() => {
                     handleButtonPdf();
                   }}
                   className="ml-auto"

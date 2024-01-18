@@ -26,7 +26,7 @@ const Button = forwardRef(function ButtonComponent(
   const classNames = `font-bold relative flex cursor-pointer items-center justify-center transition-all pl-[9.5px] pr-[9.5px]  hover:bg-opacity-70 rounded-[0.2rem] ${style} ${activeButtonClass}`;
   return (
     <>
-      {type === "button" ? (
+      {(type === "button"  || type === "submit") ? (
         <button
           type={method === "" ? "button" : method}
           className={`${classNames}` + className}

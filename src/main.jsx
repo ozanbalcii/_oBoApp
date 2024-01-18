@@ -9,6 +9,8 @@ import { LinkedinCustomProvider } from "./app/contexts/trashContexts/LinkedinCus
 import { AppOpenCloseProvider } from "./app/contexts/trashContexts/AppOpenClose.jsx";
 import { PdfCvProvider } from "./app/contexts/PdfCvProvider.jsx";
 import { FolderProvider } from "./app/contexts/vsCode/FolderProvider.jsx";
+import { CodeProvider } from "./app/contexts/vsCode/Code.jsx";
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <DesktopProvider>
@@ -19,7 +21,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <AppOpenCloseProvider>
               <PdfCvProvider>
                 <FolderProvider>
-                  <App />
+                  <CodeProvider>
+                    <App />
+                  </CodeProvider>
                 </FolderProvider>
               </PdfCvProvider>
             </AppOpenCloseProvider>

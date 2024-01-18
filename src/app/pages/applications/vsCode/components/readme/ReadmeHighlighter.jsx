@@ -4,10 +4,9 @@ import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
 const ReadmeHighlighter = () => {
-  const codeString = ` const greeting = "Hello, React!"; console.log(greeting);
-  <div className='bg-[#272822] w-full h-full 
-  ReadmeHighlighterReadmeHighlighterReadmeHighlighterReadmeHighlighter'>
-  `;
+  const codeString = `you can type '/clr' to clean,
+you can type '/cv' to open the cv app,
+you can type '/linkedin' to open the linkedin app,`;
 
   return (
        <SyntaxHighlighter className='!m-0' language="javascript" style={{ ...okaidia}} showLineNumbers>

@@ -14,8 +14,10 @@ import {
   useAppOpenCloseContext,
 } from "../../../contexts/trashContexts/AppOpenClose";
 import "animate.css/animate.min.css";
+import { CodeContext, useCodeContext } from "../../../contexts/vsCode/Code";
 
 export default function RecipeReviewCard() {
+  const {setCommand } = useCodeContext(CodeContext);
   const [expanded, setExpanded] = React.useState(false);
   const [iconAppear, setIconAppear] = React.useState(false);
 
@@ -49,12 +51,14 @@ export default function RecipeReviewCard() {
             <Button
               onClick={() => {
                 handleButtonLinkedin();
+                setCommand([]);
               }}
               className="bg-slate-700 hover:bg-red-400 rounded-full w-[14px] h-[9px]"
             />
             <Button
               onClick={() => {
                 handleButtonLinkedin();
+                setCommand([]);
               }}
               className="bg-slate-700 hover:bg-yellow-400  rounded-full w-[14px] h-[9px] flex items-center justify-center"
             />
