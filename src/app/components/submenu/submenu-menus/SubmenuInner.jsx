@@ -12,12 +12,17 @@ import Button from "../../common/Button";
 
 export default function SubmenuInner() {
   const { showsubMenu, setShowsubMenu } = useSubmenuContext(SubmenuContext);
-  const { open, close, handleButtonPdf, handleButtonLinkedin } =
-    useAppOpenCloseContext(AppOpenCloseContext);
+  const {
+    open,
+    close,
+    vsCodeOpen,
+    handleButtonPdf,
+    handleButtonLinkedin,
+    handleButtonVsCode,
+  } = useAppOpenCloseContext(AppOpenCloseContext);
   const handleOpen = () => {
     setShowsubMenu(true);
   };
-
   return (
     <>
       <div className=" text-xs " onMouseEnter={handleOpen}>
@@ -61,21 +66,28 @@ export default function SubmenuInner() {
                     }`}
                   />
                 </Button>
-                
-                <Button  className={`rounded-xl !pl-0`}>
-                  <SVG icon="vsCode" className={"rounded-xl bg-white p-2"} />
+                <Button
+                  onClick={() => {
+                    handleButtonVsCode();
+                  }}
+                  className={`rounded-xl !pl-0`}
+                >
+                  <SVG
+                    icon="vsCode"
+                    className={`rounded-xl text-white transition-all ${
+                      vsCodeOpen ? "border-[5px] border-yellow-400 " : ""
+                    }`}
+                  />
                 </Button>
-
                 <Button className=" rounded-lg ">
                   <SVG icon="spotify" className={"rounded-xl"} />
                 </Button>
-                <Button  className={`rounded-xl !pl-0`}>
+                <Button className={`rounded-xl !pl-0`}>
                   <SVG icon="gmail" className={"rounded-xl"} />
                 </Button>
-                <Button  className={`rounded-xl !pl-0`}>
+                <Button className={`rounded-xl !pl-0`}>
                   <SVG icon="github" className={"rounded-xl"} />
                 </Button>
-            
               </div>
             </motion.div>
           </div>

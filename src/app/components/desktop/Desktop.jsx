@@ -69,7 +69,7 @@ export default function Desktop() {
                 size={55}
                 className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mt-2 rounded-xl"
               />
-              <div className="!font-normal pt-[6px] ">ozanbalci.pdf</div>
+              <div className="!font-normal pt-[6px]">ozanbalci.pdf</div>
             </Button>
           </div>
         </div>
@@ -153,7 +153,7 @@ export default function Desktop() {
 
       {/* <DraggableItem /> */}
       <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full pl-[4.063rem] pr-[4.063rem] pb-[0.313rem] transition-all">
-        <div className="opacity-0 text-xs " onMouseEnter={handleClose}>
+        <div className="opacity-0 text-xs∂" onMouseEnter={handleClose}>
           -
         </div>
         <SubmenuWrapper />

@@ -55,8 +55,6 @@ export function AppOpenCloseProvider({ children }) {
   const handleButtonSize= () => {
     setSize((size) => !size);
   };
-
-
   const data = {
     setType,
     type,
