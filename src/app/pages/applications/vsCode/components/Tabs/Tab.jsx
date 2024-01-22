@@ -7,27 +7,41 @@ import Button from "../../../../../components/common/Button";
 import SVG from "../../../../../assets/svg/SVG";
 
 export default function Tab() {
-  const { tabOBoApp, tabProjects, tabReadme } = useFolderContext(FolderContext);
+  const {
+    handleTabOpenProjects,
+    handleTabOpenOboApp,
+    handleTabOpenReadme,
+    handleOboApp,
+    handleReadme,
+    handleProjects,
+    projects,
+    readme,
+    oBoApp,
+
+  } = useFolderContext(FolderContext);
   return (
     <>
-      {(tabOBoApp || tabProjects || tabReadme) && (
         <div className="bg-[#1E1E1E] text-yellow-600  ">
           <div className="bg-[#333333]">
             <div className="p-2 pl-[108px]">
-              <div className=" gap-1">
+              <div className=" gap-1 ">
                 <div className="flex items-center gap-[10px]">
-                  {tabOBoApp && (
-                    <div className="flex items-center border-[0.5px] border-gray-500 hover:bg-[#3e3e3e74] p-2 rounded-md">
+                  { oBoApp && (
+                    <div className="flex items-center border-[0.5px] border-gray-500 hover:bg-[#3e3e3e74] p-2 rounded-md cursor-pointer">
                       <div className="inline-block min-content ">
                         <div className="flex items-center">
-                          <div>
+                          <Button
+                          onClick={() => {
+                            handleTabOpenOboApp()
+                          }}
+                          >
                             <SVG icon="react" size={11} />
-                            <span className="pl-2">index.jsx</span>
-                          </div>
+                            <span className="pl-2 ">index.jsx</span>
+                          </Button>
                           <div>
                             <Button
                               onClick={() => {
-                                // handleButtonLinkedin();
+                                handleOboApp();
                               }}
                               className="ml-auto"
                               icon={<SVG icon="x, cancel, close" size={11} />}
@@ -37,22 +51,26 @@ export default function Tab() {
                       </div>
                     </div>
                   )}
-                  {tabReadme ? (
-                    <div className="flex items-center border-[0.5px] border-gray-500 hover:bg-[#3e3e3e74] p-2 rounded-md">
-                      <div className="inline-block min-content ">
-                        <div className="flex items-center">
-                          <div>
+                  {  readme   && (
+                  <div className="flex items-center border-[0.5px] border-gray-500 hover:bg-[#3e3e3e74] p-2 rounded-md cursor-pointer">
+                  <div className="inline-block min-content ">
+                    <div className="flex items-center">
+                          <Button
+                              onClick={() => {
+                                handleTabOpenReadme()
+                              }}
+                          >
                             <SVG
                               className={"text-blue-500"}
                               icon="info"
                               size={11}
                             />
                             <span className="pl-2">readme.md</span>
-                          </div>
+                          </Button>
                           <div>
                             <Button
                               onClick={() => {
-                                // handleButtonLinkedin();
+                                handleReadme();
                               }}
                               className="ml-auto"
                               icon={<SVG icon="x, cancel, close" size={11} />}
@@ -61,19 +79,23 @@ export default function Tab() {
                         </div>
                       </div>
                     </div>
-                  ) : null}
-                  {tabProjects ? (
-                    <div className="flex items-center border-[0.5px] border-gray-500 hover:bg-[#3e3e3e74] p-2 rounded-md">
+                  ) }
+                  {projects  && (
+                    <div className="flex items-center border-[0.5px] border-gray-500 hover:bg-[#3e3e3e74] p-2 rounded-md cursor-pointer">
                       <div className="inline-block min-content ">
                         <div className="flex items-center">
-                          <div>
+                          <Button
+                              onClick={() => {
+                                handleTabOpenProjects();
+                              }}
+                          >
                             <SVG icon="javascript" size={11} />
                             <span className="pl-2">myProjects.js</span>
-                          </div>
+                          </Button>
                           <div>
                             <Button
                               onClick={() => {
-                                // handleButtonLinkedin();
+                                handleProjects();
                               }}
                               className="ml-auto"
                               icon={<SVG icon="x, cancel, close" size={11} />}
@@ -82,13 +104,13 @@ export default function Tab() {
                         </div>
                       </div>
                     </div>
-                  ) : null}
+                  ) }
                 </div>
               </div>
             </div>
           </div>
         </div>
-      )}
+  
     </>
   );
 }

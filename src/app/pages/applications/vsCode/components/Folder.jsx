@@ -25,14 +25,13 @@ export default function Folder() {
         <SVG icon="folder-open" className={"text-blue-500"} size={11} />
       }
       defaultExpandIcon={<SVG icon="folder1" size={11} />}
-      sx={{ height:999, width:300, flexGrow: 1, maxWidth: 200, overflowY: "auto" }}
+      sx={{ height:999, width:200, flexGrow: 1, maxWidth: 200, overflowY: "auto" }}
     >
       <TreeItem nodeId="1" label="Guide">
         <TreeItem nodeId="2" label="Readme">
           <SideBarButton
             onClick={() => {
               handleReadme();
-              handleTabReadme();
             }}
             nodeId="2"
             text="readme.md"
@@ -46,7 +45,6 @@ export default function Folder() {
           <SideBarButton
             onClick={() => {
               handleOboApp();
-              handleTabOboApp();
             }}
             nodeId="4"
             text="index.jsx"
@@ -59,7 +57,6 @@ export default function Folder() {
         <SideBarButton
           onClick={() => {
             handleProjects();
-            handleTabProjects();
           }}
           nodeId="4"
           text="myProjects.js"

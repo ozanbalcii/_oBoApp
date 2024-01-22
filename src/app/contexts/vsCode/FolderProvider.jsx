@@ -15,26 +15,32 @@ export function FolderProvider({ children }) {
 
   const handleOboApp = () => {
     setOboApp((oBoApp) => !oBoApp);
+    setReadme(false);
+    setProjects(false)
   };
 
-  const handleTabOboApp = () => {
-    setTabOboApp((tabOBoApp) => !tabOBoApp);
+  const handleTabOpenOboApp = () => {
+    setOboApp(true);
   };
 
   const handleProjects = () => {
     setProjects((projects) => !projects);
+    setOboApp(false)
+    setReadme(false)
   };
 
-  const handleTabProjects = () => {
-    setTabProjects((tabProjects) => !tabProjects);
+  const handleTabOpenProjects = () => {
+    setProjects(true);
   };
 
   const handleReadme = () => {
     setReadme((readme) => !readme);
+    setOboApp(false)
+    setProjects(false)
   };
 
-  const handleTabReadme = () => {
-    setTabReadme((tabReadme) => !tabReadme);
+  const handleTabOpenReadme = () => {
+    setReadme(true);
   };
 
   const handleSidebarToggle = () => {
@@ -56,11 +62,11 @@ export function FolderProvider({ children }) {
     toggle,
     handleButtonSize,
     windowSize,
-    handleTabOboApp,
+    handleTabOpenOboApp,
     tabOBoApp,
-    handleTabProjects,
+    handleTabOpenReadme,
     tabProjects,
-    handleTabReadme,
+    handleTabOpenProjects,
     tabReadme,
   };
 
