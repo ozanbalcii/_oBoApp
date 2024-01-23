@@ -74,23 +74,23 @@ export default function VsCode() {
             <div className="flex">
               <Sidebar />
               {readme || oBoApp || projects ? (
-                    <>
-                      {readme && tabReadme && (
-                          <div className="bg-gray-300 ">
-                            <Readme />
-                          </div>
-                      )}
-                      {oBoApp && tabOBoApp && (
-                          <div className="bg-gray-300 ">
-                            <OBoApp />
-                          </div>
-                      )}
-                      {projects && tabProjects && (
-                          <div className="bg-gray-300 ">
-                            <MyProjects />
-                          </div>
-                      )}
-                    </>
+                <>
+                  {readme && tabReadme && (
+                    <div className="bg-gray-300 ">
+                      <Readme />
+                    </div>
+                  )}
+                  {oBoApp && tabOBoApp && (
+                    <div className="bg-gray-300 ">
+                      <OBoApp />
+                    </div>
+                  )}
+                  {projects && tabProjects && (
+                    <div className="bg-gray-300 ">
+                      <MyProjects />
+                    </div>
+                  )}
+                </>
               ) : (
                 <Welcome />
               )}

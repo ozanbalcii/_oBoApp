@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from "react";
-
 export const FolderContext = createContext();
 
 export function FolderProvider({ children }) {

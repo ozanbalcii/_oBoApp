@@ -17,7 +17,7 @@ export const LinkedinPageProvider = ({ children }) => {
   const [location, setLocation] = useState();
   const [connections, setConnections] = useState();
 
-  const fetchGetLinkedinUsersData = async (limit = 3) => {
+  const fetchGetLinkedinUsersData = async () => {
     try {
       setLoading(true);
       const users = await getLinkedinUsersData();

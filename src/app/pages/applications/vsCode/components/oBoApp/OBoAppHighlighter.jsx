@@ -68,7 +68,7 @@ const OBoAppHighlighter = () => {
       <div className="pl-[60px] pt-2 pr-5 border-none border">
         <Input
           className={
-            " text-white border-none w-full h-full pt-1 pb-1 bg-gray-600 rounded-md p-2"
+            "text-white border-none w-full h-full pt-1 pb-1 bg-gray-600 rounded-md p-2"
           }
           type={"text"}
           name="code"

@@ -4,13 +4,16 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Button from "../../../../components/common/Button";
 import SVG from "../../../../assets/svg/SVG";
 import Folder from "./Folder";
 import {
   FolderContext,
   useFolderContext,
 } from "../../../../contexts/vsCode/FolderProvider";
+import Search from "./Search";
+import SourceControl from "./SourceControl";
+import Bug from "./Bug";
+import Extensions from "./Extensions";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -130,21 +133,21 @@ export default function VerticalTabs() {
             </Tabs>
           </div>
           {/* {!toggle && (  )} */}
-          <div className="bg-[#252526]  text-white w-full">
+          <div className="bg-[#252526] text-white w-full">
             <TabPanel value={value} index={0}>
             <Folder /> 
             </TabPanel>
             <TabPanel value={value} index={1}>
-              Item Two
+              <Search />
             </TabPanel>
             <TabPanel value={value} index={2}>
-              Item Three
+            <SourceControl />
             </TabPanel>
             <TabPanel value={value} index={3}>
-              Item Four
+              <Bug/>
             </TabPanel>
             <TabPanel value={value} index={4}>
-              Item Five
+              <Extensions />
             </TabPanel>
           </div>
         </Box>

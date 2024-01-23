@@ -17,7 +17,7 @@ export const getLinkedinUsersData = async () => {
     console.log(error, "An erro occured while fetchinng linkedin users data");
     return {
       success: false,
-      message: "An erro occured while fetchinng Linkedin Users Data",
+      message: "An error occured while fetchinng Linkedin Users Data",
     };
   }
 };
