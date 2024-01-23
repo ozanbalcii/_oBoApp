@@ -19,10 +19,19 @@ import Readme from "./components/readme/Readme";
 import OBoApp from "./components/oBoApp/OBoApp";
 import Tab from "./components/Tabs/Tab";
 import Welcome from "./components/Welcome";
+
 export default function VsCode() {
   const [expanded, setExpanded] = React.useState(false);
-  const { oBoApp, projects, readme, handleButtonSize, windowSize } =
-    useFolderContext(FolderContext);
+  const {
+    oBoApp,
+    projects,
+    readme,
+    handleButtonSize,
+    windowSize,
+    tabOBoApp,
+    tabProjects,
+    tabReadme,
+  } = useFolderContext(FolderContext);
   const { open, handleButtonVsCode } =
     useAppOpenCloseContext(AppOpenCloseContext);
   return (
@@ -40,7 +49,7 @@ export default function VsCode() {
         }}
       >
         <Card sx={{ maxWidth: 1900 }}>
-          <div className="bg-[#282626fc]  flex items-center gap-2 pt-3 pb-3 pl-3 pr-3">
+          <div className="bg-[#282626fc] flex items-center gap-2 pt-3 pb-3 pl-3 pr-3">
             <Button
               onClick={() => {
                 handleButtonVsCode();
@@ -65,28 +74,27 @@ export default function VsCode() {
             <div className="flex">
               <Sidebar />
               {readme || oBoApp || projects ? (
-                <>
-                  {readme && (
-                    <div className="bg-gray-300 ">
-                      <Readme />
-                    </div>
-                  )}
-                  {oBoApp && (
-                    <div className="bg-gray-300 ">
-                      <OBoApp />
-                    </div>
-                  )}
-                  {projects && (
-                    <div className="bg-gray-300 ">
-                      <MyProjects />
-                    </div>
-                  )}
-                </>
+                    <>
+                      {readme && tabReadme && (
+                          <div className="bg-gray-300 ">
+                            <Readme />
+                          </div>
+                      )}
+                      {oBoApp && tabOBoApp && (
+                          <div className="bg-gray-300 ">
+                            <OBoApp />
+                          </div>
+                      )}
+                      {projects && tabProjects && (
+                          <div className="bg-gray-300 ">
+                            <MyProjects />
+                          </div>
+                      )}
+                    </>
               ) : (
                 <Welcome />
               )}
             </div>
-    
           </div>
           <Collapse
             className="bg-[#333333] border-r-[0.5px] border-t-[0.5px] border-gray-300 text-white h-full flex items-center justify-center"

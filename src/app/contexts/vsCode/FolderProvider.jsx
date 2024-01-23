@@ -9,38 +9,42 @@ export function FolderProvider({ children }) {
   const [tabProjects, setTabProjects] = useState(false);
   const [readme, setReadme] = useState(false);
   const [tabReadme, setTabReadme] = useState(false);
-
   const [toggle, setToggle] = useState(false);
   const [windowSize, setWindowSize] = useState(false);
 
   const handleOboApp = () => {
-    setOboApp((oBoApp) => !oBoApp);
+    setOboApp(true);
     setReadme(false);
+    setProjects(false)
+  };
+  const handleProjects = () => {
+    setProjects(true);
+    setOboApp(false)
+    setReadme(false)
+  };
+  const handleReadme = () => {
+    setReadme(true);
+    setOboApp(false)
     setProjects(false)
   };
 
   const handleTabOpenOboApp = () => {
-    setOboApp(true);
+    setTabOboApp(true);
   };
-
-  const handleProjects = () => {
-    setProjects((projects) => !projects);
-    setOboApp(false)
-    setReadme(false)
+  const handleTabCloseOboApp = () => {
+    setTabOboApp(false);
   };
-
   const handleTabOpenProjects = () => {
-    setProjects(true);
+    setTabProjects(true);
   };
-
-  const handleReadme = () => {
-    setReadme((readme) => !readme);
-    setOboApp(false)
-    setProjects(false)
+  const handleTabCloseProjects = () => {
+    setTabProjects(false);
   };
-
   const handleTabOpenReadme = () => {
-    setReadme(true);
+    setTabReadme(true);
+  };
+  const handleTabCloseReadme = () => {
+    setTabReadme(false);
   };
 
   const handleSidebarToggle = () => {
@@ -68,6 +72,9 @@ export function FolderProvider({ children }) {
     tabProjects,
     handleTabOpenProjects,
     tabReadme,
+    handleTabCloseOboApp,
+    handleTabCloseProjects,
+    handleTabCloseReadme,
   };
 
   return (
