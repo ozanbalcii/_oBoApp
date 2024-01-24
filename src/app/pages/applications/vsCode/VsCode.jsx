@@ -34,6 +34,7 @@ export default function VsCode() {
   } = useFolderContext(FolderContext);
   const { open, handleButtonVsCode } =
     useAppOpenCloseContext(AppOpenCloseContext);
+    console.log(readme, oBoApp, projects, 'ddddd')
   return (
     <div
       className={`flex justify-center transition-all w-full ${

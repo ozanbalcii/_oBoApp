@@ -21,7 +21,6 @@ export default function Tab() {
     tabProjects,
     tabReadme,
   } = useFolderContext(FolderContext);
-  console.log(tabOBoApp, tabProjects, tabReadme, "dsdsdsds");
   return (
     <>
       <div className="bg-[#1E1E1E] text-yellow-500">

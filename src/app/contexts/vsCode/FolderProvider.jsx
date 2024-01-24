@@ -32,18 +32,22 @@ export function FolderProvider({ children }) {
   };
   const handleTabCloseOboApp = () => {
     setTabOboApp(false);
+    setOboApp(false);
   };
   const handleTabOpenProjects = () => {
     setTabProjects(true);
+   
   };
   const handleTabCloseProjects = () => {
     setTabProjects(false);
+    setProjects(false);
   };
   const handleTabOpenReadme = () => {
     setTabReadme(true);
   };
   const handleTabCloseReadme = () => {
     setTabReadme(false);
+    setReadme(false);
   };
 
   const handleSidebarToggle = () => {
