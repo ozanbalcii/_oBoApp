@@ -39,5 +39,29 @@ export const extensionsData = [
         time: '6ms',
         producer: 'Alessandro Fragnani',
     },
+    {
+        id: '5',
+        picture: '/src/app/assets/VsCodePagePhoto/github.png',
+        name: 'Github',
+        desc: 'Gtihub extension for VsCode.',
+        time: '6ms',
+        producer: 'Microsoft',
+    },
+    {
+        id: '6',
+        picture: '/src/app/assets/VsCodePagePhoto/react.jpg',
+        name: 'React Tools',
+        desc: 'React tools for VsCode.',
+        time: '6ms',
+        producer: 'Facebook',
+    },
+    {
+        id: '7',
+        picture: '/src/app/assets/VsCodePagePhoto/javaScript.jpg',
+        name: 'JavaScript (ES6) Snippets',
+        desc: 'VsCode snippets for Js.',
+        time: '6ms',
+        producer: 'Microsoft',
+    },
 
 ]

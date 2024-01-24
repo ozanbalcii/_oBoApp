@@ -8,9 +8,6 @@ import SVG from "../../../../../assets/svg/SVG";
 
 export default function Tab() {
   const {
-    handleTabOpenProjects,
-    handleTabOpenOboApp,
-    handleTabOpenReadme,
     handleTabCloseOboApp,
     handleTabCloseProjects,
     handleTabCloseReadme,

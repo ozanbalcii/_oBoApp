@@ -56,102 +56,92 @@ export default function VerticalTabs() {
 
   return (
     <>
-    
-        <Box
-          className="bg-[#292929] text-white"
-          sx={{ flexGrow: 1, display: "flex", height: 664, width: 470 }}
+      <Box
+        className="bg-[#292929] text-white"
+        sx={{ flexGrow: 1, display: "flex", height: 664, width: 470 }}
+      >
+        <div
+          style={{ border: "1px", display: "flex", justifyContent: "center" }}
         >
-          <div style={{ border:'1px', display: "flex", justifyContent: "center" }}>
-            <Tabs
-              orientation="vertical"
-              variant="scrollable"
-              value={value}
-              onChange={handleChange}
-              sx={{ borderLeft: 1, borderColor: "divider" }}
-            >
-              <Tab
-                onClick={() => handleSidebarToggle()}
-                sx={{
-                  color: "#D1D5DA",
-                  "&:hover": {
-                    color: "white",
-                  },
-                }}
-                icon={<SVG icon="documents" size={20} />}
-                {...a11yProps(0)}
-              />
-              <Tab
-                sx={{
-                  color: "#D1D5DA",
-                  "&:hover": {
-                    color: "white",
-                  },
-                }}
-                icon={<SVG icon="search" size={20} />}
-                {...a11yProps(1)}
-              />
-              <Tab
-                sx={{
-                  color: "#D1D5DA",
-                  "&:hover": {
-                    color: "white",
-                  },
-                }}
-                icon={<SVG icon="branch" size={20} />}
-                {...a11yProps(2)}
-              />
-              <Tab
-                sx={{
-                  color: "#D1D5DA",
-                  "&:hover": {
-                    color: "white",
-                  },
-                }}
-                icon={<SVG icon="bug" size={20} />}
-                {...a11yProps(3)}
-              />
-              <Tab
-                sx={{
-                  color: "#D1D5DA",
-                  "&:hover": {
-                    color: "white",
-                  },
-                }}
-                icon={<SVG icon="puzzle" size={20} />}
-                {...a11yProps(4)}
-              />
-              <Tab
-                sx={{
-                  color: "#D1D5DA",
-                  "&:hover": {
-                    color: "white",
-                  },
-                }}
-                icon={<SVG icon="folder" size={20} />}
-                {...a11yProps(4)}
-              />
-            </Tabs>
-          </div>
-          {/* {!toggle && (  )} */}
-          <div className="bg-[#252526] text-white w-full">
-            <TabPanel value={value} index={0}>
-            <Folder /> 
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-              <Search />
-            </TabPanel>
-            <TabPanel value={value} index={2}>
+          <Tabs
+            orientation="vertical"
+            variant="scrollable"
+            value={value}
+            onChange={handleChange}
+            sx={{ borderLeft: 1, borderColor: "divider" }}
+          >
+            <Tab
+              onClick={() => handleSidebarToggle()}
+              sx={{
+                color: "#D1D5DA",
+                "&:hover": {
+                  color: "white",
+                },
+              }}
+              icon={<SVG icon="documents" size={20} />}
+              {...a11yProps(0)}
+            />
+            <Tab
+              sx={{
+                color: "#D1D5DA",
+                "&:hover": {
+                  color: "white",
+                },
+              }}
+              icon={<SVG icon="search" size={20} />}
+              {...a11yProps(1)}
+            />
+            <Tab
+              sx={{
+                color: "#D1D5DA",
+                "&:hover": {
+                  color: "white",
+                },
+              }}
+              icon={<SVG icon="branch" size={20} />}
+              {...a11yProps(2)}
+            />
+            <Tab
+              sx={{
+                color: "#D1D5DA",
+                "&:hover": {
+                  color: "white",
+                },
+              }}
+              icon={<SVG icon="bug" size={20} />}
+              {...a11yProps(3)}
+            />
+            <Tab
+              sx={{
+                color: "#D1D5DA",
+                "&:hover": {
+                  color: "white",
+                },
+              }}
+              icon={<SVG icon="puzzle" size={20} />}
+              {...a11yProps(4)}
+            />
+          </Tabs>
+        </div>
+        {/* {!toggle && (  )} */}
+        <div className="bg-[#252526] text-white w-full">
+          <TabPanel value={value} index={0}>
+            <Folder />
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            <Search />
+          </TabPanel>
+          <TabPanel value={value} index={2}>
             <SourceControl />
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-              <Bug/>
-            </TabPanel>
-            <TabPanel value={value} index={4}>
-              <Extensions />
-            </TabPanel>
-          </div>
-        </Box>
-     
+          </TabPanel>
+          <TabPanel value={value} index={3}>
+            <Bug />
+          </TabPanel>
+          <TabPanel value={value} index={4}>
+            <Extensions />
+          </TabPanel>
+        </div>
+      </Box>
     </>
   );
 }
