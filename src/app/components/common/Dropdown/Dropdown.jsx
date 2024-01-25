@@ -6,9 +6,8 @@ import { MenuItem as BaseMenuItem, menuItemClasses } from "@mui/base/MenuItem";
 import { styled } from "@mui/system";
 import { FaApple } from "react-icons/fa";
 
-export default function CustomDropdown({ loading, buttonName}) {
+export default function CustomDropdown({ loading, buttonName }) {
   const createHandleMenuClick = (menuItem) => {
-   
     return () => {
       console.log(`Clicked on ${menuItem}`);
     };
@@ -52,7 +51,7 @@ export default function CustomDropdown({ loading, buttonName}) {
       font-size: 0.685rem;
       font-weight: 25; 
       box-sizing: border-box;
-      backdrop-filter: opacity(0.6);
+      backdrop-filter: opacity(1);
       margin: 9px 0;
       min-width: 200px;
       border-radius: 8px;
@@ -63,10 +62,10 @@ export default function CustomDropdown({ loading, buttonName}) {
       border: 1px solid ${
         theme.palette.mode === "dark" ? grey[700] : grey[800]
       };
-      color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
+      color: ${theme.palette.mode === "dark" ? grey[500] : grey[900]};
       box-shadow: 0px 4px 6px ${
         theme.palette.mode === "dark"
-          ? "rgba(0,0,0, 0.50)"
+          ? "rgba(0,0,0, 0.70)"
           : "rgba(0,0,0, 0.05)"
       };
       z-index: 1;
@@ -123,14 +122,14 @@ export default function CustomDropdown({ loading, buttonName}) {
     transition: all 150ms ease;
     cursor: pointer;
     // color: ${theme.palette.mode === "dark" ? grey[200] : grey[900]};
-    // background: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
+    // background: ${theme.palette.mode === "dark" ? grey[100] : "#fff"};
     // border: 1px solid ${
       theme.palette.mode === "dark" ? grey[700] : grey[200]
     };
     // color: white;
 
     // &:hover {
-    //   background: ${theme.palette.mode === "dark" ? grey[800] : grey[50]};
+    //   background: ${theme.palette.mode === "dark" ? grey[800] : grey[700]};
     //   border-color: ${theme.palette.mode === "dark" ? grey[600] : grey[300]};
     // }
   
@@ -149,18 +148,21 @@ export default function CustomDropdown({ loading, buttonName}) {
 
   return (
     <Dropdown>
-      <MenuButton className="hover:bg-[#F8FAFC] hover:bg-opacity-20 text-white  ">
+      <MenuButton className="hover:bg-[#F8FAFC] hover:bg-opacity-20 text-white ">
         <FaApple />
       </MenuButton>
       <Menu slots={{ listbox: Listbox }} className="backdrop-filter pl-2 ">
         {buttonName?.map((options) => (
           <>
-          <MenuItem className="text-white hover:bg-green-700" onClick={createHandleMenuClick("Profile")}>
-            {options?.label}
-          </MenuItem>
-          <div className="pr-[0.4rem] pl-[0.4rem]">
-          <hr className="border-1 border-[#4c4c61] " />
-        </div>
+            <MenuItem
+              className="text-white hover:bg-green-700"
+              onClick={createHandleMenuClick("Profile")}
+            >
+              {options?.label}
+            </MenuItem>
+            <div className="pr-[0.4rem] pl-[0.4rem]">
+              <hr className="border-1 border-[#4c4c61] " />
+            </div>
           </>
         ))}
       </Menu>

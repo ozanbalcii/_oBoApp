@@ -11,6 +11,7 @@ import { PdfCvProvider } from "./app/contexts/PdfCvProvider.jsx";
 import { FolderProvider } from "./app/contexts/vsCode/FolderProvider.jsx";
 import { CodeProvider } from "./app/contexts/vsCode/Code.jsx";
 import ExtensionsProvider from "./app/contexts/vsCode/ExtensionsProvider.jsx";
+import InfoBoxProvider from "./app/contexts/infoBox/InfoBoxProvider.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <DesktopProvider>
@@ -23,7 +24,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <FolderProvider>
                   <CodeProvider>
                     <ExtensionsProvider>
-                      <App />
+                      <InfoBoxProvider>
+                        <App />
+                      </InfoBoxProvider>
                     </ExtensionsProvider>
                   </CodeProvider>
                 </FolderProvider>

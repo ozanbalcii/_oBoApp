@@ -15,6 +15,7 @@ export default function Apple() {
     try {
       setLoading(true);
       const optionsData = await getHeaderButtonsData();
+      
       const results = optionsData?.data?.map((item) => {
         if (item.type === 'apple') {
           return {

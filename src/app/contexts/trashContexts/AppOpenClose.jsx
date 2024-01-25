@@ -1,6 +1,5 @@
 import { createContext, useContext, useState } from "react";
 import "animate.css/animate.min.css";
-import { CodeContext, useCodeContext } from "../vsCode/Code";
 
 export const AppOpenCloseContext = createContext();
 
@@ -11,12 +10,13 @@ export function AppOpenCloseProvider({ children }) {
   const [open, setOpen] = useState(false);
   const [close, setClose] = useState(false);
   const [vsCodeOpen, setVsCodeOpen] = useState(false);
-  const [finder, setFinder] = useState(true);
-  const [size, setSize] = useState(false);
-
   const [cvOpen, setCvOpen] = useState(false);
+  const [finder, setFinder] = useState(true);
+  const [infoBox, setInfoBox] = useState(true);
+  const [notice, setNtoice] = useState(false);
+  const [infoWeb, setInfoWeb] = useState(false);
 
-
+  const [size, setSize] = useState(false);
 
   //! mybe..
   // const handleButtonClick = () => {
@@ -51,6 +51,20 @@ export function AppOpenCloseProvider({ children }) {
     setClose(false);
     setFinder(!finder)
   };
+  const handleButtonInfoBox = () => {
+    setInfoBox((prevInfoBox) => !prevInfoBox)
+    setVsCodeOpen(false)
+    setOpen(false);
+    setClose(false);
+    setFinder(!finder)
+  };
+
+  const handleButtonNotice = () => {
+    setNtoice(!notice)
+  };
+  const handleButtonInfoWeb= () => {
+    setInfoWeb(!infoWeb)
+  };
 
   const handleButtonSize= () => {
     setSize((size) => !size);
@@ -64,11 +78,17 @@ export function AppOpenCloseProvider({ children }) {
     handleButtonPdf,
     handleButtonVsCode,
     handleButtonSize,
+    handleButtonInfoBox,
+    handleButtonNotice,
+    handleButtonInfoWeb,
     size,
     close,
     setClose,
     vsCodeOpen,
     finder,
+    infoBox, 
+    notice,
+    infoWeb,
   };
 
   return (
