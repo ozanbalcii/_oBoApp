@@ -9,11 +9,15 @@ export default function InfoBoxProvider({ children }) {
     const result = response?.data?.map((item) => ({
       notice: item?.notice?.map((noti) => ({
         id: noti?.id,
-        text: noti?.text ? noti?.text : "-",
+        frontendText: noti?.frontendText ? noti?.frontendText : "-",
+        backendText: noti?.backendText ? noti?.backendText : "-",
+        finallyText: noti?.finallyText ? noti?.finallyText : "-",
+
       })),
       infoWeb: item?.infoWeb?.map((inf) => ({
         id: inf?.id,
-        text: inf?.text ? inf?.text : "-",
+        article1: inf?.article1 ? inf?.article1 : "-",
+        article2: inf?.article2 ? inf?.article2 : "-",
       })),
     }));
     setInfoBox(result);

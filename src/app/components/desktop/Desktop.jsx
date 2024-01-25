@@ -39,7 +39,7 @@ export default function Desktop() {
           <div className="pl-6">
             <Button
               className={`flex flex-col text-white items-center ${
-                open || close || vsCodeOpen ? "hidden" : "flex"
+                open || close || vsCodeOpen || infoBox ? "hidden" : "flex"
               }`}
               onClick={() => {
                 handleButtonLinkedin();
@@ -59,7 +59,7 @@ export default function Desktop() {
           <div className="pl-6">
             <Button
               className={`flex flex-col text-white items-center  ${
-                open || close || vsCodeOpen ? "hidden" : "flex"
+                open || close || vsCodeOpen || infoBox ? "hidden" : "flex"
               }`}
               onClick={() => {
                 handleButtonPdf();
@@ -78,7 +78,7 @@ export default function Desktop() {
           <div className="pl-6">
             <Button
               className={`flex flex-col text-white items-center  ${
-                open || close || vsCodeOpen ? "hidden" : "flex"
+                open || close || vsCodeOpen || infoBox ? "hidden" : "flex"
               }`}
               onClick={() => {
                 handleButtonVsCode();
@@ -97,7 +97,7 @@ export default function Desktop() {
           <div className="pl-6">
             <Button
               className={`flex flex-col text-white items-center  ${
-                open || close || vsCodeOpen  ? "hidden" : "flex"
+                open || close || vsCodeOpen || infoBox  ? "hidden" : "flex"
               }`}
               onClick={() => {
                 handleButtonInfoBox();

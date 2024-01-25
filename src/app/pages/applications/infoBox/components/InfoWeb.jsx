@@ -14,15 +14,19 @@ export default function InfoWeb() {
 
   return (
     <div className="bg-[#2a210b] rounded-md ">
-        
       <div className="p-2 text-gray-400 ">
-        {infoBox?.map((item) => {
-          item?.infoWeb?.map((data) => (
-            <div key={data?.id}>
-              {data?.text}
-            </div>
-          ));
-        })}
+        {infoBox?.map((item) => (
+          <>
+            {item?.infoWeb?.map((noti) => (
+              <>
+                <div className="list-none" key={noti?.id}>
+                  <l >{noti?.article1}</l>
+                  <li className="pt-2">{noti?.article2}</li>
+                </div>
+              </>
+            ))}
+          </>
+        ))}
       </div>
     </div>
   );
