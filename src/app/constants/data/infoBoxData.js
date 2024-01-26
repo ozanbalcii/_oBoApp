@@ -12,7 +12,7 @@ export const infoBoxData = [
     Header will be improved (button, modal etc.)
                 `,
         backendText: `Backend:
-                Backend for Desk and Member system will be developed `,
+                Backend for Table and Member system will be developed `,
         finallyText: `Finally:
                 All projects will be tested and debugged`,
       },
@@ -25,7 +25,6 @@ export const infoBoxData = [
             `,
         article2: `
             You can code with Vscode (such as /cv, /linkedin, /clr)
-            
             `,
       },
     ],
