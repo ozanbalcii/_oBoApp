@@ -13,6 +13,7 @@ import {
 import PdfCv from "../../pages/applications/pdfCv/PdfCv";
 import VsCode from "../../pages/applications/vsCode/VsCode";
 import InfoBox from "../../pages/applications/infoBox/InfoBox";
+import Customer from "../../pages/applications/customer/Customer";
 
 
 export default function Desktop() {
@@ -22,10 +23,12 @@ export default function Desktop() {
     handleButtonPdf,
     handleButtonVsCode,
     handleButtonInfoBox,
+    handleButtonCustomer,
     open,
     close,
     vsCodeOpen,
     infoBox,
+    customer,
   } = useAppOpenCloseContext(AppOpenCloseContext);
 
   const handleClose = () => {
@@ -39,16 +42,16 @@ export default function Desktop() {
           <div className="pl-6">
             <Button
               className={`flex flex-col text-white items-center ${
-                open || close || vsCodeOpen || infoBox ? "hidden" : "flex"
+                open || close || vsCodeOpen || infoBox || customer ? "hidden" : "flex"
               }`}
               onClick={() => {
-                handleButtonLinkedin();
+                handleButtonLinkedin(); 
               }}
             >
               <SVG
                 icon="linkedin"
                 size={55}
-                className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mt-2 rounded-xl"
+                className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mt-2 rounded-xl "
               />
               <div className="!font-normal pt-[6px] ">Linkedin</div>
             </Button>
@@ -59,7 +62,7 @@ export default function Desktop() {
           <div className="pl-6">
             <Button
               className={`flex flex-col text-white items-center  ${
-                open || close || vsCodeOpen || infoBox ? "hidden" : "flex"
+                open || close || vsCodeOpen || infoBox || customer ? "hidden" : "flex"
               }`}
               onClick={() => {
                 handleButtonPdf();
@@ -78,7 +81,7 @@ export default function Desktop() {
           <div className="pl-6">
             <Button
               className={`flex flex-col text-white items-center  ${
-                open || close || vsCodeOpen || infoBox ? "hidden" : "flex"
+                open || close || vsCodeOpen || infoBox || customer ? "hidden" : "flex"
               }`}
               onClick={() => {
                 handleButtonVsCode();
@@ -97,7 +100,26 @@ export default function Desktop() {
           <div className="pl-6">
             <Button
               className={`flex flex-col text-white items-center  ${
-                open || close || vsCodeOpen || infoBox  ? "hidden" : "flex"
+                open || close || vsCodeOpen || infoBox || customer ? "hidden" : "flex"
+              }`}
+              onClick={() => {
+                handleButtonCustomer();
+              }}
+            >
+              <SVG
+                icon="customer"
+                size={55}
+                className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mt-2 "
+              />
+              <div className="!font-normal pt-[6px] ">Customer Table</div>
+            </Button>
+          </div>
+        </div>
+        <div className=" pt-12 ">
+          <div className="pl-6">
+            <Button
+              className={`flex flex-col text-white items-center  ${
+                open || close || vsCodeOpen || infoBox || customer  ? "hidden" : "flex"
               }`}
               onClick={() => {
                 handleButtonInfoBox();
@@ -106,7 +128,7 @@ export default function Desktop() {
               <SVG
                 icon="box-filled"
                 size={55}
-                className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mt-2 text-[#00bb35e3]"
+                className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mt-2 text-[#16a33ee3]"
               />
               <div className="!font-normal pt-[6px] ">infoBox</div>
             </Button>
@@ -118,6 +140,7 @@ export default function Desktop() {
       {close && <PdfCv className="z-40" />}
       {vsCodeOpen && <VsCode className="z-40"/>}
       {infoBox && <InfoBox className="z-40"/>}
+      {customer && <Customer className="z-40"/>}
 
       {/* {(!open || !close) && (
         <>

@@ -10,7 +10,6 @@ import InfoWeb from "./components/InfoWeb";
 export default function InfoBox() {
   const {
     handleButtonInfoBox,
-    infoBox,
     handleButtonNotice,
     notice,
     handleButtonInfoWeb,

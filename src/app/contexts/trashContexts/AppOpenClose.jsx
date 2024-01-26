@@ -4,18 +4,16 @@ import "animate.css/animate.min.css";
 export const AppOpenCloseContext = createContext();
 
 export function AppOpenCloseProvider({ children }) {
-
-
   const [type, setType] = useState("");
   const [open, setOpen] = useState(false);
   const [close, setClose] = useState(false);
   const [vsCodeOpen, setVsCodeOpen] = useState(false);
   const [cvOpen, setCvOpen] = useState(false);
   const [finder, setFinder] = useState(true);
-  const [infoBox, setInfoBox] = useState(true);
+  const [infoBox, setInfoBox] = useState(false);
   const [notice, setNtoice] = useState(false);
   const [infoWeb, setInfoWeb] = useState(false);
-
+  const [customer, setCustomer] = useState(true);
   const [size, setSize] = useState(false);
 
   //! mybe..
@@ -32,41 +30,52 @@ export function AppOpenCloseProvider({ children }) {
   // };
 
   const handleButtonLinkedin = () => {
-        setOpen((prevOpen) => !prevOpen);
-        setVsCodeOpen(false)
-        setClose(false)
-        setFinder(!finder)
-    }
+    setOpen((prevOpen) => !prevOpen);
+    setVsCodeOpen(false);
+    setClose(false);
+    setCustomer(false);
+    setFinder(!finder);
+  };
 
   const handleButtonPdf = () => {
     setClose((prevClose) => !prevClose);
-    setOpen(false)
-    setVsCodeOpen(false)
-    setFinder(!finder)
+    setOpen(false);
+    setVsCodeOpen(false);
+    setCustomer(false);
+    setFinder(!finder);
   };
-
   const handleButtonVsCode = () => {
     setVsCodeOpen((prevVsCodeOpen) => !prevVsCodeOpen);
     setOpen(false);
     setClose(false);
-    setFinder(!finder)
+    setCustomer(false);
+    setFinder(!finder);
   };
   const handleButtonInfoBox = () => {
-    setInfoBox((prevInfoBox) => !prevInfoBox)
-    setVsCodeOpen(false)
+    setInfoBox((prevInfoBox) => !prevInfoBox);
+    setVsCodeOpen(false);
     setOpen(false);
     setClose(false);
-    setFinder(!finder)
+    setCustomer(false);
+    setFinder(!finder);
+  };
+  const handleButtonCustomer = () => {
+    setCustomer((prevCustomer) => !prevCustomer);
+    setInfoWeb(false);
+    setVsCodeOpen(false);
+    setOpen(false);
+    setClose(false);
+    setFinder(!finder);
   };
 
   const handleButtonNotice = () => {
-    setNtoice(!notice)
+    setNtoice(!notice);
   };
-  const handleButtonInfoWeb= () => {
-    setInfoWeb(!infoWeb)
+  const handleButtonInfoWeb = () => {
+    setInfoWeb(!infoWeb);
   };
 
-  const handleButtonSize= () => {
+  const handleButtonSize = () => {
     setSize((size) => !size);
   };
   const data = {
@@ -81,14 +90,15 @@ export function AppOpenCloseProvider({ children }) {
     handleButtonInfoBox,
     handleButtonNotice,
     handleButtonInfoWeb,
+    handleButtonCustomer,
     size,
     close,
-    setClose,
     vsCodeOpen,
     finder,
-    infoBox, 
+    infoBox,
     notice,
     infoWeb,
+    customer,
   };
 
   return (
