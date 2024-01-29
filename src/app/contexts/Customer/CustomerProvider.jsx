@@ -25,6 +25,7 @@ export default function CustomerProvider({ children }) {
       name: item?.name,
       surname: item?.surname,
       birthdate: item?.birthdate,
+      password: item?.password,
       confirmPassword: item?.confirmPassword,
       email: item?.email,
       fkBankAccount: item?.fkBankAccount,
@@ -44,6 +45,7 @@ export default function CustomerProvider({ children }) {
 
   const data = {
     userData,
+    setUserData,
   };
 
   return (

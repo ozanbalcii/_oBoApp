@@ -15,7 +15,7 @@ export default function Table({ columns, data }) {
               ))}
             </tr>
           </thead>
-          <tbody className="text-gray-400">
+          <tbody className="text-gray-300">
             {data?.map((dataItem, index) => (
               <tr key={index}>
                 {columns?.map((column, index) => (
@@ -30,7 +30,7 @@ export default function Table({ columns, data }) {
                         ? "text-red-700"
                         : column?.dataIndex === "status" &&
                           dataItem?.status === "Pending"
-                        ? "text-purple-600"
+                        ? "text-purple-700"
                         : ""
                     }`}
                   >

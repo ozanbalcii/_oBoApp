@@ -13,6 +13,7 @@ export function AppOpenCloseProvider({ children }) {
   const [infoBox, setInfoBox] = useState(false);
   const [notice, setNtoice] = useState(false);
   const [infoWeb, setInfoWeb] = useState(false);
+  const [newCustomerModal, setNewCustomerModal] = useState(false);
   const [customer, setCustomer] = useState(true);
   const [size, setSize] = useState(false);
 
@@ -68,6 +69,10 @@ export function AppOpenCloseProvider({ children }) {
     setFinder(!finder);
   };
 
+  const handleNewCustomerModal = () => {
+    setNewCustomerModal(!newCustomerModal)
+  };
+
   const handleButtonNotice = () => {
     setNtoice(!notice);
   };
@@ -79,10 +84,6 @@ export function AppOpenCloseProvider({ children }) {
     setSize((size) => !size);
   };
   const data = {
-    setType,
-    type,
-    open,
-    cvOpen,
     handleButtonLinkedin,
     handleButtonPdf,
     handleButtonVsCode,
@@ -91,6 +92,11 @@ export function AppOpenCloseProvider({ children }) {
     handleButtonNotice,
     handleButtonInfoWeb,
     handleButtonCustomer,
+    handleNewCustomerModal,
+    setType,
+    type,
+    open,
+    cvOpen,
     size,
     close,
     vsCodeOpen,
@@ -99,6 +105,8 @@ export function AppOpenCloseProvider({ children }) {
     notice,
     infoWeb,
     customer,
+    newCustomerModal,
+
   };
 
   return (
