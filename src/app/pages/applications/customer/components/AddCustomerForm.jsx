@@ -1,73 +1,151 @@
-import React from 'react'
-import * as Yup from 'yup'
-import Swal from 'sweetalert2'
-import {useFormik} from 'formik'
-import { CustomerContext, useCustomerContext } from '../../../../contexts/Customer/CustomerProvider';
-import Input from '../../../../components/common/Input';
+import React from "react";
+import * as Yup from "yup";
+import Swal from "sweetalert2";
+import { useFormik } from "formik";
+import {
+  CustomerContext,
+  useCustomerContext,
+} from "../../../../contexts/Customer/CustomerProvider";
+import Input from "../../../../components/common/Input";
+import Button from "../../../../components/common/Button";
+import SubmitButton from "../../../../components/common/Button/SubmitButton";
+import CustomSelect from "../../../../components/common/Select";
 
 export default function AddCustomerForm() {
-    const { setUserData } = useCustomerContext(CustomerContext);
+  const { setUserData, userRoles, setUserRoles, } = useCustomerContext(CustomerContext);
+  console.log(userRoles, "userRoles");
+  const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
+  // const userSchema = Yup.object().shape({
+  //   password: Yup.string()
+  //     .matches(passwordRules, { message: "Please create a stronger password" })
+  //     .required("Required"),
+  //   confirmPassword: Yup.string()
+  //     .oneOf([Yup.ref("password"), null], "Passwords must match")
+  //     .required("Required"),
+  // });
 
-    const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/
-    const userSchema = Yup.object().shape({
-      password: Yup.string()
-        .matches(passwordRules, {message: 'Please create a stronger password'})
-        .required('Required'),
-      confirmPassword: Yup.string()
-        .oneOf([Yup.ref('password'), null], 'Passwords must match')
-        .required('Required'),
-    })
-
-    const {handleSubmit,  handleChange, values, touched, errors, getFieldProps} = useFormik({
-        validationSchema: userSchema,
-        initialValues:{
-            name: '',
-            surname: '',
-            email: '',
-            phone: '',
-            role: '',
-            password: '',
-            confirmPassword: '',
-            status: '',
-        },
-        onSubmit: (values) => {
-            setTimeout(() => {
-                setUserData((prev) =>[
-                    ...prev,
-                    {
-                        id: Math.floor(Math.random() * 10),
-                        name: values.name,
-                        surname: values.surname,
-                        email: values.email,
-                        phone: values.phone,
-                        password: values,
-                        confirmPassword: values.confirmPassword,
-                    }
-                ])
-                Swal.fire({
-                    icon: 'success',
-                    text: 'Customer added successfully!',
-                    showConfirmButton: !1,
-                    cancelButtonText: 'Close',
-                    showCancelButton: !0,
-                    allowOutsideClick: !1,
-                  })
-            }, 600)
-        }
-    })
+  const { handleSubmit, handleChange, values } = useFormik({
+    // validationSchema: userSchema,
+    initialValues: {
+      name: "",
+      surname: "",
+      birthdate: "",
+      password: "",
+      confirmPassword: "",
+      email: "",
+      lastSeen: "",
+      phone: "",
+      role: "",
+      status: "",
+    },
+    onSubmit: (values) => {
+      console.log(values, "sasaas");
+      setTimeout(() => {
+        setUserData((prevState) => [
+          ...prevState,
+          {
+            id: Math.floor(Math.random() * 1000),
+            name: values.name,
+            surname: values.surname,
+            password: values.password,
+            confirmPassword: values.confirmPassword,
+            email: values.email,
+            lastSeen: values.lastSeen,
+            phone: values.phone,
+            role: values.role,
+            status: values.status,
+          },
+        ]);
+        Swal.fire({
+          icon: "success",
+          text: "Customer added successfully!",
+          showConfirmButton: false,
+          cancelButtonText: "Close",
+          showCancelButton: true,
+          allowOutsideClick: false,
+        });
+      }, 600);
+    },
+  });
   return (
-    <form onSubmit={handleSubmit} noValidate className='form px-7 py-5 ' >
-        {/* SET SHOULD BE GRID */}
-        {/* SET SHOULD BE GRID */}
-        {/* SET SHOULD BE GRID */}
-        {/* SET SHOULD BE GRID */}
-        {/* SET SHOULD BE GRID */}
-        <div className='text-gray-300 '>
-        <label className='fw-bold  mb-2  required'>Name</label>
+    <form onSubmit={handleSubmit} noValidate className=" px-7 py-5 ">
+      <div className="text-darky">
+        <div className="grid grid-rows-6 gap-3">
+          <div className="col-span-1">
+            <label className="fw-bold  mb-2 text-gray-300 ">Name</label>
+          </div>
+          <div className="col-span-5">
             <Input
-            placeholder={'Name'}
+              type={"text"}
+              name="name"
+              placeholder="Name"
+              onChange={handleChange}
+              value={values.name}
             />
+          </div>
+          <div className="col-span-1">
+            <label className="fw-bold  mb-2 text-gray-300 ">Surname</label>
+          </div>
+          <div className="col-span-5">
+            <Input
+              type={"text"}
+              name="surname"
+              placeholder="Surname"
+              onChange={handleChange}
+              value={values.surname}
+            />
+          </div>
+
+          <div className="col-span-1">
+            <label className="fw-bold  mb-2 text-gray-300 ">Email</label>
+          </div>
+          <div className="col-span-5">
+            <Input
+              type={"text"}
+              name="email"
+              placeholder="Email"
+              onChange={handleChange}
+              value={values.email}
+            />
+
+          </div>
+          <div className="col-span-1">
+            <label className="fw-bold  mb-2 text-gray-300 ">Phone</label>
+          </div>
+          <div className="col-span-5">
+            <Input
+              type={"text"}
+              name="phone"
+              placeholder="Phone"
+              onChange={handleChange}
+              value={values.phone}
+            />
+          </div>
+
+          <div className="col-span-1">
+            <label className="fw-bold  mb-2 text-gray-300 ">Role</label>
+          </div>
+          <div className="col-span-5">
+            <CustomSelect
+              name="role"
+              placeholder="Role"
+              onChange={handleChange}
+              value={values.role}
+              options={[{label: 'Choose', value: null}, ...userRoles]}
+            />
+          </div>
+
+
         </div>
+      </div>
+      <div className="pt-5">
+        <SubmitButton
+          submit={"submit"}
+          type={"submit"}
+          text={"Submit"}
+          className="border border-gray-500 text-green-700 hover:text-gray-500 p-2 rounded-md w-full"
+        />
+      </div>
     </form>
-  )
+  );
 }

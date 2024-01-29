@@ -67,7 +67,7 @@ export default function Customer() {
     },
   ];
   return (
-    <div className="border-2 border-[#585857b3] text-gray-400 mt-[100px] rounded-md mx-10">
+    <div className="border-2 border-[#585857b3] text-gray-400 mt-[100px] rounded-md mx-10  max-h-[700px]  overflow-y-auto ">
       <div className="p-2 bg-darky">
         <div className="p-2">
           <Button
@@ -82,9 +82,9 @@ export default function Customer() {
         </div>
         <div className="pb-3 flex justify-end pr-5">
           <Button
-            text={"New Customer"}
+            text={"Add New Customer"}
             icon={<SVG icon="people" className="rounded-md mr-2" size={20} />}
-            className="hover:text-white"
+            className="text-white hover:text-gray-400 "
             onClick={() => {
               handleNewCustomerModal();
             }}

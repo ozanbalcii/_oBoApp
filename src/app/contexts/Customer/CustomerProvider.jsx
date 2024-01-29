@@ -6,14 +6,14 @@ import {
 
 export const CustomerContext = createContext();
 export default function CustomerProvider({ children }) {
-  const [userRoles, setUserRoles] = useState();
+  const [userRoles, setUserRoles] = useState([]);
   const [userData, setUserData] = useState();
 
   const fetchUserRoles = async () => {
     const role = await getUserRoles();
     const userRoles = role?.data?.map((value) => ({
-      id: value?.id,
-      title: value?.title,
+      value: value?.value,
+      label: value?.label,
     }));
     setUserRoles(userRoles);
   };
@@ -46,6 +46,8 @@ export default function CustomerProvider({ children }) {
   const data = {
     userData,
     setUserData,
+    userRoles,
+    setUserRoles,
   };
 
   return (

@@ -1,27 +1,27 @@
 export const UserRoles = [
     {
-      id: 1,
-      title: 'Frontend Developer'
+      value: 1,
+      label: 'Frontend Developer'
     },
     {
-      id: 2,
-      title: 'Customer service'
+      value: 2,
+      label: 'Customer service'
     },
     {
-      id: 3,
-      title: 'Manager'
+      value: 3,
+      label: 'Manager'
     },
     {
-      id: 4,
-      title: 'Backend Developer'
+      value: 4,
+      label: 'Backend Developer'
     },
     {
-      id: 5,
-      title: 'Fullstack Developer'
+      value: 5,
+      label: 'Fullstack Developer'
     },
     {
-      id: 6,
-      title: 'accountant'
+      value: 6,
+      label: 'accountant'
     },
   ]
   

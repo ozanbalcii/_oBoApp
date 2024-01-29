@@ -15,17 +15,17 @@ export default function NewCustomerModal() {
       <div className="fixed inset-0 z-50 bg-black opacity-50"></div>
       <div className="fixed inset-0 flex items-center justify-center z-50">
         <div className="bg-[#323233] p-6 rounded-lg shadow-lg ">
-     <div className="pb-3">
-     <Button
-            className="h-2 w-2 bg-red-400"
-            onClick={() => {
-              handleNewCustomerModal();
-            }}
-          />
-     </div>
+          <div className="pb-3">
+            <Button
+              className="h-2 w-2 bg-red-400"
+              onClick={() => {
+                handleNewCustomerModal();
+              }}
+            />
+          </div>
           <div>
             <div>
-                <AddCustomerForm/>  
+              <AddCustomerForm />
             </div>
           </div>
         </div>

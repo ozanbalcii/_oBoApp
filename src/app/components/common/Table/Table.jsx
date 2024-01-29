@@ -24,13 +24,13 @@ export default function Table({ columns, data }) {
                     className={`py-3 px-6 ${
                       column?.dataIndex === "status" &&
                       dataItem?.status === "Active"
-                        ? "text-green-700"
+                        ? "text-green-600"
                         : column?.dataIndex === "status" &&
                           dataItem?.status === "Passive"
-                        ? "text-red-700"
+                        ? "text-red-400"
                         : column?.dataIndex === "status" &&
                           dataItem?.status === "Pending"
-                        ? "text-purple-700"
+                        ? "text-purple-400"
                         : ""
                     }`}
                   >

@@ -28,7 +28,7 @@ const Button = forwardRef(function ButtonComponent(
     <>
       {(type === "button"  || type === "submit") ? (
         <button
-          type={method === "" ? "button" : method}
+          type={type}
           className={`${classNames}` + className}
           onClick={onClick}
           disabled={loading}
