@@ -1,12 +1,67 @@
 import Button from "../../../components/common/Button";
-import { AppOpenCloseContext, useAppOpenCloseContext } from "../../../contexts/trashContexts/AppOpenClose";
+import Table from "../../../components/common/Table/Table";
+import { CustomerContext, useCustomerContext } from "../../../contexts/Customer/CustomerProvider";
+import {
+  AppOpenCloseContext,
+  useAppOpenCloseContext,
+} from "../../../contexts/trashContexts/AppOpenClose";
 
 export default function Customer() {
-    const {
-        handleButtonCustomer,
-        customer,
-      } = useAppOpenCloseContext(AppOpenCloseContext);
-    
+  const { handleButtonCustomer, customer } = useAppOpenCloseContext(AppOpenCloseContext);
+  const {userData} = useCustomerContext(CustomerContext)
+
+
+  const tableColumns = [
+    {
+      title: '#',
+      dataIndex: 'id',
+    },
+    {
+      title: 'Name',
+      dataIndex: 'name',
+    },
+    {
+      title: 'Surname',
+      dataIndex: 'surname',
+    },
+    {
+      title: 'Email',
+      dataIndex: 'email',
+    },
+    {
+      title: 'Phone',
+      dataIndex: 'phone',
+    },
+    {
+      title: 'Role',
+      dataIndex: 'role',
+    },
+    {
+      title: 'Status',
+      dataIndex: 'status',
+    },
+    {
+      title: 'Process',
+      dataIndex: 'process',
+      render: (item) => {
+        console.log(item, 'render Item')
+        return (
+          <span className='d-flex gap-1 '>
+          {/* <UserProfileButton id={item.id} className='btn btn-info btn-sm' />
+          <DeleteUserButton
+            setUserData={setUserData}
+            userData={userData}
+            setSelectedUserData={setSelectedUserData}
+            selectedUserData={selectedUserData}
+            id={item.id}
+            className='btn btn-danger btn-sm'
+          /> */}
+        </span>
+        )
+      }
+    }
+  ]
+
   return (
     <div className="border-2 border-[#585857b3] text-gray-400 mt-[100px] rounded-md mx-10">
       <div className="p-2 bg-darky">
@@ -14,7 +69,7 @@ export default function Customer() {
           <Button
             className="h-2 w-2 bg-red-400"
             onClick={() => {
-                handleButtonCustomer()
+              handleButtonCustomer();
             }}
           />
         </div>
@@ -22,23 +77,10 @@ export default function Customer() {
           Customer Table
         </div>
         <div className="flex items-center justify-center gap-10">
-          <div className="hover:bg-slate-700 rounded-md transition-all">
-            <Button
-              onClick={() => {
-                // handleButtonNotice();
-              }}
-              text={"Notice"}
+            <Table
+            columns={tableColumns}
+            data={userData}
             />
-          </div>
-          <div className="">
-            <Button
-              className="hover:bg-slate-700 rounded-md transition-all"
-              text={"Informations for Website"}
-              onClick={() => {
-                // handleButtonInfoWeb()
-              }}
-            />
-          </div>
         </div>
 
         <div className="grid grid-cols-12 gap-4 pt-5 ">
@@ -46,7 +88,7 @@ export default function Customer() {
             {/* <div className="text-white">{notice && <Notice />} </div> */}
           </div>
           <div className="col-span-6">
-          {/* <div className="">{infoWeb && <InfoWeb />} </div> */}
+            {/* <div className="">{infoWeb && <InfoWeb />} </div> */}
           </div>
         </div>
       </div>
