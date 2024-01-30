@@ -7,13 +7,13 @@ import {
   useCustomerContext,
 } from "../../../../contexts/Customer/CustomerProvider";
 import Input from "../../../../components/common/Input";
-import Button from "../../../../components/common/Button";
 import SubmitButton from "../../../../components/common/Button/SubmitButton";
 import CustomSelect from "../../../../components/common/Select";
 
 export default function AddCustomerForm() {
-  const { setUserData, userRoles, setUserRoles, } = useCustomerContext(CustomerContext);
-  console.log(userRoles, "userRoles");
+  const { setUserData, userRoles, userStatus} = useCustomerContext(CustomerContext);
+  
+
   const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
   // const userSchema = Yup.object().shape({
   //   password: Yup.string()
@@ -38,8 +38,7 @@ export default function AddCustomerForm() {
       role: "",
       status: "",
     },
-    onSubmit: (values) => {
-      console.log(values, "sasaas");
+    onSubmit: (values, { resetForm }) => {
       setTimeout(() => {
         setUserData((prevState) => [
           ...prevState,
@@ -65,6 +64,7 @@ export default function AddCustomerForm() {
           allowOutsideClick: false,
         });
       }, 600);
+      resetForm();
     },
   });
   return (
@@ -135,7 +135,7 @@ export default function AddCustomerForm() {
               placeholder="Role"
               onChange={handleChange}
               value={values.role}
-              options={[{label: 'Choose', value: null}, ...userRoles]}
+              options={[{label: 'Empty', value: null}, ...userRoles]}
             />
           </div>
 
@@ -148,8 +148,8 @@ export default function AddCustomerForm() {
               name="status"
               placeholder="Status"
               onChange={handleChange}
-              value={values.role}
-              options={[{label: 'Choose', value: null}, ...userRoles]}
+              value={values.status}
+              options={[{label: 'Empty', value: null}, ...userStatus]}
             />
           </div>
         </div>

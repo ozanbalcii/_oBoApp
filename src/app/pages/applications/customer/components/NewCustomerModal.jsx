@@ -4,7 +4,6 @@ import {
   AppOpenCloseContext,
   useAppOpenCloseContext,
 } from "../../../../contexts/trashContexts/AppOpenClose";
-import SVG from "../../../../assets/svg/SVG";
 import AddCustomerForm from "./AddCustomerForm";
 
 export default function NewCustomerModal() {

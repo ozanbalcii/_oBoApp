@@ -2,11 +2,13 @@ import { createContext, useContext, useEffect, useState } from "react";
 import {
   getUserData,
   getUserRoles,
+  getUserStatus,
 } from "../../pages/applications/customer/services/index";
 
 export const CustomerContext = createContext();
 export default function CustomerProvider({ children }) {
   const [userRoles, setUserRoles] = useState([]);
+  const [userStatus, setUserStatus] = useState([]);
   const [userData, setUserData] = useState();
 
   const fetchUserRoles = async () => {
@@ -16,6 +18,15 @@ export default function CustomerProvider({ children }) {
       label: value?.label,
     }));
     setUserRoles(userRoles);
+  };
+
+  const fetchUserStatus = async () => {
+    const  getStatus = await getUserStatus();
+    const statusData = getStatus?.data?.map((value) => ({
+      value: value?.value,
+      label: value?.label,
+    }));
+    setUserStatus(statusData);
   };
 
   const fetchUserData = async () => {
@@ -31,7 +42,7 @@ export default function CustomerProvider({ children }) {
       fkBankAccount: item?.fkBankAccount,
       lastSeen: item?.lastSeen,
       phone: item?.phone,
-      role: item?.role, 
+      role: item?.role,
       status: item?.status,
     }));
     setUserData(users);
@@ -40,14 +51,15 @@ export default function CustomerProvider({ children }) {
   useEffect(() => {
     fetchUserData();
     fetchUserRoles();
+    fetchUserStatus();
   }, []);
-
 
   const data = {
     userData,
     setUserData,
     userRoles,
     setUserRoles,
+    userStatus,
   };
 
   return (
