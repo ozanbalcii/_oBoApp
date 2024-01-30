@@ -3,7 +3,7 @@ const Input = ({id, type, placeholder, required, className, onChange, value, nam
       <>
         <input
           id={id ? id : ""}
-          className={' ' + className}
+          className={'!rounded-[4px]' + className}
           type={type}
           placeholder={placeholder}
           value={value}
