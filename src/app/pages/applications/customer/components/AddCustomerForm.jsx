@@ -68,7 +68,7 @@ export default function AddCustomerForm() {
     },
   });
   return (
-    <form onSubmit={handleSubmit} noValidate className=" px-7 py-5 ">
+    <form onSubmit={handleSubmit} noValidate className=" px-24 py-5 ">
       <div className="text-darky">
         <div className="grid grid-rows-6 gap-3">
           <div className="col-span-1">
@@ -76,6 +76,7 @@ export default function AddCustomerForm() {
           </div>
           <div className="col-span-5">
             <Input
+              className='rounded-[4px]'
               type={"text"}
               name="name"
               placeholder="Name"
@@ -88,6 +89,7 @@ export default function AddCustomerForm() {
           </div>
           <div className="col-span-5">
             <Input
+              className='rounded-[4px]'
               type={"text"}
               name="surname"
               placeholder="Surname"
@@ -101,6 +103,7 @@ export default function AddCustomerForm() {
           </div>
           <div className="col-span-5">
             <Input
+              className='rounded-[4px]'
               type={"text"}
               name="email"
               placeholder="Email"
@@ -114,6 +117,7 @@ export default function AddCustomerForm() {
           </div>
           <div className="col-span-5">
             <Input
+              className='rounded-[4px]'
               type={"text"}
               name="phone"
               placeholder="Phone"
@@ -121,12 +125,12 @@ export default function AddCustomerForm() {
               value={values.phone}
             />
           </div>
-
           <div className="col-span-1">
             <label className="fw-bold  mb-2 text-gray-300 ">Role</label>
           </div>
           <div className="col-span-5">
             <CustomSelect
+              className='rounded-[20px]'
               name="role"
               placeholder="Role"
               onChange={handleChange}
@@ -135,7 +139,19 @@ export default function AddCustomerForm() {
             />
           </div>
 
-
+          <div className="col-span-1">
+            <label className="fw-bold  mb-2 text-gray-300 ">Status</label>
+          </div>
+          <div className="col-span-5">
+            <CustomSelect
+              className='rounded-[20px]'
+              name="status"
+              placeholder="Status"
+              onChange={handleChange}
+              value={values.role}
+              options={[{label: 'Choose', value: null}, ...userRoles]}
+            />
+          </div>
         </div>
       </div>
       <div className="pt-5">
@@ -143,7 +159,7 @@ export default function AddCustomerForm() {
           submit={"submit"}
           type={"submit"}
           text={"Submit"}
-          className="border border-gray-500 text-green-700 hover:text-gray-500 p-2 rounded-md w-full"
+          className="border border-gray-500 text-green-700 hover:border-green-700 hover:text-gray-500 p-2 rounded-md w-full"
         />
       </div>
     </form>

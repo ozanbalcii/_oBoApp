@@ -21,7 +21,7 @@ export const UserRoles = [
     },
     {
       value: 6,
-      label: 'accountant'
+      label: 'Accountant'
     },
   ]
   

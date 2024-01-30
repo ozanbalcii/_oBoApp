@@ -9,6 +9,7 @@ import {
   AppOpenCloseContext,
   useAppOpenCloseContext,
 } from "../../../contexts/trashContexts/AppOpenClose";
+import DeleteCustomerButton from "./components/DeleteCustomerButton";
 import NewCustomerModal from "./components/NewCustomerModal";
 
 export default function Customer() {
@@ -49,18 +50,11 @@ export default function Customer() {
       title: "Process",
       dataIndex: "process",
       render: (item) => {
-        // console.log(item, "render Item");
         return (
           <span className="d-flex gap-1 ">
-            {/* <UserProfileButton id={item.id} className='btn btn-info btn-sm' />
-          <DeleteUserButton
-            setUserData={setUserData}
-            userData={userData}
-            setSelectedUserData={setSelectedUserData}
-            selectedUserData={selectedUserData}
-            id={item.id}
-            className='btn btn-danger btn-sm'
-          /> */}
+           <DeleteCustomerButton 
+           id={item.id}
+           />
           </span>
         );
       },
@@ -80,6 +74,18 @@ export default function Customer() {
         <div className="text-start pb-2 pl-11 text-[26px] bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent w-[300px]">
           Customer Table
         </div>
+        <div className="flex gap-2 justify-center">
+          <p className="text-white "> You can contact me for a more professional-comprehensive table:</p>
+          <a
+          className="text-yellow-200"
+            href="https://www.linkedin.com/in/ozanbalci98/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Linkedin
+          </a>
+        </div>
+
         <div className="pb-3 flex justify-end pr-5">
           <Button
             text={"Add New Customer"}
