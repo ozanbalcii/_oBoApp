@@ -107,14 +107,15 @@ export default function Customer() {
           </>
         )}
 
-        <div className="grid grid-cols-12 gap-4 pt-5 ">
+        {/* <div className="grid grid-cols-12 gap-4 pt-5 ">
           <div className="col-span-6">
-            {/* <div className="text-white">{notice && <Notice />} </div> */}
+            <div className="text-white">{notice && <Notice />} </div> 
           </div>
           <div className="col-span-6">
-            {/* <div className="">{infoWeb && <InfoWeb />} </div> */}
+            <div className="">{infoWeb && <InfoWeb />} </div> 
           </div>
-        </div>
+        </div> */}
+        
       </div>
     </div>
   );
