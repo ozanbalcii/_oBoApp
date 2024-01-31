@@ -13,6 +13,7 @@ import { CodeProvider } from "./app/contexts/vsCode/Code.jsx";
 import ExtensionsProvider from "./app/contexts/vsCode/ExtensionsProvider.jsx";
 import InfoBoxProvider from "./app/contexts/infoBox/InfoBoxProvider.jsx";
 import CustomerProvider from "./app/contexts/Customer/CustomerProvider.jsx";
+import LoadingProvider from "./app/contexts/trashContexts/Loading.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <DesktopProvider>
@@ -27,7 +28,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                     <ExtensionsProvider>
                       <InfoBoxProvider>
                         <CustomerProvider>
-                          <App />
+                          <LoadingProvider>
+                            <App />
+                          </LoadingProvider>
                         </CustomerProvider>
                       </InfoBoxProvider>
                     </ExtensionsProvider>

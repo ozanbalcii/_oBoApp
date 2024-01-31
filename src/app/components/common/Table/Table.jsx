@@ -1,7 +1,12 @@
 import React from "react";
+import {
+  LoadingContext,
+  useLoadingContext,
+} from "../../../contexts/trashContexts/Loading";
+import Loading from "../Loading";
 
 export default function Table({ columns, data }) {
-  console.log(data, "columns");
+  const { loading } = useLoadingContext(LoadingContext);
   return (
     <>
       <div className="overflow-x-auto">
@@ -46,4 +51,15 @@ export default function Table({ columns, data }) {
       </div>
     </>
   );
+  return (loading ? (
+    <Loading>
+      <div>
+        <Table columns={columns} data={data} />
+      </div>
+    </Loading>
+  ) : (
+    <div>
+      <Table columns={columns} data={data} />
+    </div>
+  ))
 }

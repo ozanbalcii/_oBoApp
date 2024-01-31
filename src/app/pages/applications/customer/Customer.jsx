@@ -75,7 +75,7 @@ export default function Customer() {
           Customer Table
         </div>
         <div className="flex gap-2 justify-center">
-          <p className="text-white "> You can contact me for a more professional-comprehensive table:</p>
+          <p className="text-white "> {'You can contact me for a more professional-comprehensive table (exp: pagination, customer profile, update, filter etc.) '} </p>
           <a
           className="text-yellow-200"
             href="https://www.linkedin.com/in/ozanbalci98/"
