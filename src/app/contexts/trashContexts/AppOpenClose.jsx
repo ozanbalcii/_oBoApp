@@ -10,11 +10,11 @@ export function AppOpenCloseProvider({ children }) {
   const [vsCodeOpen, setVsCodeOpen] = useState(false);
   const [cvOpen, setCvOpen] = useState(false);
   const [finder, setFinder] = useState(true);
-  const [infoBox, setInfoBox] = useState(false);
+  const [infoBox, setInfoBox] = useState(true);
   const [notice, setNtoice] = useState(false);
   const [infoWeb, setInfoWeb] = useState(false);
   const [newCustomerModal, setNewCustomerModal] = useState(false);
-  const [customer, setCustomer] = useState(true);
+  const [customer, setCustomer] = useState(false);
   const [size, setSize] = useState(false);
 
   //! mybe..
