@@ -5,7 +5,6 @@ import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const ReadmeHighlighter = () => {
   const codeString = `You can use the following codes on index.jsx (_oBoApp/main/index.jsx) 
-you can type '/clr' to clean,
 you can type '/cv' to open the cv app,
 you can type '/linkedin' to open the linkedin app,`;
 

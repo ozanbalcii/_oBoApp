@@ -11,21 +11,25 @@ export default function NewCustomerModal() {
     useAppOpenCloseContext(AppOpenCloseContext);
   return (
     <>
-      <div className="fixed inset-0 z-50 bg-black opacity-50"></div>
-      <div className="fixed inset-0 flex items-center justify-center z-50">
-        <div className="bg-[#2c2c2d] p-3 rounded-lg shadow-lg ">
-          <div className="pb-3">
+      <div
+        className="fixed inset-0 z-40 bg-black bg-opacity-70"
+        onClick={handleNewCustomerModal}
+      ></div>
+      <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div className="bg-[#161616fc]  p-6 rounded-lg shadow-lg w-full max-w-md">
+          <div className="flex justify-end pb-3">
+            {/* Close Button */}
             <Button
-              className="h-2 w-2 bg-red-400"
-              onClick={() => {
-                handleNewCustomerModal();
-              }}
-            />
+              className="h-6 w-6 bg-red-600"
+              onClick={handleNewCustomerModal}
+            >
+              &#x2715;
+            </Button>
           </div>
-          <div>
-            <div>
-              <AddCustomerForm />
-            </div>
+
+          {/* Modal Content */}
+          <div className="flex items-center justify-center">
+            <AddCustomerForm />
           </div>
         </div>
       </div>

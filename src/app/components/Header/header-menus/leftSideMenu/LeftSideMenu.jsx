@@ -13,9 +13,9 @@ export default function LeftSideMenu() {
       <Apple />
       <div className="font-extrabold text-[0.878rem] className='hover:bg-[#F8FAFC]">
         {finder && 'Finder'}
-        {open && 'Linkedin' }
-        {close && 'ozanBalci.pdf'}
-        {vsCodeOpen && 'Code'}
+        {open && ' - Linkedin' }
+        {close && ' - ozanBalci.pdf'}
+        {vsCodeOpen && ' - Code'}
     
       </div>
       <Button className="hover:bg-[#fff4f44f]">File</Button>

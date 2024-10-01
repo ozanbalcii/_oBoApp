@@ -90,20 +90,20 @@ export default function Customer() {
 
         <div className="pb-3 flex justify-end pr-5">
           <Button
-            text={"Add New Customer"}
-            icon={<SVG icon="people" className="rounded-md mr-2" size={20} />}
-            className="text-white hover:text-gray-400 "
+            text={" + Add New Customer"}
+            icon={<SVG icon="people" className="mr-2" size={20} />}
+            className="text-green-500 hover:text-gray-400 border-2 border-green-900 rounded-md p-1  "
             onClick={() => {
               handleNewCustomerModal();
             }}
           />
         </div>
-        <div className="flex items-center justify-center gap-10">
+        <div className="flex items-center justify-center gap-10 border-[0.1px] border-gray-500 rounded-md p-4 mx-5">
           <Table columns={tableColumns} data={userData} />
         </div>
         {newCustomerModal && (
           <>
-            <div className="">
+            <div>
               <NewCustomerModal />
             </div>
           </>
