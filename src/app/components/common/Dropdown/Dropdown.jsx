@@ -6,164 +6,90 @@ import { MenuItem as BaseMenuItem, menuItemClasses } from "@mui/base/MenuItem";
 import { styled } from "@mui/system";
 import { FaApple } from "react-icons/fa";
 
-export default function CustomDropdown({ loading, buttonName }) {
-  const createHandleMenuClick = (menuItem) => {
-    return () => {
-      console.log(`Clicked on ${menuItem}`);
-    };
-  };
-
-  const blue = {
-    50: "#F0F7FF",
-    100: "#C2E0FF",
-    200: "#99CCF3",
-    300: "#66B2FF",
-    400: "#3399FF",
-    500: "#007FFF",
-    600: "#0072E6",
-    700: "#0059B3",
-    800: "#004C99",
-    900: "#003A75",
-  };
-
-  const grey = {
-    50: "#F3F6F9",
-    100: "#E5EAF2",
-    200: "#DAE2ED",
-    300: "#C7D0DD",
-    400: "#B0B8C4",
-    500: "#9DA8B7",
-    600: "#6B7A90",
-    700: "#434D5B",
-    800: "#303740",
-    900: "#1C2025",
-  };
-
-  const green = {
-    50: "#228B22",
-  };
-  const white = {
-    50: "#FFFFFF",
+export default function CustomDropdown({ buttonName }) {
+  const createHandleMenuClick = (menuItem) => () => {
+    console.log(`Clicked on ${menuItem}`);
   };
 
   const Listbox = styled("ul")(
     ({ theme }) => `
-      font-size: 0.685rem;
-      font-weight: 25; 
-      box-sizing: border-box;
-      backdrop-filter: opacity(1);
-      margin: 9px 0;
+      font-size: 0.875rem;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
       min-width: 200px;
-      border-radius: 8px;
-      z-index: 30;
-      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-      overflow: auto;
-  
-      border: 1px solid ${
-        theme.palette.mode === "dark" ? grey[700] : grey[800]
-      };
-      color: ${theme.palette.mode === "dark" ? grey[500] : grey[900]};
-      box-shadow: 0px 4px 6px ${
-        theme.palette.mode === "dark"
-          ? "rgba(0,0,0, 0.70)"
-          : "rgba(0,0,0, 0.05)"
-      };
-      z-index: 1;
-      border: 0.5px solid ${
-        theme.palette.mode === "dark" ? grey[700] : grey[600]
-      };
-      background-color: rgba(50, 50, 64, 0.5);
+      border-radius: 0.5rem;
+      box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px); /* Frosted glass effect */
+      background-color: rgba(50, 50, 64, 0.7); /* Semi-transparent background */
+      border: 1px solid rgba(255, 255, 255, 0.1); /* Light border */
+      z-index: 10;
+      color: ${theme.palette.mode === "dark" ? "#f3f4f6" : "#1f2937"};
     `
   );
 
   const MenuItem = styled(BaseMenuItem)(
     ({ theme }) => `
-    font-family: 'Arial;
-    list-style: none;
-    padding: 3.5px 15px; 
-    border-radius: 3px;
-    margin: 4px 4px 4px;
-    cursor: default;
-    user-select: none;
-    display: flex; 
-    align-items: center; 
-    backdrop-filter: blur(99px);
-    // box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    color: 		rgb(104,104,104)
-    &.${menuItemClasses.focusVisible} {
-      outline: 3px solid ${
-        theme.palette.mode === "dark" ? blue[600] : blue[200]
-      };
-       background-color: ${
-         theme.palette.mode === "dark" ? grey[800] : grey[100]
-       };
-      color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
-    }
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      font-size: 0.74rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      color: ${theme.palette.mode === "dark" ? "#ffffff" : "#ffffff"};
   
-    &.${menuItemClasses.disabled} {
-      color: ${theme.palette.mode === "dark" ? grey[700] : grey[400]};
-    }
-
-   &:hover:not(.${menuItemClasses.disabled}) {
-     background-color: ${theme.palette.mode === "dark" ? green[50] : green[50]};
-     color: ${theme.palette.mode === "dark" ? white[50] : white[50]};
-     font-weight: 200;
-   }
-   `
+      &:hover {
+        background-color: rgba(0, 128, 0, 0.7); 
+        color: #ffffff;
+      }
+  
+      &.${menuItemClasses.focusVisible} {
+        outline: 3px solid ${theme.palette.mode === "dark" ? "#3399FF" : "#66B2FF"};
+      }
+  
+      &.${menuItemClasses.disabled} {
+        color: ${theme.palette.mode === "dark" ? "#6b7280" : "#9ca3af"};
+      }
+    `
   );
 
   const MenuButton = styled(BaseMenuButton)(
     ({ theme }) => `
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 0.975rem;
-    line-height: 1.5;
-    padding: 6px 10px;
-    border-radius: 5px;
-    transition: all 150ms ease;
-    cursor: pointer;
-    // color: ${theme.palette.mode === "dark" ? grey[200] : grey[900]};
-    // background: ${theme.palette.mode === "dark" ? grey[100] : "#fff"};
-    // border: 1px solid ${
-      theme.palette.mode === "dark" ? grey[700] : grey[200]
-    };
-    // color: white;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      transition: all 150ms ease-in-out;
+      cursor: pointer;
+      color: #ffff;
+  
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
 
-    // &:hover {
-    //   background: ${theme.palette.mode === "dark" ? grey[800] : grey[700]};
-    //   border-color: ${theme.palette.mode === "dark" ? grey[600] : grey[300]};
-    // }
-  
-    // &:active {
-    //   background: ${theme.palette.mode === "dark" ? grey[700] : grey[100]};
-    // }
-  
-    &:focus-visible {
-      box-shadow: 0 0 0 4px ${
-        theme.palette.mode === "dark" ? blue[300] : blue[200]
-      };
-      outline: none;
-    }
+      &:focus-visible {
+        box-shadow: 0 0 0 4px ${
+          theme.palette.mode === "dark" ? "#66B2FF" : "#3399FF"
+        };
+        outline: none;
+      }
     `
   );
 
   return (
     <Dropdown>
-      <MenuButton className="hover:bg-[#F8FAFC] hover:bg-opacity-20 text-white ">
+      <MenuButton className="text-white hover:bg-opacity-20">
         <FaApple />
       </MenuButton>
-      <Menu slots={{ listbox: Listbox }} className="backdrop-filter pl-2 ">
-        {buttonName?.map((options) => (
-          <>
-            <MenuItem
-              className="text-white hover:bg-green-700"
-              onClick={createHandleMenuClick("Profile")}
-            >
-              {options?.label}
+
+      <Menu slots={{ listbox: Listbox }}>
+        {buttonName?.map((option) => (
+          <div key={option?.label}>
+            <MenuItem onClick={createHandleMenuClick(option?.label)}>
+              {option?.label}
             </MenuItem>
-            <div className="pr-[0.4rem] pl-[0.4rem]">
-              <hr className="border-1 border-[#4c4c61] " />
+            <div className="px-2">
+              <hr className="border-t border-gray-600" />
             </div>
-          </>
+          </div>
         ))}
       </Menu>
     </Dropdown>
