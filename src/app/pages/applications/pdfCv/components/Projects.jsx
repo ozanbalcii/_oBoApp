@@ -29,7 +29,7 @@ export default function Projects() {
                     </a>
                   </ul>
                 </div>
-                <div className="pb-3">
+                {/* <div className="pb-3">
                   <a
                     className="hover:underline font-[900] pt-2"
                     href={`${projectsInfo?.text1}`}
@@ -37,7 +37,7 @@ export default function Projects() {
                   >
                     The project I'm doing right now: {projectsInfo?.text1}
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
@@ -49,7 +49,7 @@ export default function Projects() {
               >
                 <div className="flex gap-3">
                   <ul list-none>
-                    <li className="font-[900] pt-2">{projects?.title} </li>
+                    <li className="font-medium pt-2">{projects?.title} </li>
                   </ul>
                 </div>
               </div>

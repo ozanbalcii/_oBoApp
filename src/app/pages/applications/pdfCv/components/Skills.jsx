@@ -16,7 +16,7 @@ export default function Skills() {
             <div>
               <div
                 key={sk?.id}
-                className="text-darky font-[900] text-[17px] !pb-0 !pt-0"
+                className="text-darky text-[17px] !pb-0 !pt-0"
               >
                 <div>{sk?.title} </div>
               </div>

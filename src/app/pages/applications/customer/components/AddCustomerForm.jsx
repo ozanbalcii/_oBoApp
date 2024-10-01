@@ -98,7 +98,9 @@ export default function AddCustomerForm() {
               <div className="text-red-300 text-[15px]">{errors.name}</div>
             )}
             <div className="pt-2">
-              <label className="fw-bold text-gray-300 text-[17px]">Surname</label>
+              <label className="fw-bold text-gray-300 text-[17px]">
+                Surname
+              </label>
               <div className="text-xl">
                 <Input
                   className="rounded-[4px]"
@@ -159,7 +161,9 @@ export default function AddCustomerForm() {
               </div>
             </div>
             <div className="pt-2">
-              <label className="fw-bold text-gray-300 text-[17px]">Status</label>
+              <label className="fw-bold text-gray-300 text-[17px]">
+                Status
+              </label>
               <div className="">
                 <CustomSelect
                   className="rounded-[20px] w-52"
@@ -176,7 +180,9 @@ export default function AddCustomerForm() {
                 )}
               </div>
               <div className="pt-2">
-                <label className="fw-bold text-gray-300 text-[17px]">Password</label>
+                <label className="fw-bold text-gray-300 text-[17px]">
+                  Password
+                </label>
                 <div className="">
                   <Input
                     type="password"
