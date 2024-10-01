@@ -6,7 +6,6 @@
   
   # 2. Gerekli Bağımlılıkları Yükleyin
   Aşağıdaki komutu çalıştırarak tüm gerekli bağımlılıkları yükleyin:
-    ```bash
   npm install
   
   # 3. Projeyi Başlatın
