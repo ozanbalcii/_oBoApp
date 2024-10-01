@@ -13,8 +13,7 @@ import DeleteCustomerButton from "./components/DeleteCustomerButton";
 import NewCustomerModal from "./components/NewCustomerModal";
 
 export default function Customer() {
-  const { handleButtonCustomer, newCustomerModal, handleNewCustomerModal } =
-    useAppOpenCloseContext(AppOpenCloseContext);
+  const { handleButtonCustomer, newCustomerModal, handleNewCustomerModal } = useAppOpenCloseContext(AppOpenCloseContext);
   const { userData } = useCustomerContext(CustomerContext);
 
   const tableColumns = [
@@ -52,9 +51,7 @@ export default function Customer() {
       render: (item) => {
         return (
           <span className="d-flex gap-1 ">
-           <DeleteCustomerButton 
-           id={item.id}
-           />
+            <DeleteCustomerButton id={item.id} />
           </span>
         );
       },
@@ -75,9 +72,14 @@ export default function Customer() {
           Customer Table
         </div>
         <div className="flex gap-2 justify-center">
-          <p className="text-white "> {'You can contact me for a more professional-comprehensive table (exp: pagination, customer profile, update, filter etc.) '} </p>
+          <p className="text-white ">
+            {" "}
+            {
+              "You can contact me for a more professional-comprehensive table (exp: pagination, customer profile, update, filter etc.) "
+            }{" "}
+          </p>
           <a
-          className="text-yellow-200"
+            className="text-yellow-200"
             href="https://www.linkedin.com/in/ozanbalci98/"
             target="_blank"
             rel="noopener noreferrer"
@@ -106,16 +108,6 @@ export default function Customer() {
             </div>
           </>
         )}
-
-        {/* <div className="grid grid-cols-12 gap-4 pt-5 ">
-          <div className="col-span-6">
-            <div className="text-white">{notice && <Notice />} </div> 
-          </div>
-          <div className="col-span-6">
-            <div className="">{infoWeb && <InfoWeb />} </div> 
-          </div>
-        </div> */}
-        
       </div>
     </div>
   );

@@ -10,23 +10,27 @@ export default function Table({ columns, data }) {
   return (
     <>
       <div className="overflow-x-auto">
-        <table className="min-w-full">
+        <table className="min-w-full table-auto"> {/* Added table-auto class */}
           <thead className="text-yellow-600">
             <tr>
               {columns?.map((item, index) => (
-                <th key={index} className={`${item?.className}`}>
-                  {item?.title}
+                <th
+                  key={index}
+                  className={`${item?.className} px-4 py-2 whitespace-nowrap`} // Ensure spacing and no text wrapping
+                  style={{ minWidth: item?.minWidth || '100px' }} // Optionally set a min-width for columns
+                >
+                  {item?.title || '-'} {/* Display a dash if the title is empty */}
                 </th>
               ))}
             </tr>
           </thead>
           <tbody className="text-gray-300">
-            {data?.map((dataItem, index) => (
-              <tr key={index}>
-                {columns?.map((column, index) => (
+            {data?.map((dataItem, rowIndex) => (
+              <tr key={rowIndex}>
+                {columns?.map((column, colIndex) => (
                   <td
-                    key={index}
-                    className={`py-3 px-6 ${
+                    key={colIndex}
+                    className={`py-3 px-6 whitespace-nowrap ${
                       column?.dataIndex === "status" &&
                       dataItem?.status === "Active"
                         ? "text-green-600"
@@ -41,7 +45,7 @@ export default function Table({ columns, data }) {
                   >
                     {column?.render
                       ? column?.render(dataItem)
-                      : dataItem[column?.dataIndex]}
+                      : dataItem[column?.dataIndex] || '-'} {/* Display dash for empty cells */}
                   </td>
                 ))}
               </tr>
@@ -51,6 +55,7 @@ export default function Table({ columns, data }) {
       </div>
     </>
   );
+
   return (loading ? (
     <Loading>
       <div>

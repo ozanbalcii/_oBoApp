@@ -37,6 +37,7 @@ export default function DeleteCustomerButton({ id }) {
   const fetchDeleteCustomer = async () => {
     try {
       const res = await deleteCustomer(id);
+
       setDeleteData(res?.data);
     } catch (error) {
       console.log(error, "error");
