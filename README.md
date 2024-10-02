@@ -5,11 +5,11 @@
   Proje dosyaları içinde oBoApp-main dizinine gidin.
   
   # 2. Gerekli Bağımlılıkları Yükleyin
-  Aşağıdaki komutu çalıştırarak tüm gerekli bağımlılıkları yükleyin:
+  Komutu çalıştırarak tüm gerekli bağımlılıkları yükleyin:
   npm install
   
   # 3. Projeyi Başlatın
-  Projeyi geliştirme modunda başlatmak için aşağıdaki komutu kullanın:
+  Projeyi geliştirme modunda başlatmak için komutu kullanın:
   npm run dev
   
   Bu adımlar tamamlandığında, proje local sunucunuzda çalışmaya başlayacaktır.
