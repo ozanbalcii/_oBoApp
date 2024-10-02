@@ -1,7 +1,7 @@
 export const extensionsData = [
     {
         id: '0',
-        picture: '/src/app/assets/VsCodePagePhoto/github.png',
+        picture: '/assets/VsCodePagePhoto/github.png',
         name: 'GitHub Copilot',
         desc: 'Your AI pair programmer',
         time: '30ms',
@@ -9,7 +9,7 @@ export const extensionsData = [
     },
     {
         id: '1',
-        picture: '/src/app/assets/VsCodePagePhoto/comments.png',
+        picture: '/assets/VsCodePagePhoto/comments.png',
         name: 'Better Comments',
         desc: 'Improve your code commenting by annotating...',
         time: '3ms',
@@ -17,7 +17,7 @@ export const extensionsData = [
     },
     {
         id: '2',
-        picture: '/src/app/assets/VsCodePagePhoto/react.jpg',
+        picture: '/assets/VsCodePagePhoto/react.jpg',
         name: 'Es7 + React/Redux snippets',
         desc: 'Simple extensions for React...',
         time: '74ms',
@@ -25,7 +25,7 @@ export const extensionsData = [
     },
     {
         id: '3',
-        picture: '/src/app/assets/VsCodePagePhoto/esLint.png',
+        picture: '/assets/VsCodePagePhoto/esLint.png',
         name: 'ESLint',
         desc: 'Integrates ESLint JavaScript into VS Code.',
         time: '74ms',
@@ -33,7 +33,7 @@ export const extensionsData = [
     },
     {
         id: '4',
-        picture: '/src/app/assets/VsCodePagePhoto/projectManager.png',
+        picture: '/assets/VsCodePagePhoto/projectManager.png',
         name: 'Project Manager',
         desc: 'Easily switch between projects',
         time: '6ms',
@@ -41,7 +41,7 @@ export const extensionsData = [
     },
     {
         id: '5',
-        picture: '/src/app/assets/VsCodePagePhoto/github.png',
+        picture: '/assets/VsCodePagePhoto/github.png',
         name: 'Github',
         desc: 'Gtihub extension for VsCode.',
         time: '6ms',
@@ -49,7 +49,7 @@ export const extensionsData = [
     },
     {
         id: '6',
-        picture: '/src/app/assets/VsCodePagePhoto/react.jpg',
+        picture: '/assets/VsCodePagePhoto/react.jpg',
         name: 'React Tools',
         desc: 'React tools for VsCode.',
         time: '6ms',
@@ -57,7 +57,7 @@ export const extensionsData = [
     },
     {
         id: '7',
-        picture: '/src/app/assets/VsCodePagePhoto/javaScript.jpg',
+        picture: '/assets/VsCodePagePhoto/javaScript.jpg',
         name: 'JavaScript (ES6) Snippets',
         desc: 'VsCode snippets for Js.',
         time: '6ms',
