@@ -77,7 +77,7 @@ export default function RecipeReviewCard() {
                   }
                   className="flex gap-3 items-center"
                 />
-                <div className="text-[15px] font-pFont flex items-center ">Linkedin</div>
+                <div className="text-[15px] font-pFont flex items-center pt-1">Linkedin</div>
                 <Button
                   onClick={() => {
                     handleButtonLinkedin();

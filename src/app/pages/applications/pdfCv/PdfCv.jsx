@@ -70,7 +70,7 @@ export default function PdfCv() {
                   }
                   className="flex gap-3 items-center"
                 />
-                <text className="text-[15px] font-pFont ">ozanbalci.pdf</text>
+                <div className="text-[15px] font-pFont flex items-center pt-1 ">ozanbalci.pdf</div>
                 <Button
                   onClick={() => {
                     handleButtonPdf();
