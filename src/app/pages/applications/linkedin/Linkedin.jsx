@@ -17,7 +17,7 @@ import "animate.css/animate.min.css";
 import { CodeContext, useCodeContext } from "../../../contexts/vsCode/Code";
 
 export default function RecipeReviewCard() {
-  const {setCommand } = useCodeContext(CodeContext);
+  const { setCommand } = useCodeContext(CodeContext);
   const [expanded, setExpanded] = React.useState(false);
   const [iconAppear, setIconAppear] = React.useState(false);
 
@@ -45,8 +45,7 @@ export default function RecipeReviewCard() {
         className="scroll-container"
         style={{ maxHeight: "800px", overflowY: "auto" }}
       >
-        
-        <Card sx={{ maxWidth: 1600 }}>
+        <Card className="max-w-full w-full lg:max-w-[1600px]">
           <div className="bg-[#09060f] flex items-center gap-2 p-1 pl-4 pt-1 pb-1">
             <Button
               onClick={() => {
@@ -60,7 +59,7 @@ export default function RecipeReviewCard() {
                 handleButtonLinkedin();
                 setCommand([]);
               }}
-              className="bg-slate-700 hover:bg-yellow-400  rounded-full w-[14px] h-[9px] flex items-center justify-center"
+              className="bg-slate-700 hover:bg-yellow-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
             />
             <Button
               onMouseEnter={handleOpenIcon}
@@ -78,9 +77,9 @@ export default function RecipeReviewCard() {
                   }
                   className="flex gap-3 items-center"
                 />
-                <text className="text-[15px] font-pFont ">Linkedin</text>
+                <div className="text-[15px] font-pFont flex items-center ">Linkedin</div>
                 <Button
-                   onClick={() => {
+                  onClick={() => {
                     handleButtonLinkedin();
                   }}
                   className="ml-auto"
@@ -90,33 +89,13 @@ export default function RecipeReviewCard() {
             </div>
           </div>
           <div className="grid grid-cols-3 gap-4 bg-[#282828] p-3">
-            <div className=" text-white gap-1 flex ">
-              <div>
-                <Button
-                  className="ml-auto hover:bg-[#F8FAFC]"
-                  icon={<SVG icon="arrow-left2" size={13} />}
-                />
-              </div>
-              <div>
-                <Button
-                  className="ml-auto hover:bg-[#F8FAFC]"
-                  icon={<SVG icon="forward" size={13} />}
-                />
-              </div>
-              <div>
-                <Button
-                  className="ml-auto hover:bg-[#F8FAFC]"
-                  icon={<SVG icon="loop2" size={13} />}
-                />
-              </div>
-              <div>
-                <Button
-                  className="ml-auto hover:bg-[#F8FAFC] "
-                  icon={<SVG icon="home3" size={13} />}
-                />
-              </div>
+            <div className="text-white gap-1 flex flex-wrap">
+              <Button
+                className="ml-auto hover:bg-[#F8FAFC]"
+                icon={<SVG icon="home3" size={13} />}
+              />
             </div>
-            <div className="bg-[#536872] rounded-2xl text-white  text-sm flex items-center">
+            <div className="bg-[#536872] rounded-2xl text-white text-sm flex items-center">
               <input
                 type="text"
                 value={url}
@@ -124,30 +103,7 @@ export default function RecipeReviewCard() {
                 className="bg-[#536872] rounded-2xl hover:opacity-75 text-white pl-3 text-sm flex items-center w-full"
               />
             </div>
-            <div>
-              <div className=" text-white gap-1 flex ">
-                <div>
-                  <Button
-                    className="ml-auto hover:bg-[#F8FAFC]"
-                    icon={<SVG icon="music" size={13} />}
-                  />
-                </div>
-                <div>
-                  <Button
-                    className="ml-auto hover:bg-[#F8FAFC] "
-                    icon={<SVG icon="star-full" size={13} />}
-                  />
-                </div>
-                <div>
-                  <Button
-                    className="ml-auto hover:bg-[#F8FAFC]"
-                    icon={<SVG icon="power-cord" size={13} />}
-                  />
-                </div>
-              </div>
-            </div>
           </div>
-
           <LinkedinHeader />
           <Collapse
             className="bg-[#F4F2EE]"
@@ -157,8 +113,8 @@ export default function RecipeReviewCard() {
           >
             <CardContent>
               <Typography>
-                <div className="grid grid-cols-10 pl-[19.5rem] pr-[19.5rem] gap-5 ">
-                  <div className="col-span-7  p-4 rounded-l-md">
+                <div className="grid grid-cols-1 lg:grid-cols-10 pl-4 pr-4 gap-5">
+                  <div className="col-span-7 p-4 rounded-l-md">
                     <LinkedinBodyLeftSide />
                   </div>
                   <div className="col-span-3 pt-4 rounded-r-md !pl-0">

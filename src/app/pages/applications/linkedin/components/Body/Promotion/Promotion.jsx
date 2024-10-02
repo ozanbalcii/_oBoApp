@@ -17,7 +17,7 @@ export default function Promotion() {
                   key={promo.id}
                   src={promo?.picture}
                   alt="linkedin-promotoin"
-                  className="max-w-full h-auto  xl:grid hidden rounded-[0.395rem]"
+                  className=" w-full h-auto xl:grid hidden rounded-[0.395rem]"
                 />
               </>
             ))}

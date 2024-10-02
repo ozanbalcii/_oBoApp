@@ -14,7 +14,7 @@ export default function PeopleAlsoViewed() {
     <>
       {customData?.map((data) => (
         <>
-          <div className="pt-2 overflow-auto xl:grid hidden  ">
+          <div className="pt-2 overflow-auto xl:grid hidden">
             <div className="bg-white border-[0.1rem] text-darky rounded-[0.495rem] ">
               <div className="font-bold text-[15px] pl-5 pt-5">
                 People also viewed
@@ -52,7 +52,6 @@ export default function PeopleAlsoViewed() {
                         </div>
                       </div>
                     </div>
-                 
                     <hr />
                   </div>
                 ))}
