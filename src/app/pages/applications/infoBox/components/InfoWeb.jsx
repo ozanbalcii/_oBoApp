@@ -13,8 +13,8 @@ export default function InfoWeb() {
   const { infoBox } = useInfoBoxContext(InfoBoxContext);
 
   return (
-    <div className="bg-[#2a210b] rounded-md ">
-      <div className="p-2 text-gray-400 ">
+    <div className="bg-[#1e1e1e] rounded-md p-3 text-gray-400">
+      <div>
         {infoBox?.map((item) => (
           <>
             {item?.infoWeb?.map((noti) => (

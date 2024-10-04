@@ -1,3 +1,4 @@
+import { Link } from "@mui/material";
 import { forwardRef } from "react";
 
 const Button = forwardRef(function ButtonComponent(
@@ -40,7 +41,11 @@ const Button = forwardRef(function ButtonComponent(
           {text}
         </button>
       ) : (
-        <Link prefetch={prefetch} href={url} target={target} s>
+        <Link
+        className="!text-white pl-[9.5px] pr-[9.5px]"
+         prefetch={prefetch} 
+         href={url} 
+         target={target} s>
           {children}
         </Link>
       )}

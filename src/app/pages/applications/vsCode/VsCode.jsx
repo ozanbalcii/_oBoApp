@@ -34,7 +34,7 @@ export default function VsCode() {
   } = useFolderContext(FolderContext);
   const { open, handleButtonVsCode } =
     useAppOpenCloseContext(AppOpenCloseContext);
-    console.log(readme, oBoApp, projects, 'ddddd')
+  console.log(readme, oBoApp, projects, "ddddd");
   return (
     <div
       className={`flex justify-center transition-all w-full ${
@@ -62,12 +62,6 @@ export default function VsCode() {
                 handleButtonVsCode();
               }}
               className="bg-[#1E1E1E] hover:bg-yellow-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
-            />
-            <Button
-              onClick={() => {
-                handleButtonSize();
-              }}
-              className="relative bg-[#1E1E1E] hover:bg-green-400 rounded-full w-[14px] h-[9px] flex items-center justify-center"
             />
           </div>
           <Tab />

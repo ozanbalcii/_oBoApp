@@ -38,7 +38,7 @@ export default function InfoBox() {
               text={"Notice"}
             />
           </div>
-          <div className="">
+          <div>
             <Button
               className="hover:bg-slate-700 rounded-md transition-all"
               text={"Informations for Website"}
@@ -54,7 +54,7 @@ export default function InfoBox() {
             <div className="text-white">{notice && <Notice />} </div>
           </div>
           <div className="col-span-6">
-          <div className="">{infoWeb && <InfoWeb />} </div>
+          <div>{infoWeb && <InfoWeb />} </div>
           </div>
         </div>
       </div>

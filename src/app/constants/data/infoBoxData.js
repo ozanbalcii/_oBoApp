@@ -4,12 +4,7 @@ export const infoBoxData = [
       {
         id: "0",
         frontendText: `
-    Frontend:
-    Table component will be created (Upload, Update, Delete),
-    Member system will be created and integrated with the table,
-    New pages, modals, etc. will be created on the Linkedin page.
-    Loading system (such as buttons, pages, effects, etc.) will be created.
-    Header will be improved (button, modal etc.)
+        On the frontend, a table component with upload, update, and delete functionality will be created, and a member system will be developed and integrated with the table. Additionally, new pages, modals, and other components will be added to the LinkedIn page, while a loading system for buttons, pages, and effects will be implemented. The header will also be enhanced, with improvements to buttons, modals, and more. On the backend, the necessary functionality for the table and member system will be developed. Finally, all projects will be thoroughly tested and debugged.
                 `,
         backendText: `Backend:
                 Backend for Table and Member system will be developed `,
@@ -21,10 +16,10 @@ export const infoBoxData = [
       {
         id: "1",
         article1: `
-            You can open the submenu by moving the cursor to the bottom of the screen. Also, you can so access the apps here.
+        You can open the submenu by moving your cursor to the bottom of the screen, where you can also access the available apps.
             `,
         article2: `
-            You can code with Vscode (such as /cv, /linkedin, /clr)
+        Additionally, you can write code in VSCode for various sections, such as /cv and /linkedin.
             `,
       },
     ],

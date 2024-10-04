@@ -79,13 +79,27 @@ export default function SubmenuInner() {
                     }`}
                   />
                 </Button>
-                <Button className=" rounded-lg ">
+                <Button
+                  type="link"
+                  target="_blank"
+                  url={"https://open.spotify.com/user/comingv2"}
+                  className="rounded-lg"
+                >
                   <SVG icon="spotify" className={"rounded-xl"} />
                 </Button>
-                <Button className={`rounded-xl !pl-0`}>
+                <Button
+                  type="link"
+                  url={`mailto:${"ozanbalcieem@gmail.com"}`}
+                  className={`rounded-xl !pl-0`}
+                >
                   <SVG icon="gmail" className={"rounded-xl"} />
                 </Button>
-                <Button className={`rounded-xl !pl-0`}>
+                <Button
+                  type="link"
+                  url={"https://github.com/ozanbalcii"}
+                  target="_blank"
+                  className={`rounded-xl !pl-0`}
+                >
                   <SVG icon="github" className={"rounded-xl"} />
                 </Button>
               </div>

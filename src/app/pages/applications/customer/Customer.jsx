@@ -106,7 +106,7 @@ export default function Customer() {
             <div>
               <NewCustomerModal />
             </div>
-          </>
+          </>   
         )}
       </div>
     </div>

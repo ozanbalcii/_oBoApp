@@ -21,7 +21,7 @@ export default function CustomerProvider({ children }) {
   };
 
   const fetchUserStatus = async () => {
-    const  getStatus = await getUserStatus();
+    const getStatus = await getUserStatus();
     const statusData = getStatus?.data?.map((value) => ({
       value: value?.value,
       label: value?.label,

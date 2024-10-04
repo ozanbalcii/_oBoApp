@@ -58,7 +58,7 @@ export default function PdfCv() {
                 handleButtonSize();
               }}
             />
-            <div className="pl-5">
+            <div className="pl-5 pt-1">
               <div className="flex items-center justify-center gap-1 text-white border border-gray-700 rounded-xl p-2 hover:bg-slate-900 ">
                 <Button
                   icon={
@@ -70,7 +70,7 @@ export default function PdfCv() {
                   }
                   className="flex gap-3 items-center"
                 />
-                <div className="text-[15px] font-pFont flex items-center pt-1 ">ozanbalci.pdf</div>
+                <div className="text-[15px] font-pFont flex items-center">ozanbalci.pdf</div>
                 <Button
                   onClick={() => {
                     handleButtonPdf();
@@ -139,12 +139,12 @@ export default function PdfCv() {
               </div>
             </div>
           </div>
-          <div className="flex items-center bg-gray-300">
+          {/* <div className="flex items-center bg-gray-300">
             <div className=" text-darky p-3 font-bold"> Download in PDF: </div>
             <div>
               <Button className="bg-green-600 text-white">Download</Button>
             </div>
-          </div>
+          </div> */}
           <Pdf />
         </Card>
       </div>

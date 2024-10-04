@@ -9,13 +9,19 @@ import {
 import Input from "../../../../components/common/Input";
 import SubmitButton from "../../../../components/common/Button/SubmitButton";
 import CustomSelect from "../../../../components/common/Select";
+import {
+  AppOpenCloseContext,
+  useAppOpenCloseContext,
+} from "../../../../contexts/trashContexts/AppOpenClose";
 
 export default function AddCustomerForm() {
   const { setUserData, userRoles, userStatus } =
     useCustomerContext(CustomerContext);
 
-  const passwordRules = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{5,}$/;
+  const { handleNewCustomerModal } =
+    useAppOpenCloseContext(AppOpenCloseContext);
 
+  const passwordRules = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{5,}$/;
   const customerSchema = Yup.object().shape({
     name: Yup.string().required("Name is required"),
     surname: Yup.string().required("Surname is required"),
@@ -63,10 +69,11 @@ export default function AddCustomerForm() {
               email: values.email,
               lastSeen: values.lastSeen,
               phone: values.phone ? values.phone : "-",
-              role: values.role,
-              status: values.status,
+              role: values.role ? values.role : "Empty",
+              status: values.status ? values.status : "Empty",
             },
           ]);
+          handleNewCustomerModal();
           Swal.fire({
             icon: "success",
             text: "Customer added successfully!",
@@ -76,7 +83,6 @@ export default function AddCustomerForm() {
             allowOutsideClick: false,
           });
         }, 600);
-        resetForm();
       },
     });
   return (

@@ -69,7 +69,7 @@ export default function RecipeReviewCard() {
               aria-expanded={expanded}
               aria-label="show more"
             />
-            <div className="pl-5">
+            <div className="pl-5 pt-1">
               <div className="flex items-center justify-center gap-1 text-white border border-gray-700 rounded-xl p-2 hover:bg-slate-900 ">
                 <Button
                   icon={
@@ -77,24 +77,45 @@ export default function RecipeReviewCard() {
                   }
                   className="flex gap-3 items-center"
                 />
-                <div className="text-[15px] font-pFont flex items-center pt-1">Linkedin</div>
+                <div className="text-[15px] font-pFont flex items-centerç">Linkedin</div>
                 <Button
                   onClick={() => {
                     handleButtonLinkedin();
                   }}
-                  className="ml-auto"
+                  className="ml-auto "
                   icon={<SVG icon="x, cancel, close" size={11} />}
                 />
               </div>
             </div>
           </div>
           <div className="grid grid-cols-3 gap-4 bg-[#282828] p-3">
-            <div className="text-white gap-1 flex flex-wrap">
-              <Button
-                className="ml-auto hover:bg-[#F8FAFC]"
-                icon={<SVG icon="home3" size={13} />}
-              />
+          <div className=" text-white gap-1 flex  ">
+              <div>
+                <Button
+                  className="ml-auto hover:bg-[#F8FAFC]"
+                  icon={<SVG icon="arrow-left2" size={13} />}
+                />
+              </div>
+              <div>
+                <Button
+                  className="ml-auto hover:bg-[#F8FAFC]"
+                  icon={<SVG icon="forward" size={13} />}
+                />
+              </div>
+              <div>
+                <Button
+                  className="ml-auto hover:bg-[#F8FAFC]"
+                  icon={<SVG icon="loop2" size={13} />}
+                />
+              </div>
+              <div>
+                <Button
+                  className="ml-auto hover:bg-[#F8FAFC] "
+                  icon={<SVG icon="home3" size={13} />}
+                />
+              </div>
             </div>
+             
             <div className="bg-[#536872] rounded-2xl text-white text-sm flex items-center">
               <input
                 type="text"

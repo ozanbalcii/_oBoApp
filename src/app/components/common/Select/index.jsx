@@ -7,7 +7,7 @@ const CustomSelect = ({
   className,
   name,
   options,
-  defaultValue = [],
+  value,  
   onChange,
   isLoading,
   isSearchable = true,
@@ -19,7 +19,7 @@ const CustomSelect = ({
     onChange({
       target: {
         name: name,
-        value: isMulti ? selectedOption : selectedOption.label,
+        value: isMulti ? selectedOption : selectedOption.label, 
       },
     });
   };
@@ -30,8 +30,8 @@ const CustomSelect = ({
       placeholder={placeholder}
       name={name}
       className={className}
-      options={options}
-      defaultValue={defaultValue}
+      options={options ? options : []}
+      value={options ? options.find(opt => opt.value === value) : "-"}  
       onChange={handleChange}
       isSearchable={isSearchable}
       isMulti={isMulti}
