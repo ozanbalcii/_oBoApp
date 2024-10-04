@@ -1,3 +1,5 @@
+# Live: ozanbalciapp.netlify.app/
+
 # TR:
 # Projeyi Başlatma Adımları
 
